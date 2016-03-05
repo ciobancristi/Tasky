@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasky", "Tasky\Tasky.csproj", "{2140565F-5B45-4267-BFB8-4DC65239C318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasky.Entities", "Tasky.Entities\Tasky.Entities.csproj", "{9D90F6B3-3EC2-4896-8837-A26E5B94ED5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasky.Services", "Tasky.Services\Tasky.Services.csproj", "{D46F2892-09BF-4580-919A-4C6F43C16503}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2140565F-5B45-4267-BFB8-4DC65239C318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2140565F-5B45-4267-BFB8-4DC65239C318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2140565F-5B45-4267-BFB8-4DC65239C318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2140565F-5B45-4267-BFB8-4DC65239C318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D90F6B3-3EC2-4896-8837-A26E5B94ED5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D90F6B3-3EC2-4896-8837-A26E5B94ED5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D90F6B3-3EC2-4896-8837-A26E5B94ED5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D90F6B3-3EC2-4896-8837-A26E5B94ED5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46F2892-09BF-4580-919A-4C6F43C16503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46F2892-09BF-4580-919A-4C6F43C16503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46F2892-09BF-4580-919A-4C6F43C16503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46F2892-09BF-4580-919A-4C6F43C16503}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
