@@ -29,5 +29,10 @@ namespace Tasky
                 MessageBox.Show("User/Password incorrect");
             }
         }
+
+        private void ExitLoginButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

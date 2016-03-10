@@ -56,6 +56,7 @@
             this.ExitLoginButton.TabIndex = 1;
             this.ExitLoginButton.Text = "Exit";
             this.ExitLoginButton.UseVisualStyleBackColor = true;
+            this.ExitLoginButton.Click += new System.EventHandler(this.ExitLoginButton_Click);
             // 
             // panel1
             // 
