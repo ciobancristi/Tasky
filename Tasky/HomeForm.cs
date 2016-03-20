@@ -21,5 +21,50 @@ namespace Tasky
         {
             Application.Exit();
         }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsersListForm usersListForm = new UsersListForm();
+            usersListForm.Show();
+            //this.Close();
+        }
+
+        private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProjectsForm projectsForm = new ProjectsForm();
+            projectsForm.Show();
+            //this.Close();
+        }
+
+        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserProfileForm userProfileForm = new UserProfileForm();
+            userProfileForm.Show();
+            //this.Close();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void emailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            adminEmailForm admEmailForm = new adminEmailForm();
+            admEmailForm.Show();
+            //this.Close();
+        }
+
+        private void registerUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            adminNewUserRegistration admUserReg = new adminNewUserRegistration();
+            admUserReg.Show();
+            //this.Close();
+        }
+
+        private void homeCalendarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
