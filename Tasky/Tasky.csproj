@@ -56,17 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminEmailForm.cs">
+    <Compile Include="AdminEmailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adminEmailForm.Designer.cs">
-      <DependentUpon>adminEmailForm.cs</DependentUpon>
+    <Compile Include="AdminEmailForm.Designer.cs">
+      <DependentUpon>AdminEmailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="adminNewUserRegistration.cs">
+    <Compile Include="AdminNewUserRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adminNewUserRegistration.Designer.cs">
-      <DependentUpon>adminNewUserRegistration.cs</DependentUpon>
+    <Compile Include="AdminNewUserRegistration.Designer.cs">
+      <DependentUpon>AdminNewUserRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -100,11 +100,11 @@
     <Compile Include="UsersListForm.Designer.cs">
       <DependentUpon>UsersListForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="adminEmailForm.resx">
-      <DependentUpon>adminEmailForm.cs</DependentUpon>
+    <EmbeddedResource Include="AdminEmailForm.resx">
+      <DependentUpon>AdminEmailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="adminNewUserRegistration.resx">
-      <DependentUpon>adminNewUserRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="AdminNewUserRegistration.resx">
+      <DependentUpon>AdminNewUserRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tasky
 {
-    public partial class adminNewUserRegistration : Form
+    public partial class AdminNewUserRegistration : Form
     {
-        public adminNewUserRegistration()
+        public AdminNewUserRegistration()
         {
             InitializeComponent();
         }

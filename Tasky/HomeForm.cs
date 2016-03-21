@@ -50,14 +50,14 @@ namespace Tasky
 
         private void emailToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            adminEmailForm admEmailForm = new adminEmailForm();
+            AdminEmailForm admEmailForm = new AdminEmailForm();
             admEmailForm.Show();
             //this.Close();
         }
 
         private void registerUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            adminNewUserRegistration admUserReg = new adminNewUserRegistration();
+            AdminNewUserRegistration admUserReg = new AdminNewUserRegistration();
             admUserReg.Show();
             //this.Close();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Tasky
 {
-    partial class adminNewUserRegistration
+    partial class AdminNewUserRegistration
     {
         /// <summary>
         /// Required designer variable.

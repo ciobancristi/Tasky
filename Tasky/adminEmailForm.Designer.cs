@@ -1,6 +1,6 @@
 ﻿namespace Tasky
 {
-    partial class adminEmailForm
+    partial class AdminEmailForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.bodyLabel = new System.Windows.Forms.Label();
             this.toTextBox = new System.Windows.Forms.TextBox();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
-            this.BodyTextBox = new System.Windows.Forms.TextBox();
+            this.bodyTextBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.sendButton = new System.Windows.Forms.Button();
@@ -91,13 +91,13 @@
             this.subjectTextBox.Size = new System.Drawing.Size(236, 20);
             this.subjectTextBox.TabIndex = 5;
             // 
-            // BodyTextBox
+            // bodyTextBox
             // 
-            this.BodyTextBox.Location = new System.Drawing.Point(142, 193);
-            this.BodyTextBox.Multiline = true;
-            this.BodyTextBox.Name = "BodyTextBox";
-            this.BodyTextBox.Size = new System.Drawing.Size(236, 199);
-            this.BodyTextBox.TabIndex = 6;
+            this.bodyTextBox.Location = new System.Drawing.Point(142, 193);
+            this.bodyTextBox.Multiline = true;
+            this.bodyTextBox.Name = "bodyTextBox";
+            this.bodyTextBox.Size = new System.Drawing.Size(236, 199);
+            this.bodyTextBox.TabIndex = 6;
             // 
             // statusStrip1
             // 
@@ -114,7 +114,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(36, 17);
             this.toolStripStatusLabel1.Text = "Tasky";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // sendButton
             // 
@@ -124,6 +123,7 @@
             this.sendButton.TabIndex = 8;
             this.sendButton.Text = "Send mail";
             this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
             // adminEmailForm
             // 
@@ -132,7 +132,7 @@
             this.ClientSize = new System.Drawing.Size(472, 549);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.BodyTextBox);
+            this.Controls.Add(this.bodyTextBox);
             this.Controls.Add(this.subjectTextBox);
             this.Controls.Add(this.toTextBox);
             this.Controls.Add(this.bodyLabel);
@@ -140,7 +140,7 @@
             this.Controls.Add(this.toLabel);
             this.Controls.Add(this.titleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "adminEmailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminEmailForm";
@@ -159,7 +159,7 @@
         private System.Windows.Forms.Label bodyLabel;
         private System.Windows.Forms.TextBox toTextBox;
         private System.Windows.Forms.TextBox subjectTextBox;
-        private System.Windows.Forms.TextBox BodyTextBox;
+        private System.Windows.Forms.TextBox bodyTextBox;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button sendButton;
