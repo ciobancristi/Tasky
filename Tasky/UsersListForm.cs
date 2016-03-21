@@ -16,5 +16,10 @@ namespace Tasky
         {
             InitializeComponent();
         }
+
+        private void UsersListForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

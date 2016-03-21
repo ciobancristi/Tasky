@@ -16,5 +16,10 @@ namespace Tasky
         {
             InitializeComponent();
         }
+
+        private void passwordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
