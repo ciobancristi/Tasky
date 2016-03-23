@@ -236,4 +236,4 @@ _Pvt_Extensions
 .fake/
 
 # custom ignore region
-*.config
+/config.local
