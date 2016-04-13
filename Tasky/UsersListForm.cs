@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tasky.Services;
 
 namespace Tasky
 {
     public partial class UsersListForm : Form
     {
+        private IUserService _userService;
         public UsersListForm()
         {
             InitializeComponent();
+            _userService = new UserService();
+            BindData();
         }
 
-        private void UsersListForm_Load(object sender, EventArgs e)
+        private void BindData()
         {
-
+            usersGridView.DataSource = _userService.GetAllUserDetails();
         }
     }
 }
