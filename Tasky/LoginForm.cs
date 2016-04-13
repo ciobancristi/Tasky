@@ -7,20 +7,17 @@ namespace Tasky
     public partial class Login : Form
     {
         private IAuthenticationService _authenticationService;
-        private IValidationService _validationService;
         public Login()
         {
             InitializeComponent();
             _authenticationService = new AuthenticationService();
-            _validationService = new ValidationService();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var userName = UsernameTextbox.Text;
             var password = PasswordTextbox.Text;
-            string[] fields = {userName, password};
-            if (!_validationService.IsEmptyValidation(fields))
+            if (userName.Length > 0 && password.Length > 0)
             {
                 if (_authenticationService.CheckCredentials(userName, password))
                 {
