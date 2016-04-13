@@ -9,6 +9,7 @@ namespace Tasky.Services
 
     public interface IUserService
     {
+        List<UserDetail> GetAllUserDetails();
         UserDetail GetUserDetails();
         void PostUserDetails(UserDetail currentUser);
         User GetUser();
@@ -17,7 +18,7 @@ namespace Tasky.Services
     public class UserService : BaseService, IUserService
     {
         private TaskyDBEntities _dbContext;
-
+        #region IUserService
         public UserService()
         {
             _dbContext = new TaskyDBEntities();
@@ -47,6 +48,14 @@ namespace Tasky.Services
             _dbContext.Entry(olduser).CurrentValues.SetValues(currentUser);
             _dbContext.SaveChanges();
         }
+
+        
+        public List<UserDetail> GetAllUserDetails()
+        {
+            return _dbContext.UserDetails.ToList();
+        }
+        #endregion
+
         #region IDisposable
         protected override void Dispose(bool disposing)
         {

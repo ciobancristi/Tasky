@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tasky.App_Start;
 
 namespace Tasky
 {
@@ -17,7 +15,7 @@ namespace Tasky
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
-
+            MappingConfig.Initialize();
         }
     }
 }
