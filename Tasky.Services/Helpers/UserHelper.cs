@@ -7,6 +7,7 @@ namespace Tasky.Services.Helpers
     {
         private static User _currentUser;
 
+
         #region public members
         public static void SetUser(User currentUser)
         {

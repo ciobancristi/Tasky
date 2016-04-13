@@ -145,6 +145,7 @@
             this.submitDataButton.TabIndex = 11;
             this.submitDataButton.Text = "Submit";
             this.submitDataButton.UseVisualStyleBackColor = true;
+            this.submitDataButton.Click += new System.EventHandler(this.submitDataButton_Click);
             // 
             // changePasswordLabel
             // 
@@ -177,6 +178,7 @@
             // 
             this.oldPasswordTextBox.Location = new System.Drawing.Point(185, 337);
             this.oldPasswordTextBox.Name = "oldPasswordTextBox";
+            this.oldPasswordTextBox.PasswordChar = '*';
             this.oldPasswordTextBox.Size = new System.Drawing.Size(200, 20);
             this.oldPasswordTextBox.TabIndex = 16;
             // 
@@ -184,6 +186,7 @@
             // 
             this.newPasswordTextBox.Location = new System.Drawing.Point(185, 367);
             this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.PasswordChar = '*';
             this.newPasswordTextBox.Size = new System.Drawing.Size(200, 20);
             this.newPasswordTextBox.TabIndex = 17;
             // 
@@ -195,6 +198,7 @@
             this.changePasswordButton.TabIndex = 18;
             this.changePasswordButton.Text = "Change Password";
             this.changePasswordButton.UseVisualStyleBackColor = true;
+            this.changePasswordButton.Click += new System.EventHandler(this.changePasswordButton_Click);
             // 
             // UserProfileForm
             // 
@@ -220,7 +224,7 @@
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.titleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Profile";
