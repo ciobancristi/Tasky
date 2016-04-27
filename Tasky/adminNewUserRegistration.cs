@@ -45,7 +45,9 @@ namespace Tasky
             user.RegisterUser(_user,_userDetails,_userRole,_userPosition);
 
             var subject = "Welcome to Tasky";
-            var body = "Welcome " + usernameTextBox.Text + ",<br>You have been registered by an admin on Tasky." + "Your username is <b>" + usernameTextBox.Text + "</b> and your password is <b>" + GeneratePassword() + "</b><br> Have a good day";
+            var body = "Welcome " + usernameTextBox.Text + ",<br>You have been registered by an admin on Tasky." +
+                "Your username is <b>" + usernameTextBox.Text + "</b> and your password is <b>" +
+             _user.Password + "</b><br> Have a good day";
             MailHelper.SendMail(_userDetails.Email, subject, body);
             MessageBox.Show("User Registered Succesfully");
         }

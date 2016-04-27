@@ -21,7 +21,7 @@ namespace Tasky
         {
             InitializeComponent();
             UserDetail _currentUser = UserDetails();
-            emailTextBox.Text = _currentUser.Email;
+                emailTextBox.Text = _currentUser.Email;
             if (_currentUser.FirstName != null)
                 firstNameTextBox.Text = _currentUser.FirstName;
             if (_currentUser.LastName != null)
