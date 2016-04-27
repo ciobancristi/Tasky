@@ -41,7 +41,8 @@
             this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.positionComboBox = new System.Windows.Forms.ComboBox();
+            this.positionLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDetailBindingSource)).BeginInit();
@@ -106,7 +107,7 @@
             // 
             // registerUserButton
             // 
-            this.registerUserButton.Location = new System.Drawing.Point(149, 206);
+            this.registerUserButton.Location = new System.Drawing.Point(149, 256);
             this.registerUserButton.Name = "registerUserButton";
             this.registerUserButton.Size = new System.Drawing.Size(158, 23);
             this.registerUserButton.TabIndex = 6;
@@ -125,14 +126,11 @@
             // 
             // roleComboBox
             // 
-            this.roleComboBox.DataSource = this.roleBindingSource;
-            this.roleComboBox.DisplayMember = "Name";
             this.roleComboBox.FormattingEnabled = true;
             this.roleComboBox.Location = new System.Drawing.Point(149, 167);
             this.roleComboBox.Name = "roleComboBox";
             this.roleComboBox.Size = new System.Drawing.Size(158, 21);
             this.roleComboBox.TabIndex = 8;
-            this.roleComboBox.ValueMember = "RoleId";
             // 
             // roleBindingSource
             // 
@@ -142,22 +140,30 @@
             // 
             this.userDetailBindingSource.DataSource = typeof(Tasky.Entities.UserDetail);
             // 
-            // button1
+            // positionComboBox
             // 
-            this.button1.Location = new System.Drawing.Point(184, 246);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.positionComboBox.FormattingEnabled = true;
+            this.positionComboBox.Location = new System.Drawing.Point(149, 213);
+            this.positionComboBox.Name = "positionComboBox";
+            this.positionComboBox.Size = new System.Drawing.Size(158, 21);
+            this.positionComboBox.TabIndex = 10;
+            // 
+            // positionLabel
+            // 
+            this.positionLabel.AutoSize = true;
+            this.positionLabel.Location = new System.Drawing.Point(76, 221);
+            this.positionLabel.Name = "positionLabel";
+            this.positionLabel.Size = new System.Drawing.Size(50, 13);
+            this.positionLabel.TabIndex = 11;
+            this.positionLabel.Text = "Position: ";
             // 
             // AdminNewUserRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 549);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.positionLabel);
+            this.Controls.Add(this.positionComboBox);
             this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.roleLabel);
             this.Controls.Add(this.registerUserButton);
@@ -195,6 +201,7 @@
         private System.Windows.Forms.ComboBox roleComboBox;
         private System.Windows.Forms.BindingSource roleBindingSource;
         private System.Windows.Forms.BindingSource userDetailBindingSource;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox positionComboBox;
+        private System.Windows.Forms.Label positionLabel;
     }
 }

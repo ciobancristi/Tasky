@@ -18,24 +18,36 @@ namespace Tasky
         public AdminNewUserRegistration()
         {
             InitializeComponent();
+            Position _userPosition = new Position();
+            UserService user = new UserService();
+           var roles= user.GetRoles();
+            roleComboBox.Items.AddRange(roles.ToArray());
+            var positions = user.GetPositions();
+            positionComboBox.Items.AddRange(positions.ToArray());
         }
 
         private void registerUserButton_Click(object sender, EventArgs e)
         {
-           
+            UserService user = new UserService();
             UserDetail _userDetails = new UserDetail();
             User _user = new User();
+            Role _userRole = new Role();
             Position _userPosition = new Position();
             _user.UserId = Guid.NewGuid();
             _user.Name = usernameTextBox.Text;
-            _userDetails.Email = emailTextBox.Text;
-            _user.Password=GeneratePassword();
-            //var subject = "Welcome to Tasky";
-            //var body = "Welcome " + usernameTextBox.Text + ",<br>You have been registered by an admin on Tasky." +
-            //    +"Your username is <b>" + usernameTextBox.Text + "</b> and your password is <b>" + _user.Password+"</b><br> Have a good day";
-            //MailHelper.SendMail(emailTextBox.Text, subject, body);
-            
+            _user.Password = GeneratePassword();
 
+            _userDetails.Email = emailTextBox.Text;
+
+            _userRole.Name = roleComboBox.SelectedItem.ToString();
+            _userPosition.Name = positionComboBox.SelectedItem.ToString();
+
+            user.RegisterUser(_user,_userDetails,_userRole,_userPosition);
+
+            var subject = "Welcome to Tasky";
+            var body = "Welcome " + usernameTextBox.Text + ",<br>You have been registered by an admin on Tasky." + "Your username is <b>" + usernameTextBox.Text + "</b> and your password is <b>" + GeneratePassword() + "</b><br> Have a good day";
+            MailHelper.SendMail(_userDetails.Email, subject, body);
+            MessageBox.Show("User Registered Succesfully");
         }
 
         private static string GeneratePassword()
@@ -47,12 +59,6 @@ namespace Tasky
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var subject = "Welcome to Tasky";
-            var body = "Welcome " + usernameTextBox.Text + ",<br>You have been registered by an admin on Tasky." + "Your username is <b>" + usernameTextBox.Text + "</b> and your password is <b>" + GeneratePassword() + "</b><br> Have a good day";
-            MailHelper.SendMail("spamsimulator2015@gmail.com", subject, body);
-            MessageBox.Show("Sent");
-        }
+
     }
 }

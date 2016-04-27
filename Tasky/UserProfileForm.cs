@@ -45,7 +45,8 @@ namespace Tasky
         private void submitDataButton_Click(object sender, EventArgs e)
         {
             UserDetail _currentUser = UserDetails();
-            _currentUser.Email = emailTextBox.Text;
+            if (_currentUser.Email != null)
+               _currentUser.Email = emailTextBox.Text;
             if (_currentUser.FirstName != null)
               _currentUser.FirstName= firstNameTextBox.Text;
             if (_currentUser.LastName != null)

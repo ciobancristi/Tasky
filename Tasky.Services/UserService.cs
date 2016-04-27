@@ -14,7 +14,10 @@ namespace Tasky.Services
         void PostUserDetails(UserDetail currentUser);
         User GetUser();
         void PostUser(User currentUser);
-        ICollection<Role> GetRoles();
+        IEnumerable<string> GetRoles();
+        IEnumerable<string> GetPositions();
+        void RegisterUser(User currentUser, UserDetail userDetail, Role rol,Position pos);
+
     }
     public class UserService : BaseService, IUserService
     {
@@ -31,12 +34,17 @@ namespace Tasky.Services
             var _currentUser = user.FirstOrDefault(u => u.UserId == currentUser);
             return  _currentUser;
         }
-        public ICollection<Role> GetRoles()
+        public IEnumerable<string> GetRoles()
         {
-            var currentUser = UserHelper.GetUserId();
             List<Role> role = _dbContext.Roles.ToList();
-
-            return role;
+            var roles = role.Select(m => m.Name);
+            return roles;
+        }
+        public IEnumerable<string> GetPositions()
+        {
+            List<Position> position = _dbContext.Positions.ToList();
+            var positions = position.Select(m => m.Name);
+            return positions;
         }
         public User GetUser()
         {
@@ -49,6 +57,17 @@ namespace Tasky.Services
         {
             var olduser = GetUser();
             _dbContext.Entry(olduser).CurrentValues.SetValues(currentUser);
+            _dbContext.SaveChanges();
+        }
+        public void RegisterUser(User currentUser,UserDetail userDetail,Role rol,Position pos)
+        {           
+            var role = _dbContext.Roles.FirstOrDefault(m=>m.Name==rol.Name);
+            currentUser.Roles.Add(role);
+            _dbContext.Users.Add(currentUser);
+            var position = _dbContext.Positions.FirstOrDefault(m => m.Name == pos.Name);
+            userDetail.PositionId = position.PositionId;
+            userDetail.UserId = currentUser.UserId;
+            _dbContext.UserDetails.Add(userDetail);
             _dbContext.SaveChanges();
         }
         public void PostUserDetails(UserDetail currentUser)
