@@ -14,6 +14,7 @@ namespace Tasky.Services
         void PostUserDetails(UserDetail currentUser);
         User GetUser();
         void PostUser(User currentUser);
+        ICollection<Role> GetRoles();
     }
     public class UserService : BaseService, IUserService
     {
@@ -29,6 +30,13 @@ namespace Tasky.Services
             IQueryable<UserDetail> user = _dbContext.UserDetails;
             var _currentUser = user.FirstOrDefault(u => u.UserId == currentUser);
             return  _currentUser;
+        }
+        public ICollection<Role> GetRoles()
+        {
+            var currentUser = UserHelper.GetUserId();
+            List<Role> role = _dbContext.Roles.ToList();
+
+            return role;
         }
         public User GetUser()
         {

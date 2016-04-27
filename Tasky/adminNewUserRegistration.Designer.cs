@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -38,7 +39,12 @@
             this.registerUserButton = new System.Windows.Forms.Button();
             this.roleLabel = new System.Windows.Forms.Label();
             this.roleComboBox = new System.Windows.Forms.ComboBox();
+            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -83,7 +89,6 @@
             this.emailLabel.Size = new System.Drawing.Size(38, 13);
             this.emailLabel.TabIndex = 3;
             this.emailLabel.Text = "Email: ";
-            this.emailLabel.Click += new System.EventHandler(this.passwordLabel_Click);
             // 
             // usernameTextBox
             // 
@@ -120,17 +125,39 @@
             // 
             // roleComboBox
             // 
+            this.roleComboBox.DataSource = this.roleBindingSource;
+            this.roleComboBox.DisplayMember = "Name";
             this.roleComboBox.FormattingEnabled = true;
             this.roleComboBox.Location = new System.Drawing.Point(149, 167);
             this.roleComboBox.Name = "roleComboBox";
             this.roleComboBox.Size = new System.Drawing.Size(158, 21);
             this.roleComboBox.TabIndex = 8;
+            this.roleComboBox.ValueMember = "RoleId";
+            // 
+            // roleBindingSource
+            // 
+            this.roleBindingSource.DataSource = typeof(Tasky.Entities.Role);
+            // 
+            // userDetailBindingSource
+            // 
+            this.userDetailBindingSource.DataSource = typeof(Tasky.Entities.UserDetail);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(184, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminNewUserRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 549);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.roleLabel);
             this.Controls.Add(this.registerUserButton);
@@ -147,6 +174,8 @@
             this.Text = "adminNewUserRegistration";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +193,8 @@
         private System.Windows.Forms.Button registerUserButton;
         private System.Windows.Forms.Label roleLabel;
         private System.Windows.Forms.ComboBox roleComboBox;
+        private System.Windows.Forms.BindingSource roleBindingSource;
+        private System.Windows.Forms.BindingSource userDetailBindingSource;
+        private System.Windows.Forms.Button button1;
     }
 }

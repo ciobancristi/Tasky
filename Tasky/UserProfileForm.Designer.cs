@@ -125,6 +125,7 @@
             // 
             // birthdayDatePicker
             // 
+            this.birthdayDatePicker.CustomFormat = "";
             this.birthdayDatePicker.Location = new System.Drawing.Point(185, 185);
             this.birthdayDatePicker.Name = "birthdayDatePicker";
             this.birthdayDatePicker.Size = new System.Drawing.Size(200, 20);
