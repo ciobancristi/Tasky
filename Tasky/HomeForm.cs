@@ -18,7 +18,7 @@ namespace Tasky
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsersListForm usersListForm = new UsersListForm();
+            UserListForm usersListForm = new UserListForm();
             usersListForm.Show();
             //this.Close();
         }
@@ -37,13 +37,6 @@ namespace Tasky
             //this.Close();
         }
 
-        private void emailToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AdminEmailForm admEmailForm = new AdminEmailForm();
-            admEmailForm.Show();
-            //this.Close();
-        }
-
         private void registerUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdminNewUserRegistration admUserReg = new AdminNewUserRegistration();
@@ -51,5 +44,11 @@ namespace Tasky
             //this.Close();
         }
 
+        private void adminPanelButton_Click(object sender, EventArgs e)
+        {
+            AdminForm form = new AdminForm();
+            form.Show();
+            //this.close();
+        }
     }
 }

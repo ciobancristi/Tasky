@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Net;
@@ -28,6 +29,47 @@ namespace Tasky.Services
                          mess.IsBodyHtml = true;
                          mess.From = new MailAddress(Username, "Timesheet administrator");
                          client.Send(mess);
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     // TODO: use a logging service 
+                     // this is a form of logging on local disk logging 
+                     string path = AppDomain.CurrentDomain.BaseDirectory + "Log.txt";
+                     using (StreamWriter writer = new StreamWriter(path, true))
+                     {
+                         writer.WriteLine(ex.InnerException.Message);
+                     }
+                 }
+             }
+                 );
+            t.Start();
+        }
+
+
+        public static void SendMail(List<string> to, string subject, string body)
+        {
+            Thread t = new Thread(
+             delegate ()
+             {
+                 try
+                 {
+                     using (SmtpClient client = new SmtpClient("smtp.gmail.com"))
+                     {
+                         client.Port = 587;
+                         client.Credentials = new NetworkCredential(Username, Password);
+                         client.EnableSsl = true;
+                         MailMessage mail = new MailMessage();
+                         mail.From = new MailAddress(Username);
+                         foreach(var destination in to)
+                         {
+                             mail.To.Add(destination);
+                         }
+                         mail.Subject = subject;
+                         mail.Body = body;
+                         mail.IsBodyHtml = true;
+                         mail.From = new MailAddress(Username, "Timesheet administrator");
+                         client.Send(mail);
                      }
                  }
                  catch (Exception ex)

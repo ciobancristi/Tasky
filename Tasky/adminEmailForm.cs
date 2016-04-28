@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Tasky.Services;
 
@@ -7,9 +8,11 @@ namespace Tasky
     public partial class AdminEmailForm : Form
     {
         private IValidationService _validationService;
+        private List<string> destinationEmails;
         public AdminEmailForm()
         {
             InitializeComponent();
+            destinationEmails = new List<string>();
             _validationService = new ValidationService();
         }
 
@@ -18,8 +21,8 @@ namespace Tasky
         {
             if (AreValidFields())
             {
-                MailHelper.SendMail(toTextBox.Text, subjectTextBox.Text, bodyTextBox.Text);
-                MessageBox.Show("The mail was sent successfuly!");
+                MailHelper.SendMail(destinationEmails, subjectTextBox.Text, bodyTextBox.Text);
+                MessageBox.Show("The mails were sent successfuly!");
                 ResetFields();
             }
         }
@@ -30,20 +33,17 @@ namespace Tasky
             var to = toTextBox.Text;
             var subject = subjectTextBox.Text;
             var body = bodyTextBox.Text;
-            string[] fields = { to, subject, body };
 
-            if (_validationService.IsEmptyValidation(fields))
-            {
-                MessageBox.Show("You cannot leave empty fields!");
+            if (to.Length == 0 || subject.Length == 0 || body.Length == 0)
                 return false;
-            }
 
-            if (!_validationService.IsValidEmail(to))
+            var destination = to.Split(',');
+            destinationEmails.AddRange(destination);
+            foreach (var dest in destinationEmails)
             {
-                MessageBox.Show("Invalid e-mail!");
-                return false;
+                if (!_validationService.IsValidEmail(dest))
+                    return false;
             }
-
             return true;
         }
 

@@ -60,17 +60,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProjectForm.Designer.cs">
+      <DependentUpon>AddProjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminEmailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminEmailForm.Designer.cs">
       <DependentUpon>AdminEmailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminNewUserRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminNewUserRegistration.Designer.cs">
       <DependentUpon>AdminNewUserRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminProjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminProjectsForm.Designer.cs">
+      <DependentUpon>AdminProjectsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="App_Start\MappingConfig.cs" />
     <Compile Include="HomeForm.cs">
@@ -99,26 +117,32 @@
     <Compile Include="UserProfileForm.Designer.cs">
       <DependentUpon>UserProfileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersListForm.cs">
+    <Compile Include="UserListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsersListForm.Designer.cs">
-      <DependentUpon>UsersListForm.cs</DependentUpon>
+    <Compile Include="UserListForm.Designer.cs">
+      <DependentUpon>UserListForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddProjectForm.resx">
+      <DependentUpon>AddProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminEmailForm.resx">
       <DependentUpon>AdminEmailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminNewUserRegistration.resx">
       <DependentUpon>AdminNewUserRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminProjectsForm.resx">
+      <DependentUpon>AdminProjectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProjectsForm.resx">
-      <DependentUpon>ProjectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -132,8 +156,8 @@
     <EmbeddedResource Include="UserProfileForm.resx">
       <DependentUpon>UserProfileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersListForm.resx">
-      <DependentUpon>UsersListForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserListForm.resx">
+      <DependentUpon>UserListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

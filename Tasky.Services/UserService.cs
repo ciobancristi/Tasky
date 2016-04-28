@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Tasky.Entities;
 using Tasky.Services.Helpers;
@@ -18,11 +17,14 @@ namespace Tasky.Services
     public class UserService : BaseService, IUserService
     {
         private TaskyDBEntities _dbContext;
-        #region IUserService
+
         public UserService()
         {
             _dbContext = new TaskyDBEntities();
         }
+        
+        #region IUserService
+
         public UserDetail GetUserDetails()
         {
             var currentUser = UserHelper.GetUserId();
@@ -49,7 +51,6 @@ namespace Tasky.Services
             _dbContext.SaveChanges();
         }
 
-        
         public List<UserDetail> GetAllUserDetails()
         {
             return _dbContext.UserDetails.ToList();
