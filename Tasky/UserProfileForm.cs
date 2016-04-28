@@ -21,7 +21,7 @@ namespace Tasky
         {
             InitializeComponent();
             UserDetail _currentUser = UserDetails();
-            emailTextBox.Text = _currentUser.Email;
+                emailTextBox.Text = _currentUser.Email;
             if (_currentUser.FirstName != null)
                 firstNameTextBox.Text = _currentUser.FirstName;
             if (_currentUser.LastName != null)
@@ -45,14 +45,15 @@ namespace Tasky
         private void submitDataButton_Click(object sender, EventArgs e)
         {
             UserDetail _currentUser = UserDetails();
-            _currentUser.Email = emailTextBox.Text;
-            if (_currentUser.FirstName != null)
+            if (emailTextBox.Text !=null)
+               _currentUser.Email = emailTextBox.Text;
+            if (firstNameTextBox.Text != null)
               _currentUser.FirstName= firstNameTextBox.Text;
-            if (_currentUser.LastName != null)
+            if ( lastNameTextBox.Text != null)
                 _currentUser.LastName= lastNameTextBox.Text;
-            if (_currentUser.BirthDate != null)
+            if (birthdayDatePicker.Value != null)
                _currentUser.BirthDate = birthdayDatePicker.Value;
-            if (_currentUser.Phone != null)
+            if (phoneTextBox.Text != null)
                _currentUser.Phone= phoneTextBox.Text;
             _userService.PostUserDetails(_currentUser);
         }

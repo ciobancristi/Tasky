@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -160,6 +161,14 @@
       <DependentUpon>UserListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Tasky.Entities.Position.datasource" />
+    <None Include="Properties\DataSources\Tasky.Entities.Project.datasource" />
+    <None Include="Properties\DataSources\Tasky.Entities.ProjectTask.datasource" />
+    <None Include="Properties\DataSources\Tasky.Entities.Role.datasource" />
+    <None Include="Properties\DataSources\Tasky.Entities.Task.datasource" />
+    <None Include="Properties\DataSources\Tasky.Entities.TaskyDBEntities.datasource" />
+    <None Include="Properties\DataSources\Tasky.Entities.User.datasource" />
+    <None Include="Properties\DataSources\Tasky.Entities.UserDetail.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
