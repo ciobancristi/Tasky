@@ -29,5 +29,10 @@ namespace Tasky
         {
             Close();
         }
+
+        private void UserListForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

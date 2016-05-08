@@ -38,6 +38,7 @@
             // 
             // adminMenuStrip
             // 
+            this.adminMenuStrip.BackColor = System.Drawing.Color.AliceBlue;
             this.adminMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectsToolStripMenuItem,
             this.emailToolStripMenuItem,
@@ -71,21 +72,28 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(612, 432);
+            this.closeButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.closeButton.Location = new System.Drawing.Point(662, 510);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.Size = new System.Drawing.Size(110, 39);
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Tasky.Properties.Resources.rauzcdht;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.adminMenuStrip);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.adminMenuStrip;
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

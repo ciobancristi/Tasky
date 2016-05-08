@@ -40,22 +40,31 @@
             // 
             // panicButton
             // 
-            this.panicButton.Location = new System.Drawing.Point(309, 393);
+            this.panicButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panicButton.FlatAppearance.BorderSize = 0;
+            this.panicButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panicButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.panicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.panicButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panicButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.panicButton.Location = new System.Drawing.Point(628, 495);
             this.panicButton.Name = "panicButton";
-            this.panicButton.Size = new System.Drawing.Size(75, 23);
+            this.panicButton.Size = new System.Drawing.Size(144, 54);
             this.panicButton.TabIndex = 0;
             this.panicButton.Text = "Crash it";
-            this.panicButton.UseVisualStyleBackColor = true;
+            this.panicButton.UseVisualStyleBackColor = false;
             this.panicButton.Click += new System.EventHandler(this.panicButton_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeCalendarToolStripMenuItem,
             this.usersToolStripMenuItem,
             this.projectsToolStripMenuItem,
             this.myProfileToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -92,22 +101,34 @@
             // 
             // adminPanelButton
             // 
-            this.adminPanelButton.Location = new System.Drawing.Point(531, 349);
+            this.adminPanelButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.adminPanelButton.FlatAppearance.BorderSize = 0;
+            this.adminPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.adminPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.adminPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminPanelButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPanelButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.adminPanelButton.Location = new System.Drawing.Point(450, 495);
             this.adminPanelButton.Name = "adminPanelButton";
-            this.adminPanelButton.Size = new System.Drawing.Size(85, 67);
+            this.adminPanelButton.Size = new System.Drawing.Size(156, 53);
             this.adminPanelButton.TabIndex = 2;
             this.adminPanelButton.Text = "Admin Panel";
-            this.adminPanelButton.UseVisualStyleBackColor = true;
+            this.adminPanelButton.UseVisualStyleBackColor = false;
             this.adminPanelButton.Click += new System.EventHandler(this.adminPanelButton_Click);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Tasky.Properties.Resources.rauzcdht;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.adminPanelButton);
             this.Controls.Add(this.panicButton);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomeForm";
