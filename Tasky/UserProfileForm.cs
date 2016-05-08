@@ -31,7 +31,7 @@ namespace Tasky
             if (_currentUser.Phone != null)
                 phoneTextBox.Text = _currentUser.Phone;
 
-
+ 
 
         }
 
@@ -66,6 +66,21 @@ namespace Tasky
                 _currentUser.Password = newPasswordTextBox.Text;
             _userService.PostUser(_currentUser);
 
+        }
+
+        private void changePasswordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserProfileForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

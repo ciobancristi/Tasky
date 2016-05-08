@@ -36,8 +36,9 @@
             // 
             // usersGridView
             // 
-            this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.usersGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.Location = new System.Drawing.Point(12, 41);
             this.usersGridView.Name = "usersGridView";
@@ -48,7 +49,8 @@
             // 
             // addUserButton
             // 
-            this.addUserButton.Location = new System.Drawing.Point(66, 444);
+            this.addUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addUserButton.Location = new System.Drawing.Point(12, 514);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(75, 23);
             this.addUserButton.TabIndex = 1;
@@ -58,7 +60,8 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(310, 444);
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(385, 514);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 2;
@@ -66,20 +69,22 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // UsersListForm
+            // UserListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(210)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(472, 549);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.usersGridView);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "UsersListForm";
+            this.Name = "UserListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fellow Users";
+            this.Load += new System.EventHandler(this.UserListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.ResumeLayout(false);
 
