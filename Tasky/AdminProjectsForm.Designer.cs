@@ -36,47 +36,63 @@
             // 
             // addProjectButton
             // 
-            this.addProjectButton.Location = new System.Drawing.Point(90, 347);
+            this.addProjectButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.addProjectButton.FlatAppearance.BorderSize = 0;
+            this.addProjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addProjectButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addProjectButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.addProjectButton.Location = new System.Drawing.Point(12, 504);
             this.addProjectButton.Name = "addProjectButton";
-            this.addProjectButton.Size = new System.Drawing.Size(75, 23);
+            this.addProjectButton.Size = new System.Drawing.Size(117, 45);
             this.addProjectButton.TabIndex = 0;
             this.addProjectButton.Text = "Add Project";
-            this.addProjectButton.UseVisualStyleBackColor = true;
+            this.addProjectButton.UseVisualStyleBackColor = false;
             this.addProjectButton.Click += new System.EventHandler(this.addProjectButton_Click);
             // 
             // projectsDataGridView
             // 
             this.projectsDataGridView.AllowUserToAddRows = false;
             this.projectsDataGridView.AllowUserToDeleteRows = false;
-            this.projectsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.projectsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.projectsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.projectsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.projectsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.projectsDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.projectsDataGridView.GridColor = System.Drawing.SystemColors.InactiveCaption;
+            this.projectsDataGridView.Location = new System.Drawing.Point(12, 52);
             this.projectsDataGridView.Name = "projectsDataGridView";
             this.projectsDataGridView.ReadOnly = true;
-            this.projectsDataGridView.Size = new System.Drawing.Size(461, 285);
+            this.projectsDataGridView.Size = new System.Drawing.Size(760, 437);
             this.projectsDataGridView.TabIndex = 1;
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(339, 347);
+            this.closeButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.closeButton.Location = new System.Drawing.Point(660, 504);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.Size = new System.Drawing.Size(112, 45);
             this.closeButton.TabIndex = 2;
             this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // AdminProjectsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 416);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Tasky.Properties.Resources.rauzcdht;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.projectsDataGridView);
             this.Controls.Add(this.addProjectButton);
+            this.DoubleBuffered = true;
             this.Name = "AdminProjectsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminProjectsForm";
             ((System.ComponentModel.ISupportInitialize)(this.projectsDataGridView)).EndInit();
             this.ResumeLayout(false);

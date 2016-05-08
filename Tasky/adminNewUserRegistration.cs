@@ -61,6 +61,9 @@ namespace Tasky
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -157,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserProfileForm.resx">
       <DependentUpon>UserProfileForm.cs</DependentUpon>
@@ -195,6 +196,9 @@
       <Project>{d46f2892-09bf-4580-919a-4c6f43c16503}</Project>
       <Name>Tasky.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rauzcdht.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

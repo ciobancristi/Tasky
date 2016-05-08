@@ -135,6 +135,7 @@
             // firstNameTextBox
             // 
             this.firstNameTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.firstNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.firstNameTextBox.Location = new System.Drawing.Point(111, 257);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(200, 20);
@@ -143,6 +144,7 @@
             // lastNameTextBox
             // 
             this.lastNameTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lastNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lastNameTextBox.Location = new System.Drawing.Point(111, 311);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(200, 20);
@@ -160,6 +162,7 @@
             // phoneTextBox
             // 
             this.phoneTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.phoneTextBox.Location = new System.Drawing.Point(111, 405);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(200, 20);
@@ -220,6 +223,7 @@
             // oldPasswordTextBox
             // 
             this.oldPasswordTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.oldPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.oldPasswordTextBox.Location = new System.Drawing.Point(520, 257);
             this.oldPasswordTextBox.Name = "oldPasswordTextBox";
             this.oldPasswordTextBox.PasswordChar = '*';
@@ -229,6 +233,7 @@
             // newPasswordTextBox
             // 
             this.newPasswordTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.newPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.newPasswordTextBox.Location = new System.Drawing.Point(520, 307);
             this.newPasswordTextBox.Name = "newPasswordTextBox";
             this.newPasswordTextBox.PasswordChar = '*';
@@ -252,6 +257,8 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.button1.Location = new System.Drawing.Point(369, 492);
@@ -259,7 +266,7 @@
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 19;
             this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserProfileForm
