@@ -15,7 +15,7 @@ namespace Tasky.Services
         void PostUser(User currentUser);
         IEnumerable<string> GetRoles();
         IEnumerable<string> GetPositions();
-        void RegisterUser(User currentUser, UserDetail userDetail, Role rol,Position pos);
+        void RegisterUser(User currentUser, UserDetail userDetail, Role rol, Position pos);
 
     }
     public class UserService : BaseService, IUserService
@@ -26,15 +26,14 @@ namespace Tasky.Services
         {
             _dbContext = new TaskyDBEntities();
         }
-        
-        #region IUserService
 
+        #region IUserService
         public UserDetail GetUserDetails()
         {
             var currentUser = UserHelper.GetUserId();
             IQueryable<UserDetail> user = _dbContext.UserDetails;
             var _currentUser = user.FirstOrDefault(u => u.UserId == currentUser);
-            return  _currentUser;
+            return _currentUser;
         }
         public IEnumerable<string> GetRoles()
         {
@@ -61,10 +60,10 @@ namespace Tasky.Services
             _dbContext.Entry(olduser).CurrentValues.SetValues(currentUser);
             _dbContext.SaveChanges();
         }
-        public void RegisterUser(User currentUser,UserDetail userDetail,Role rol,Position pos)
-        {           
-            var role = _dbContext.Roles.FirstOrDefault(m=>m.Name==rol.Name);
-            currentUser.Roles.Add(role);
+        public void RegisterUser(User currentUser, UserDetail userDetail, Role role, Position pos)
+        {
+            var selectedRole = _dbContext.Roles.FirstOrDefault(m => m.Name == role.Name);
+            currentUser.Roles.Add(selectedRole);
             _dbContext.Users.Add(currentUser);
             var position = _dbContext.Positions.FirstOrDefault(m => m.Name == pos.Name);
             userDetail.PositionId = position.PositionId;
@@ -73,11 +72,11 @@ namespace Tasky.Services
             _dbContext.SaveChanges();
         }
         public void PostUserDetails(UserDetail currentUser)
-        { var olduser=GetUserDetails();
+        {
+            var olduser = GetUserDetails();
             _dbContext.Entry(olduser).CurrentValues.SetValues(currentUser);
             _dbContext.SaveChanges();
         }
-
         public List<UserDetail> GetAllUserDetails()
         {
             return _dbContext.UserDetails.ToList();
