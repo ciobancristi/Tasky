@@ -10,6 +10,9 @@ namespace Tasky
 {
     public partial class AddProjectForm : Form
     {
+        public delegate void OnSaveEventHandler(object sender, EventArgs e);
+        public event OnSaveEventHandler OnSaveEvent;
+
         private TaskyDBEntities _dbContext;
         private IProjectService _projectService;
         public AddProjectForm()
@@ -73,6 +76,8 @@ namespace Tasky
                 _projectService
                     .AddProject(projectName, clientName, userIds, taskIds);
                 MessageBox.Show("Project Saved Successfully");
+                OnSaveEvent.Invoke(this, e);
+                Close();
             }
             else
             {

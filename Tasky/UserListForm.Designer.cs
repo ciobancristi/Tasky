@@ -96,7 +96,6 @@
             this.Name = "UserListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fellow Users";
-            this.Load += new System.EventHandler(this.UserListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.ResumeLayout(false);
 

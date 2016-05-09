@@ -9,6 +9,11 @@ namespace Tasky
         public HomeForm()
         {
             InitializeComponent();
+            if (!UserHelper.IsAdmin())
+            {
+                adminPanelButton.Visible = false;
+                panicButton.Visible = false;
+            }
         }
 
         private void panicButton_Click(object sender, EventArgs e)

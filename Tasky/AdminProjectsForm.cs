@@ -39,7 +39,13 @@ namespace Tasky
         private void addProjectButton_Click(object sender, EventArgs e)
         {
             var form = new AddProjectForm();
+            form.OnSaveEvent += new AddProjectForm.OnSaveEventHandler(HandleOnAddNewProjectEvent);
             form.Show();
+        }
+
+        private void HandleOnAddNewProjectEvent(object sender, EventArgs e)
+        {
+            BindData();
         }
 
         private void closeButton_Click(object sender, EventArgs e)

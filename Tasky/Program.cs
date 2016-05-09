@@ -12,10 +12,10 @@ namespace Tasky
         [STAThread]
         static void Main()
         {
+            MappingConfig.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
-            MappingConfig.Initialize();
         }
     }
 }
