@@ -62,10 +62,10 @@ namespace Tasky.Services
         }
         public void RegisterUser(User currentUser, UserDetail userDetail, Role role, Position pos)
         {
-            var selectedRole = _dbContext.Roles.FirstOrDefault(m => m.Name == role.Name);
+            var selectedRole = _dbContext.Roles.FirstOrDefault(m => m.RoleId == role.RoleId);
             currentUser.Roles.Add(selectedRole);
             _dbContext.Users.Add(currentUser);
-            var position = _dbContext.Positions.FirstOrDefault(m => m.Name == pos.Name);
+            var position = _dbContext.Positions.FirstOrDefault(m => m.PositionId == pos.PositionId);
             userDetail.PositionId = position.PositionId;
             userDetail.UserId = currentUser.UserId;
             _dbContext.UserDetails.Add(userDetail);
