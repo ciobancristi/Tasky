@@ -35,6 +35,7 @@
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminPanelButton = new System.Windows.Forms.Button();
+            this.timeCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.homeCalendarToolStripMenuItem,
             this.usersToolStripMenuItem,
             this.projectsToolStripMenuItem,
+            this.timeCheckToolStripMenuItem,
             this.myProfileToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -116,6 +118,13 @@
             this.adminPanelButton.UseVisualStyleBackColor = false;
             this.adminPanelButton.Click += new System.EventHandler(this.adminPanelButton_Click);
             // 
+            // timeCheckToolStripMenuItem
+            // 
+            this.timeCheckToolStripMenuItem.Name = "timeCheckToolStripMenuItem";
+            this.timeCheckToolStripMenuItem.Size = new System.Drawing.Size(82, 22);
+            this.timeCheckToolStripMenuItem.Text = "Time Check";
+            this.timeCheckToolStripMenuItem.Click += new System.EventHandler(this.timeCheckToolStripMenuItem_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,5 +159,6 @@
         private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem myProfileToolStripMenuItem;
         private System.Windows.Forms.Button adminPanelButton;
+        private System.Windows.Forms.ToolStripMenuItem timeCheckToolStripMenuItem;
     }
 }

@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Tasky.Entities;
 
 namespace Tasky.Services
 {
-    interface ITaskService
+    public interface ITaskService
     {
+        List<Task> GetTasks(DateTime date);
+        void AddTask(Task task);
     }
     public class TaskService : BaseService, ITaskService
     {
@@ -16,7 +19,23 @@ namespace Tasky.Services
         }
 
         #region ITaskService
-        
+        public void AddTask(Task task)
+        {
+            if (task == null)
+                throw new ArgumentNullException();
+            _dbContext.Tasks.Add(task);
+            _dbContext.SaveChanges();
+        }
+
+        public List<Task> GetTasks(DateTime date)
+        {
+            if (date == null)
+                throw new ArgumentNullException();
+
+            //var tasks = _dbContext.Tasks.Where(x => x.Date.Date == date.Date).ToList();
+            //return tasks;
+            return null;
+        }
         #endregion
 
         #region IDisposable

@@ -61,8 +61,10 @@
     <Compile Include="Helpers\MailHelper.cs" />
     <Compile Include="Helpers\RegexUtilities.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
+    <Compile Include="Models\NameValueItem.cs" />
     <Compile Include="Models\ProjectUserViewModel.cs" />
     <Compile Include="Models\ProjectViewModel.cs" />
+    <Compile Include="Models\TaskViewModel.cs" />
     <Compile Include="Models\UserDetailViewModel.cs" />
     <Compile Include="ProjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

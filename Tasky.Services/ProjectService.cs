@@ -8,6 +8,7 @@ namespace Tasky.Services
     public interface IProjectService
     {
         void AddProject(string name, string client, List<Guid> userIds, List<int> taskIds);
+        //List<Project> GetProjec
     }
     public class ProjectService : BaseService, IProjectService
     {

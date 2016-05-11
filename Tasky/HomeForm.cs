@@ -55,5 +55,11 @@ namespace Tasky
             form.Show();
             //this.close();
         }
+
+        private void timeCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TimeCheckForm();
+            form.Show();
+        }
     }
 }
