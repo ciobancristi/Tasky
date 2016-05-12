@@ -23,7 +23,7 @@ namespace Tasky
 
         private void usersToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            var form = new UserListForm();
+            var form = new UserListForm(true);
             form.Show();
         }
 

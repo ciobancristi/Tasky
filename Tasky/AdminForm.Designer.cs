@@ -74,9 +74,9 @@
             // 
             this.closeButton.BackColor = System.Drawing.Color.LightSteelBlue;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.closeButton.Location = new System.Drawing.Point(662, 510);
+            this.closeButton.Location = new System.Drawing.Point(642, 482);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(110, 39);
             this.closeButton.TabIndex = 1;

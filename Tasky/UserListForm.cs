@@ -14,23 +14,22 @@ namespace Tasky
         private IUserService _userService;
         private IMapper _mapper;
 
-        public UserListForm()
+        public UserListForm(bool isAddUserVisible)
         {
             InitializeComponent();
             _userService = new UserService();
             _mapper = App.Mapper;
 
             BindData();
-            if (!UserHelper.IsAdmin())
-                addUserButton.Visible = false;
+            addUserButton.Visible = isAddUserVisible;
         }
 
         private void BindData()
         {
             var models = _userService.GetAllUserDetails()
-                    .Select(x => _mapper.Map<UserDetailViewModel>(x)).ToList();
+                    .Select(x => _mapper.Map<UserDetailsViewModel>(x)).ToList();
             usersGridView.DataSource = models;
-            usersGridView.Columns[2].Visible = false;
+            //usersGridView.Columns[2].Visible = false;
         }
 
         private void addUserButton_Click(object sender, EventArgs e)

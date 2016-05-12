@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.titleLabel = new System.Windows.Forms.Label();
             this.projectLabel = new System.Windows.Forms.Label();
@@ -60,9 +61,9 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(97, 20);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(258, 31);
+            this.titleLabel.Size = new System.Drawing.Size(427, 31);
             this.titleLabel.TabIndex = 1;
-            this.titleLabel.Text = "Add task activity for ";
+            this.titleLabel.Text = "Add task activity for selected date ";
             // 
             // projectLabel
             // 
@@ -78,7 +79,7 @@
             // 
             this.taskLabel.AutoSize = true;
             this.taskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taskLabel.Location = new System.Drawing.Point(327, 135);
+            this.taskLabel.Location = new System.Drawing.Point(309, 135);
             this.taskLabel.Name = "taskLabel";
             this.taskLabel.Size = new System.Drawing.Size(39, 16);
             this.taskLabel.TabIndex = 3;
@@ -117,16 +118,30 @@
             this.commentsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commentsTextBox.Location = new System.Drawing.Point(178, 186);
             this.commentsTextBox.Name = "commentsTextBox";
-            this.commentsTextBox.Size = new System.Drawing.Size(317, 91);
+            this.commentsTextBox.Size = new System.Drawing.Size(324, 91);
             this.commentsTextBox.TabIndex = 9;
             this.commentsTextBox.Text = "";
             // 
             // activitiesDataGridView
             // 
-            this.activitiesDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.activitiesDataGridView.AllowUserToAddRows = false;
+            this.activitiesDataGridView.AllowUserToDeleteRows = false;
+            this.activitiesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.activitiesDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.activitiesDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.activitiesDataGridView.GridColor = System.Drawing.SystemColors.InactiveBorder;
             this.activitiesDataGridView.Location = new System.Drawing.Point(108, 325);
+            this.activitiesDataGridView.MultiSelect = false;
             this.activitiesDataGridView.Name = "activitiesDataGridView";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.activitiesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.activitiesDataGridView.Size = new System.Drawing.Size(575, 150);
             this.activitiesDataGridView.TabIndex = 10;
             // 
@@ -177,9 +192,9 @@
             // 
             this.tasksComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tasksComboBox.FormattingEnabled = true;
-            this.tasksComboBox.Location = new System.Drawing.Point(372, 132);
+            this.tasksComboBox.Location = new System.Drawing.Point(354, 132);
             this.tasksComboBox.Name = "tasksComboBox";
-            this.tasksComboBox.Size = new System.Drawing.Size(121, 24);
+            this.tasksComboBox.Size = new System.Drawing.Size(148, 24);
             this.tasksComboBox.TabIndex = 15;
             // 
             // projectComboBox
@@ -190,12 +205,15 @@
             this.projectComboBox.Name = "projectComboBox";
             this.projectComboBox.Size = new System.Drawing.Size(121, 24);
             this.projectComboBox.TabIndex = 16;
+            this.projectComboBox.SelectedIndexChanged += new System.EventHandler(this.projectComboBox_SelectedIndexChanged);
             // 
             // TimeCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::Tasky.Properties.Resources.rauzcdht;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.projectComboBox);
             this.Controls.Add(this.tasksComboBox);
@@ -212,7 +230,9 @@
             this.Controls.Add(this.projectLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.dateTimePicker);
+            this.DoubleBuffered = true;
             this.Name = "TimeCheckForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimeCheckForm";
             ((System.ComponentModel.ISupportInitialize)(this.activitiesDataGridView)).EndInit();
             this.ResumeLayout(false);

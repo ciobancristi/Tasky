@@ -8,7 +8,8 @@ namespace Tasky.Services
     public interface IProjectService
     {
         void AddProject(string name, string client, List<Guid> userIds, List<int> taskIds);
-        //List<Project> GetProjec
+        List<Project> GetActiveProjects(Guid userId);
+        List<ProjectTask> GetProjectTasks(int projectId);
     }
     public class ProjectService : BaseService, IProjectService
     {
@@ -35,6 +36,31 @@ namespace Tasky.Services
             };
             _dbContext.Projects.Add(project);
             _dbContext.SaveChanges();
+        }
+
+        public List<Project> GetActiveProjects(Guid userId)
+        {
+            if (userId == null)
+                throw new ArgumentNullException();
+
+            var projects = _dbContext.Projects
+                            .Where(p => (p.Users.FirstOrDefault(u => u.UserId == userId) != null)
+                                        && p.HasFinished == false)
+                            .ToList();
+
+            return projects;
+        }
+
+        public List<ProjectTask> GetProjectTasks(int projectId)
+        {
+            if (projectId < 0)
+                throw new ArgumentOutOfRangeException();
+
+            var projectTasks = _dbContext.ProjectTasks
+                                .Where(p => p.Projects.FirstOrDefault(x => x.ProjectId == projectId) != null)
+                                .ToList();
+
+            return projectTasks;
         }
         #endregion
 

@@ -62,11 +62,11 @@ namespace Tasky
             List<Guid> userIds = new List<Guid>();
             List<int> taskIds = new List<int>();
 
-            foreach (ProjectUserViewModel user in userCheckedListBox.SelectedItems)
+            foreach (ProjectUserViewModel user in userCheckedListBox.CheckedItems)
             {
                 userIds.Add(user.UserId);
             }
-            foreach (ProjectTask task in taskCheckedListBox.SelectedItems)
+            foreach (ProjectTask task in taskCheckedListBox.CheckedItems)
             {
                 taskIds.Add(task.ProjectTaskId);
             }
@@ -90,6 +90,5 @@ namespace Tasky
         {
             Close();
         }
-
     }
 }

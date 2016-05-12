@@ -33,9 +33,9 @@
             this.homeCalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminPanelButton = new System.Windows.Forms.Button();
-            this.timeCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.panicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.panicButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panicButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.panicButton.Location = new System.Drawing.Point(628, 495);
+            this.panicButton.Location = new System.Drawing.Point(610, 477);
             this.panicButton.Name = "panicButton";
             this.panicButton.Size = new System.Drawing.Size(144, 54);
             this.panicButton.TabIndex = 0;
@@ -94,6 +94,13 @@
             this.projectsToolStripMenuItem.Text = "My Projects ";
             this.projectsToolStripMenuItem.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
             // 
+            // timeCheckToolStripMenuItem
+            // 
+            this.timeCheckToolStripMenuItem.Name = "timeCheckToolStripMenuItem";
+            this.timeCheckToolStripMenuItem.Size = new System.Drawing.Size(82, 22);
+            this.timeCheckToolStripMenuItem.Text = "Time Check";
+            this.timeCheckToolStripMenuItem.Click += new System.EventHandler(this.timeCheckToolStripMenuItem_Click);
+            // 
             // myProfileToolStripMenuItem
             // 
             this.myProfileToolStripMenuItem.Name = "myProfileToolStripMenuItem";
@@ -110,20 +117,13 @@
             this.adminPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminPanelButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminPanelButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.adminPanelButton.Location = new System.Drawing.Point(450, 495);
+            this.adminPanelButton.Location = new System.Drawing.Point(432, 477);
             this.adminPanelButton.Name = "adminPanelButton";
             this.adminPanelButton.Size = new System.Drawing.Size(156, 53);
             this.adminPanelButton.TabIndex = 2;
             this.adminPanelButton.Text = "Admin Panel";
             this.adminPanelButton.UseVisualStyleBackColor = false;
             this.adminPanelButton.Click += new System.EventHandler(this.adminPanelButton_Click);
-            // 
-            // timeCheckToolStripMenuItem
-            // 
-            this.timeCheckToolStripMenuItem.Name = "timeCheckToolStripMenuItem";
-            this.timeCheckToolStripMenuItem.Size = new System.Drawing.Size(82, 22);
-            this.timeCheckToolStripMenuItem.Text = "Time Check";
-            this.timeCheckToolStripMenuItem.Click += new System.EventHandler(this.timeCheckToolStripMenuItem_Click);
             // 
             // HomeForm
             // 

@@ -1,29 +1,38 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Tasky.Entities;
+using Tasky.Services.Common;
+using Tasky.Services.Models;
 
 namespace Tasky.Services
 {
     public interface ITaskService
     {
         List<Task> GetTasks(DateTime date);
-        void AddTask(Task task);
+        void AddTask(NewTaskModel task);
     }
     public class TaskService : BaseService, ITaskService
     {
         private TaskyDBEntities _dbContext;
+        private readonly IMapper _mapper;
+
         public TaskService()
         {
             _dbContext = new TaskyDBEntities();
+            _mapper = App.Mapper;
         }
 
         #region ITaskService
-        public void AddTask(Task task)
+        public void AddTask(NewTaskModel task)
         {
             if (task == null)
                 throw new ArgumentNullException();
-            _dbContext.Tasks.Add(task);
+            var taskModel = _mapper.Map<Task>(task);
+            //TODO: delete Name field from Task table
+            taskModel.Name = " ";
+            _dbContext.Tasks.Add(taskModel);
             _dbContext.SaveChanges();
         }
 
@@ -31,10 +40,12 @@ namespace Tasky.Services
         {
             if (date == null)
                 throw new ArgumentNullException();
-
-            //var tasks = _dbContext.Tasks.Where(x => x.Date.Date == date.Date).ToList();
-            //return tasks;
-            return null;
+            var startDate = date.Date;
+            var endDate = date.Date.AddDays(1);
+            var tasks = _dbContext.Tasks
+                        .Where(x => (x.Date >= startDate && x.Date < endDate))
+                        .ToList();
+            return tasks;
         }
         #endregion
 
