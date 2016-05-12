@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using Tasky.Entities;
+using Tasky.Services.Models;
 
 namespace Tasky.Services
 {
     public interface IProjectService
     {
-        void AddProject(string name, string client, List<Guid> userIds, List<int> taskIds);
+        void AddProject(NewProjectModel newProject);
         List<Project> GetActiveProjects(Guid userId);
         List<ProjectTask> GetProjectTasks(int projectId);
+        List<ProjectTask> GetProjectTasks();
     }
     public class ProjectService : BaseService, IProjectService
     {
@@ -21,21 +23,21 @@ namespace Tasky.Services
         }
 
         #region IProjectService
-        public void AddProject(string name, string client, List<Guid> userIds, List<int> taskIds)
+        public void AddProject(NewProjectModel newProject)
         {
-            var users = GetUsersByIds(userIds);
-            //var projectTasks = GetProjectTasksByIds(taskIds);
-            //var project = new Project
-            //{
-            //    Name = name,
-            //    Client = client,
-            //    HasFinished = false,
-            //    Created = DateTime.Now,
-            //    ProjectTasks = projectTasks,
-            //    Users = users,
-            //};
-            //_dbContext.Projects.Add(project);
-            //_dbContext.SaveChanges();
+            var users = GetUsersByIds(newProject.UserIds);
+            var projectTasks = GetProjectTasksByIds(newProject.TaskIds);
+            var project = new Project
+            {
+                Name = newProject.Name,
+                HasFinished = false,
+                Created = DateTime.Now,
+                ProjectTasks = projectTasks,
+                Users = users,
+                ClientId = newProject.ClientId
+            };
+            _dbContext.Projects.Add(project);
+            _dbContext.SaveChanges();
         }
 
         public List<Project> GetActiveProjects(Guid userId)
@@ -62,6 +64,14 @@ namespace Tasky.Services
 
             return projectTasks;
         }
+
+        public List<ProjectTask> GetProjectTasks()
+        {
+            var projectTasks = _dbContext.ProjectTasks.ToList();
+
+            return projectTasks;
+        }
+
         #endregion
 
         #region private members

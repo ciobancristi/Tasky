@@ -330,7 +330,7 @@
           <NavigationProperty Name="ProjectTasks" Relationship="Self.ProjectTaskMap" FromRole="Project" ToRole="ProjectTask" />
           <NavigationProperty Name="Users" Relationship="Self.UserProject" FromRole="Project" ToRole="User" />
           <Property Name="ClientId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Client1" Relationship="TaskyDBModel.FK_Project_Client" FromRole="Project" ToRole="Client" />
+          <NavigationProperty Name="Client" Relationship="TaskyDBModel.FK_Project_Client" FromRole="Project" ToRole="Client" />
         </EntityType>
         <EntityType Name="ProjectTask">
           <Key>
@@ -640,7 +640,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

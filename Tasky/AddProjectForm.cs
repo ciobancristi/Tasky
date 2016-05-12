@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Tasky.Entities;
 using Tasky.Services;
+using Tasky.Services.Common;
 using Tasky.Services.Models;
 
 namespace Tasky
@@ -13,13 +15,18 @@ namespace Tasky
         public delegate void OnSaveEventHandler(object sender, EventArgs e);
         public event OnSaveEventHandler OnSaveEvent;
 
-        private TaskyDBEntities _dbContext;
+        private IUserService _userService;
         private IProjectService _projectService;
+        private IClientService _clientService;
+        private IMapper _mapper;
+
         public AddProjectForm()
         {
             InitializeComponent();
-            _dbContext = new TaskyDBEntities();
+            _userService = new UserService();
             _projectService = new ProjectService();
+            _clientService = new ClientService();
+            _mapper = App.Mapper;
 
             BindData();
         }
@@ -28,12 +35,13 @@ namespace Tasky
         {
             BindProjectTaskData();
             BindProjectUserData();
+            BindClients();
         }
 
         private void BindProjectUserData()
         {
             var projectUsers = new List<ProjectUserViewModel>();
-            var users = _dbContext.UserDetails.ToList();
+            var users = _userService.GetAllUserDetails();
             foreach (var user in users)
             {
                 projectUsers.Add(new ProjectUserViewModel
@@ -49,16 +57,26 @@ namespace Tasky
 
         private void BindProjectTaskData()
         {
-            var tasks = _dbContext.ProjectTasks.ToList();
+            var tasks = _projectService.GetProjectTasks();
             ((ListBox)taskCheckedListBox).DataSource = tasks;
             ((ListBox)taskCheckedListBox).DisplayMember = "Name";
             ((ListBox)taskCheckedListBox).ValueMember = "ProjectTaskId";
         }
 
+        private void BindClients()
+        {
+            var clients = _clientService.GetClients()
+                            .Select(x => _mapper.Map<NameValueItem>(x))
+                            .ToList();
+            clientsComboBox.DataSource = clients;
+            clientsComboBox.DisplayMember = "Name";
+            clientsComboBox.ValueMember = "Value";
+        }
+
         private void addProjectButton_Click(object sender, EventArgs e)
         {
-            string projectName = projectNameTexBox.Text,
-                   clientName = clientTextBox.Text;
+            var projectName = projectNameTexBox.Text;
+            NameValueItem selectedClient = (NameValueItem)clientsComboBox.SelectedItem;
             List<Guid> userIds = new List<Guid>();
             List<int> taskIds = new List<int>();
 
@@ -70,11 +88,17 @@ namespace Tasky
             {
                 taskIds.Add(task.ProjectTaskId);
             }
-            if (projectName.Length > 0 && clientName.Length > 0
-                && userIds.Count > 0 && taskIds.Count > 0)
+            if (projectName.Length > 0 && userIds.Count > 0 
+                && taskIds.Count > 0 && clientsComboBox.Items.Count > 0)
             {
-                _projectService
-                    .AddProject(projectName, clientName, userIds, taskIds);
+                var newProject = new NewProjectModel
+                {
+                    Name = projectName,
+                    ClientId = int.Parse(selectedClient.Value),
+                    TaskIds = taskIds,
+                    UserIds = userIds
+                };
+                _projectService.AddProject(newProject);
                 MessageBox.Show("Project Saved Successfully");
                 OnSaveEvent.Invoke(this, e);
                 Close();

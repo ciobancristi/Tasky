@@ -33,11 +33,11 @@
             this.tasksLabel = new System.Windows.Forms.Label();
             this.usersLabel = new System.Windows.Forms.Label();
             this.projectNameTexBox = new System.Windows.Forms.TextBox();
-            this.clientTextBox = new System.Windows.Forms.TextBox();
             this.addProjectButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.taskCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.userCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.clientsComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // projectNameLabel
@@ -92,14 +92,6 @@
             this.projectNameTexBox.Size = new System.Drawing.Size(217, 22);
             this.projectNameTexBox.TabIndex = 5;
             // 
-            // clientTextBox
-            // 
-            this.clientTextBox.Location = new System.Drawing.Point(192, 104);
-            this.clientTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.clientTextBox.Name = "clientTextBox";
-            this.clientTextBox.Size = new System.Drawing.Size(217, 22);
-            this.clientTextBox.TabIndex = 6;
-            // 
             // addProjectButton
             // 
             this.addProjectButton.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -148,6 +140,14 @@
             this.userCheckedListBox.Size = new System.Drawing.Size(217, 106);
             this.userCheckedListBox.TabIndex = 11;
             // 
+            // clientsComboBox
+            // 
+            this.clientsComboBox.FormattingEnabled = true;
+            this.clientsComboBox.Location = new System.Drawing.Point(192, 107);
+            this.clientsComboBox.Name = "clientsComboBox";
+            this.clientsComboBox.Size = new System.Drawing.Size(217, 24);
+            this.clientsComboBox.TabIndex = 12;
+            // 
             // AddProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,11 +155,11 @@
             this.BackgroundImage = global::Tasky.Properties.Resources.rauzcdht;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(541, 561);
+            this.Controls.Add(this.clientsComboBox);
             this.Controls.Add(this.userCheckedListBox);
             this.Controls.Add(this.taskCheckedListBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.addProjectButton);
-            this.Controls.Add(this.clientTextBox);
             this.Controls.Add(this.projectNameTexBox);
             this.Controls.Add(this.usersLabel);
             this.Controls.Add(this.tasksLabel);
@@ -183,10 +183,10 @@
         private System.Windows.Forms.Label tasksLabel;
         private System.Windows.Forms.Label usersLabel;
         private System.Windows.Forms.TextBox projectNameTexBox;
-        private System.Windows.Forms.TextBox clientTextBox;
         private System.Windows.Forms.Button addProjectButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.CheckedListBox taskCheckedListBox;
         private System.Windows.Forms.CheckedListBox userCheckedListBox;
+        private System.Windows.Forms.ComboBox clientsComboBox;
     }
 }

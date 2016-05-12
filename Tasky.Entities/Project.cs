@@ -55,7 +55,7 @@ public partial class Project
 
     public virtual ICollection<User> Users { get; set; }
 
-    public virtual Client Client1 { get; set; }
+    public virtual Client Client { get; set; }
 
 }
 

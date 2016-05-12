@@ -57,11 +57,13 @@
   <ItemGroup>
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="ClientService.cs" />
     <Compile Include="Common\App.cs" />
     <Compile Include="Helpers\MailHelper.cs" />
     <Compile Include="Helpers\RegexUtilities.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Common\NameValueItem.cs" />
+    <Compile Include="Models\NewProjectModel.cs" />
     <Compile Include="Models\ProjectUserViewModel.cs" />
     <Compile Include="Models\ProjectViewModel.cs" />
     <Compile Include="Models\NewTaskModel.cs" />

@@ -1,38 +1,36 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Tasky.Entities;
+using Tasky.Services;
+using Tasky.Services.Common;
+using Tasky.Services.Helpers;
 using Tasky.Services.Models;
 
 namespace Tasky
 {
     public partial class AdminProjectsForm : Form
     {
-        private TaskyDBEntities _dbContext;
+        private IProjectService _projectService;
+        private IMapper _mapper;
         public AdminProjectsForm()
         {
+            _projectService = new ProjectService();
+            _mapper = App.Mapper;
             InitializeComponent();
-            _dbContext = new TaskyDBEntities();
             BindData();
         }
 
         private void BindData()
         {
-            var projects = _dbContext.Projects.ToList();
-            var projectViewModels = new List<ProjectViewModel>();
-            foreach(var p in projects)
-            {
-                //projectViewModels.Add(new ProjectViewModel
-                //{
-                //    Client = p.Client,
-                //    Created = p.Created,
-                //    HasFinished = p.HasFinished,
-                //    Name = p.Name,
-                //    ProjectId = p.ProjectId
-                //});
-            }
-            projectsDataGridView.DataSource = projectViewModels;
+            var projects = _projectService
+                            .GetActiveProjects(UserHelper.GetUserId())
+                            .Select(x => _mapper.Map<ProjectViewModel>(x))
+                            .ToList();
+            
+            projectsDataGridView.DataSource = projects;
             projectsDataGridView.Columns[0].Visible = false;
         }
 

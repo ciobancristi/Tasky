@@ -18,14 +18,13 @@ Delete From Project where ProjectId >= 0
 
 --- Delete Column Client
 ALTER TABLE Project
-DROP COLUMN Client 
+DROP COLUMN Client
 
---- Add Column ClientId
+
 ALTER TABLE Project
 ADD ClientId int not null
 
---- Add foreign key to Client Table
- ALTER TABLE Project
+ALTER TABLE Project
 ADD CONSTRAINT FK_Project_Client
 FOREIGN KEY (ClientId)
 REFERENCES Client(ClientId)
@@ -61,5 +60,11 @@ GO
 
 SET ANSI_PADDING OFF
 GO
+
+USE [TaskyDB]
+GO
+
+
+
 
 

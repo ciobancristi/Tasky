@@ -33,7 +33,11 @@ namespace Tasky.App_Start
 
                 cfg.CreateMap<NewTaskModel, Task>();
 
-                //cfg.CreateMap<>
+                cfg.CreateMap<Client, NameValueItem>()
+                    .ForMember(x => x.Value, o => o.MapFrom(x => x.ClientId));
+
+                cfg.CreateMap<Project, ProjectViewModel>()
+                    .ForMember(x => x.ClientName, o => o.MapFrom(x => x.Client.Name));
 
             });
             App.MapperConfiguration = config;
