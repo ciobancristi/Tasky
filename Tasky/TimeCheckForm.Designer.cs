@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.titleLabel = new System.Windows.Forms.Label();
             this.projectLabel = new System.Windows.Forms.Label();
@@ -58,7 +58,9 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.MidnightBlue;
             this.titleLabel.Location = new System.Drawing.Point(97, 20);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(427, 31);
@@ -68,6 +70,7 @@
             // projectLabel
             // 
             this.projectLabel.AutoSize = true;
+            this.projectLabel.BackColor = System.Drawing.Color.Transparent;
             this.projectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectLabel.Location = new System.Drawing.Point(100, 135);
             this.projectLabel.Name = "projectLabel";
@@ -78,6 +81,7 @@
             // taskLabel
             // 
             this.taskLabel.AutoSize = true;
+            this.taskLabel.BackColor = System.Drawing.Color.Transparent;
             this.taskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taskLabel.Location = new System.Drawing.Point(309, 135);
             this.taskLabel.Name = "taskLabel";
@@ -88,6 +92,7 @@
             // hoursWorkedDateTimePicker
             // 
             this.hoursWorkedDateTimePicker.AutoSize = true;
+            this.hoursWorkedDateTimePicker.BackColor = System.Drawing.Color.Transparent;
             this.hoursWorkedDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hoursWorkedDateTimePicker.Location = new System.Drawing.Point(528, 135);
             this.hoursWorkedDateTimePicker.Name = "hoursWorkedDateTimePicker";
@@ -98,6 +103,7 @@
             // commentsLabel
             // 
             this.commentsLabel.AutoSize = true;
+            this.commentsLabel.BackColor = System.Drawing.Color.Transparent;
             this.commentsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commentsLabel.Location = new System.Drawing.Point(100, 186);
             this.commentsLabel.Name = "commentsLabel";
@@ -134,20 +140,21 @@
             this.activitiesDataGridView.Location = new System.Drawing.Point(108, 325);
             this.activitiesDataGridView.MultiSelect = false;
             this.activitiesDataGridView.Name = "activitiesDataGridView";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.activitiesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.activitiesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.activitiesDataGridView.Size = new System.Drawing.Size(575, 150);
             this.activitiesDataGridView.TabIndex = 10;
             // 
             // myActivityLabel
             // 
             this.myActivityLabel.AutoSize = true;
+            this.myActivityLabel.BackColor = System.Drawing.Color.Transparent;
             this.myActivityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myActivityLabel.Location = new System.Drawing.Point(104, 302);
             this.myActivityLabel.Name = "myActivityLabel";
@@ -168,24 +175,30 @@
             // 
             // addTaskActivityButton
             // 
-            this.addTaskActivityButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addTaskActivityButton.Location = new System.Drawing.Point(578, 254);
+            this.addTaskActivityButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.addTaskActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addTaskActivityButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTaskActivityButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.addTaskActivityButton.Location = new System.Drawing.Point(578, 242);
             this.addTaskActivityButton.Name = "addTaskActivityButton";
-            this.addTaskActivityButton.Size = new System.Drawing.Size(100, 23);
+            this.addTaskActivityButton.Size = new System.Drawing.Size(121, 35);
             this.addTaskActivityButton.TabIndex = 13;
             this.addTaskActivityButton.Text = "Add Task Activity";
-            this.addTaskActivityButton.UseVisualStyleBackColor = true;
+            this.addTaskActivityButton.UseVisualStyleBackColor = false;
             this.addTaskActivityButton.Click += new System.EventHandler(this.addTaskActivityButton_Click);
             // 
             // closeButton
             // 
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.Location = new System.Drawing.Point(578, 496);
+            this.closeButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.closeButton.Location = new System.Drawing.Point(594, 493);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(100, 23);
+            this.closeButton.Size = new System.Drawing.Size(105, 38);
             this.closeButton.TabIndex = 14;
             this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // tasksComboBox
