@@ -20,6 +20,8 @@
         <AssociationConnector Association="TaskyDBModel.ProjectTaskMap" ManuallyRouted="false" />
         <AssociationConnector Association="TaskyDBModel.UserProject" ManuallyRouted="false" />
         <AssociationConnector Association="TaskyDBModel.UserRole" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TaskyDBModel.Client" Width="1.5" PointX="0.75" PointY="9.625" />
+        <AssociationConnector Association="TaskyDBModel.FK_Project_Client" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs">
+      <DependentUpon>TaskyEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Position.cs">
       <DependentUpon>TaskyEntities.tt</DependentUpon>
     </Compile>

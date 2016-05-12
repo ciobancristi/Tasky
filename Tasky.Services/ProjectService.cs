@@ -24,18 +24,18 @@ namespace Tasky.Services
         public void AddProject(string name, string client, List<Guid> userIds, List<int> taskIds)
         {
             var users = GetUsersByIds(userIds);
-            var projectTasks = GetProjectTasksByIds(taskIds);
-            var project = new Project
-            {
-                Name = name,
-                Client = client,
-                HasFinished = false,
-                Created = DateTime.Now,
-                ProjectTasks = projectTasks,
-                Users = users,
-            };
-            _dbContext.Projects.Add(project);
-            _dbContext.SaveChanges();
+            //var projectTasks = GetProjectTasksByIds(taskIds);
+            //var project = new Project
+            //{
+            //    Name = name,
+            //    Client = client,
+            //    HasFinished = false,
+            //    Created = DateTime.Now,
+            //    ProjectTasks = projectTasks,
+            //    Users = users,
+            //};
+            //_dbContext.Projects.Add(project);
+            //_dbContext.SaveChanges();
         }
 
         public List<Project> GetActiveProjects(Guid userId)

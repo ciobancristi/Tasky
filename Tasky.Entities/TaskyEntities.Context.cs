@@ -46,6 +46,8 @@ public partial class TaskyDBEntities : DbContext
 
     public virtual DbSet<UserDetail> UserDetails { get; set; }
 
+    public virtual DbSet<Client> Clients { get; set; }
+
 }
 
 }

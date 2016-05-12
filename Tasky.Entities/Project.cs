@@ -37,9 +37,9 @@ public partial class Project
 
     public System.DateTime Created { get; set; }
 
-    public string Client { get; set; }
-
     public bool HasFinished { get; set; }
+
+    public int ClientId { get; set; }
 
 
 
@@ -54,6 +54,8 @@ public partial class Project
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
     public virtual ICollection<User> Users { get; set; }
+
+    public virtual Client Client1 { get; set; }
 
 }
 

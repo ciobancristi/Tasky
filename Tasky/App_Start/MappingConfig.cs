@@ -33,6 +33,8 @@ namespace Tasky.App_Start
 
                 cfg.CreateMap<NewTaskModel, Task>();
 
+                //cfg.CreateMap<>
+
             });
             App.MapperConfiguration = config;
             App.Mapper = config.CreateMapper();

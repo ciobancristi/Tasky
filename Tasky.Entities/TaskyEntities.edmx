@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="TaskyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientId" />
+          </Key>
+          <Property Name="ClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Position">
           <Key>
             <PropertyRef Name="PositionId" />
@@ -19,8 +26,8 @@
           <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Created" Type="date" Nullable="false" />
-          <Property Name="Client" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="HasFinished" Type="bit" Nullable="false" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProjectTask">
           <Key>
@@ -94,6 +101,18 @@
           <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Project_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Project" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientId" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ProjectTaskMap_Project">
           <End Role="Project" Type="Self.Project" Multiplicity="1" />
           <End Role="ProjectTaskMap" Type="Self.ProjectTaskMap" Multiplicity="*" />
@@ -227,6 +246,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="TaskyDBModelStoreContainer">
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProjectTask" EntityType="Self.ProjectTask" Schema="dbo" store:Type="Tables" />
@@ -237,6 +257,10 @@
           <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserProject" EntityType="Self.UserProject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Project_Client" Association="Self.FK_Project_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
           <AssociationSet Name="FK_ProjectTaskMap_Project" Association="Self.FK_ProjectTaskMap_Project">
             <End Role="Project" EntitySet="Project" />
             <End Role="ProjectTaskMap" EntitySet="ProjectTaskMap" />
@@ -301,11 +325,12 @@
           <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="HasFinished" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Project" FromRole="Project" ToRole="Task" />
           <NavigationProperty Name="ProjectTasks" Relationship="Self.ProjectTaskMap" FromRole="Project" ToRole="ProjectTask" />
           <NavigationProperty Name="Users" Relationship="Self.UserProject" FromRole="Project" ToRole="User" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client1" Relationship="TaskyDBModel.FK_Project_Client" FromRole="Project" ToRole="Client" />
         </EntityType>
         <EntityType Name="ProjectTask">
           <Key>
@@ -479,7 +504,32 @@
             <End Role="Role" EntitySet="Roles" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="Clients" EntityType="TaskyDBModel.Client" />
+          <AssociationSet Name="FK_Project_Client" Association="TaskyDBModel.FK_Project_Client">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientId" />
+          </Key>
+          <Property Name="ClientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Projects" Relationship="TaskyDBModel.FK_Project_Client" FromRole="Client" ToRole="Project" />
+        </EntityType>
+        <Association Name="FK_Project_Client">
+          <End Type="TaskyDBModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="TaskyDBModel.Project" Role="Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ClientId" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -497,10 +547,10 @@
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="TaskyDBModel.Project">
               <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="Client" ColumnName="Client" />
                 <ScalarProperty Name="HasFinished" ColumnName="HasFinished" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -582,6 +632,14 @@
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="TaskyDBModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

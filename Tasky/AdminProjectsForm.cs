@@ -23,14 +23,14 @@ namespace Tasky
             var projectViewModels = new List<ProjectViewModel>();
             foreach(var p in projects)
             {
-                projectViewModels.Add(new ProjectViewModel
-                {
-                    Client = p.Client,
-                    Created = p.Created,
-                    HasFinished = p.HasFinished,
-                    Name = p.Name,
-                    ProjectId = p.ProjectId
-                });
+                //projectViewModels.Add(new ProjectViewModel
+                //{
+                //    Client = p.Client,
+                //    Created = p.Created,
+                //    HasFinished = p.HasFinished,
+                //    Name = p.Name,
+                //    ProjectId = p.ProjectId
+                //});
             }
             projectsDataGridView.DataSource = projectViewModels;
             projectsDataGridView.Columns[0].Visible = false;
