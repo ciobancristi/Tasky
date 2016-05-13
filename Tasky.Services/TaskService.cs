@@ -12,6 +12,7 @@ namespace Tasky.Services
     {
         List<Task> GetTasks(DateTime date);
         void AddTask(NewTaskModel task);
+        double GetWorkedHoursForWeek(Guid userId, DateTime startOfWeek);
     }
     public class TaskService : BaseService, ITaskService
     {
@@ -46,6 +47,27 @@ namespace Tasky.Services
                         .Where(x => (x.Date >= startDate && x.Date < endDate))
                         .ToList();
             return tasks;
+        }
+
+        public double GetWorkedHoursForWeek(Guid userId, DateTime startOfWeek)
+        {
+            if (userId == null || startOfWeek == null)
+                throw new ArgumentNullException();
+
+            var startDate = startOfWeek.Date;
+            var endDate = startOfWeek.AddDays(6).Date;
+
+            var hours = _dbContext.Tasks
+                .Where(x => x.UserId == userId && x.Date >= startDate && x.Date <= endDate)
+                .Select(x => x.Hours);
+
+            double sum = 0;
+            foreach(var value in hours)
+            {
+                sum += value;
+            }
+
+            return sum;
         }
         #endregion
 

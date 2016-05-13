@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Tasky.Entities;
 using Tasky.Services.Helpers;
@@ -16,7 +17,6 @@ namespace Tasky.Services
         IEnumerable<string> GetRoles();
         IEnumerable<string> GetPositions();
         void RegisterUser(User currentUser, UserDetail userDetail, Role rol, Position pos);
-
     }
     public class UserService : BaseService, IUserService
     {
@@ -81,6 +81,7 @@ namespace Tasky.Services
         {
             return _dbContext.UserDetails.ToList();
         }
+
         #endregion
 
         #region IDisposable

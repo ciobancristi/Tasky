@@ -1,11 +1,16 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using Tasky.Services;
+using Tasky.Services.Common;
 
 namespace Tasky
 {
     public partial class AdminForm : Form
     {
+        private ReportsService _reportService;
         public AdminForm()
         {
+            _reportService = new ReportsService();
             InitializeComponent();
         }
 
@@ -30,6 +35,18 @@ namespace Tasky
         private void closeButton_Click(object sender, System.EventArgs e)
         {
             Close();
+        }
+
+        private void lastWeekButton_Click(object sender, System.EventArgs e)
+        {
+            var dayOfLastWeek = DateTime.Now.StartOfWeek(DayOfWeek.Monday).AddDays(-1);
+            _reportService.GenerateWeeklyReports(dayOfLastWeek);
+        }
+
+        private void CurrentWeekReminder_Click(object sender, EventArgs e)
+        {
+            var today = DateTime.Now.Date;
+            _reportService.GenerateWeeklyReports(today);
         }
     }
 }
