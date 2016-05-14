@@ -12,6 +12,8 @@ namespace Tasky.Services
         List<Project> GetActiveProjects(Guid userId);
         List<ProjectTask> GetProjectTasks(int projectId);
         List<ProjectTask> GetProjectTasks();
+        void DelteProject(int projectId);
+        void EditProject(int projectId, Project editedProject);
     }
     public class ProjectService : BaseService, IProjectService
     {
@@ -72,6 +74,36 @@ namespace Tasky.Services
             return projectTasks;
         }
 
+        public void DelteProject(int projectId)
+        {
+            if (projectId < 0)
+                throw new ArgumentOutOfRangeException();
+
+            var project = _dbContext.Projects.FirstOrDefault(x => x.ProjectId == projectId);
+            if(project != null)
+            {
+                _dbContext.Projects.Remove(project);
+                _dbContext.SaveChanges();
+            }
+        }
+
+        public void EditProject(int projectId, NewProjectModel editedProject)
+        {
+            var project = _dbContext.Projects.FirstOrDefault(x => x.ProjectId == projectId);
+            var users = GetUsersByIds(editedProject.UserIds);
+            var projectTasks = GetProjectTasksByIds(editedProject.TaskIds);
+            var projectToEdit = new Project
+            {
+                Name = editedProject.Name,
+                HasFinished = false,
+                Created = DateTime.Now,
+                ProjectTasks = projectTasks,
+                Users = users,
+                ClientId = editedProject.ClientId
+            };
+            project = projectToEdit;
+            _dbContext.SaveChanges();
+        }
         #endregion
 
         #region private members

@@ -31,6 +31,8 @@
             this.addProjectButton = new System.Windows.Forms.Button();
             this.projectsDataGridView = new System.Windows.Forms.DataGridView();
             this.closeButton = new System.Windows.Forms.Button();
+            this.deleteProjectButton = new System.Windows.Forms.Button();
+            this.editProjectButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.projectsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,25 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // deleteProjectButton
+            // 
+            this.deleteProjectButton.Location = new System.Drawing.Point(183, 466);
+            this.deleteProjectButton.Name = "deleteProjectButton";
+            this.deleteProjectButton.Size = new System.Drawing.Size(117, 45);
+            this.deleteProjectButton.TabIndex = 3;
+            this.deleteProjectButton.Text = "Delete Project";
+            this.deleteProjectButton.UseVisualStyleBackColor = true;
+            this.deleteProjectButton.Click += new System.EventHandler(this.deleteProjectButton_Click);
+            // 
+            // editProjectButton
+            // 
+            this.editProjectButton.Location = new System.Drawing.Point(321, 466);
+            this.editProjectButton.Name = "editProjectButton";
+            this.editProjectButton.Size = new System.Drawing.Size(136, 45);
+            this.editProjectButton.TabIndex = 4;
+            this.editProjectButton.Text = "Edit Project";
+            this.editProjectButton.UseVisualStyleBackColor = true;
+            // 
             // AdminProjectsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,6 +110,8 @@
             this.BackgroundImage = global::Tasky.Properties.Resources.rauzcdht;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.editProjectButton);
+            this.Controls.Add(this.deleteProjectButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.projectsDataGridView);
             this.Controls.Add(this.addProjectButton);
@@ -106,5 +129,7 @@
         private System.Windows.Forms.Button addProjectButton;
         private System.Windows.Forms.DataGridView projectsDataGridView;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button deleteProjectButton;
+        private System.Windows.Forms.Button editProjectButton;
     }
 }

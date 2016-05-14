@@ -103,7 +103,7 @@
             this.addProjectButton.Name = "addProjectButton";
             this.addProjectButton.Size = new System.Drawing.Size(105, 37);
             this.addProjectButton.TabIndex = 8;
-            this.addProjectButton.Text = "Add Project";
+            this.addProjectButton.Text = "Save";
             this.addProjectButton.UseVisualStyleBackColor = false;
             this.addProjectButton.Click += new System.EventHandler(this.addProjectButton_Click);
             // 

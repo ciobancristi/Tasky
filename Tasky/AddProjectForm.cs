@@ -19,6 +19,7 @@ namespace Tasky
         private IProjectService _projectService;
         private IClientService _clientService;
         private IMapper _mapper;
+        private Project projectToEdit;
 
         public AddProjectForm()
         {
@@ -27,6 +28,18 @@ namespace Tasky
             _projectService = new ProjectService();
             _clientService = new ClientService();
             _mapper = App.Mapper;
+
+            BindData();
+        }
+
+        public AddProjectForm(Project project)
+        {
+            InitializeComponent();
+            _userService = new UserService();
+            _projectService = new ProjectService();
+            _clientService = new ClientService();
+            _mapper = App.Mapper;
+            projectToEdit = project;
 
             BindData();
         }
@@ -83,20 +96,37 @@ namespace Tasky
             {
                 taskIds.Add(task.ProjectTaskId);
             }
-            if (projectName.Length > 0 && userIds.Count > 0 
+            if (projectName.Length > 0 && userIds.Count > 0
                 && taskIds.Count > 0 && clientsComboBox.Items.Count > 0)
             {
-                var newProject = new NewProjectModel
+                if (projectToEdit != null)
                 {
-                    Name = projectName,
-                    ClientId = int.Parse(selectedClient.Value),
-                    TaskIds = taskIds,
-                    UserIds = userIds
-                };
-                _projectService.AddProject(newProject);
-                MessageBox.Show("Project Saved Successfully");
-                OnSaveEvent.Invoke(this, e);
-                Close();
+                    var newProject = new NewProjectModel
+                    {
+                        Name = projectName,
+                        ClientId = int.Parse(selectedClient.Value),
+                        TaskIds = taskIds,
+                        UserIds = userIds
+                    };
+                    _projectService.AddProject(newProject);
+                    MessageBox.Show("Project Saved Successfully");
+                    OnSaveEvent.Invoke(this, e);
+                    Close();
+                }
+                else
+                {
+                    var newProject = new NewProjectModel
+                    {
+                        Name = projectName,
+                        ClientId = int.Parse(selectedClient.Value),
+                        TaskIds = taskIds,
+                        UserIds = userIds
+                    };
+                    _projectService.EditProject(projectToEdit.ProjectId, newProject);
+                    MessageBox.Show("Project Saved Successfully");
+                    OnSaveEvent.Invoke(this, e);
+                    Close();
+                }
             }
             else
             {
