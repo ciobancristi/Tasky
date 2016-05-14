@@ -13,7 +13,7 @@ namespace Tasky.Services
         List<ProjectTask> GetProjectTasks(int projectId);
         List<ProjectTask> GetProjectTasks();
         void DelteProject(int projectId);
-        void EditProject(int projectId, Project editedProject);
+        //void EditProject(int projectId, Project editedProject);
     }
     public class ProjectService : BaseService, IProjectService
     {

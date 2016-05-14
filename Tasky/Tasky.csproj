@@ -62,12 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEditClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEditClient.Designer.cs">
-      <DependentUpon>AddEditClient.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,12 +73,6 @@
     </Compile>
     <Compile Include="AdminEmailForm.Designer.cs">
       <DependentUpon>AdminEmailForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminNewUserRegistration.cs">
       <SubType>Form</SubType>
@@ -105,6 +93,12 @@
     <Compile Include="ClientsForm.Designer.cs">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +112,6 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProjectsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProjectsForm.Designer.cs">
-      <DependentUpon>ProjectsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeCheckForm.cs">
       <SubType>Form</SubType>
@@ -143,17 +131,11 @@
     <Compile Include="UserListForm.Designer.cs">
       <DependentUpon>UserListForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddEditClient.resx">
-      <DependentUpon>AddEditClient.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddProjectForm.resx">
       <DependentUpon>AddProjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminEmailForm.resx">
       <DependentUpon>AdminEmailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminNewUserRegistration.resx">
       <DependentUpon>AdminNewUserRegistration.cs</DependentUpon>
@@ -164,14 +146,14 @@
     <EmbeddedResource Include="ClientsForm.resx">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProjectsForm.resx">
-      <DependentUpon>ProjectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

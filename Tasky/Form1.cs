@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tasky
 {
-    public partial class ProjectsForm : Form
+    public partial class UserUserListForm : Form
     {
-        public ProjectsForm()
+        public UserUserListForm()
         {
             InitializeComponent();
         }

@@ -41,12 +41,13 @@ namespace Tasky
                     Projects = projectNames
                 });
             }
-            clientsDataGridView.DataSource = clientViewModels;
-            clientsDataGridView.Columns[0].Visible = false;
+            //clientsDataGridView.DataSource = clientViewModels;
+            //clientsDataGridView.Columns[0].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panelNewClient.Visible = true;
         }
     }
 }

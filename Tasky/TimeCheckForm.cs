@@ -79,12 +79,12 @@ namespace Tasky
                 activitiesDataGridView.DataSource = tasks;
                 activitiesDataGridView.Columns[0].Visible = false;
                 activitiesDataGridView.Visible = true;
-                noActivityLabel.Visible = false;
+                //noActivityLabel.Visible = false;
             }
             else
             {
                 activitiesDataGridView.Visible = false;
-                noActivityLabel.Visible = true;
+                //noActivityLabel.Visible = true;
             }
         }
 
@@ -152,5 +152,11 @@ namespace Tasky
             NameValueItem selectedProject = (NameValueItem)projectComboBox.SelectedItem;
             BindProjectTasks(int.Parse(selectedProject.Value));
         }
+
+        private void TimeCheckForm_Load(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

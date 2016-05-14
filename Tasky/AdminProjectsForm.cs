@@ -55,5 +55,10 @@ namespace Tasky
         {
             var project = projectsDataGridView.SelectedRows;
         }
+
+        private void editProjectButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

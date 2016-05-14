@@ -14,6 +14,17 @@ namespace Tasky
                 //adminPanelButton.Visible = false;
                 //panicButton.Visible = false;
             }
+            if (UserHelper.IsAdmin())
+            {
+                panelAdminHome.Visible = true;
+                panelUserHome.Visible = false;
+            }
+            else
+            {
+                panelAdminHome.Visible = false;
+                panelUserHome.Visible = true;
+            }
+
         }
 
         private void panicButton_Click(object sender, EventArgs e)
@@ -29,8 +40,7 @@ namespace Tasky
 
         private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProjectsForm projectsForm = new ProjectsForm();
-            projectsForm.Show();
+
         }
 
         private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,14 +57,21 @@ namespace Tasky
 
         private void adminPanelButton_Click(object sender, EventArgs e)
         {
-            AdminForm form = new AdminForm();
-            form.Show();
+
         }
 
         private void timeCheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new TimeCheckForm();
             form.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var showClientForm = new ClientsForm();
+            this.Hide();
+            showClientForm.Show();
+            this.Close();
         }
     }
 }

@@ -122,7 +122,7 @@ namespace Tasky
                         TaskIds = taskIds,
                         UserIds = userIds
                     };
-                    _projectService.EditProject(projectToEdit.ProjectId, newProject);
+                    //_projectService.EditProject(projectToEdit.ProjectId, newProject);
                     MessageBox.Show("Project Saved Successfully");
                     OnSaveEvent.Invoke(this, e);
                     Close();
