@@ -48,5 +48,15 @@ namespace Tasky
             var today = DateTime.Now.Date;
             _reportService.GenerateWeeklyReports(today);
         }
+
+        private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

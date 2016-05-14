@@ -11,8 +11,8 @@ namespace Tasky
             InitializeComponent();
             if (!UserHelper.IsAdmin())
             {
-                adminPanelButton.Visible = false;
-                panicButton.Visible = false;
+                //adminPanelButton.Visible = false;
+                //panicButton.Visible = false;
             }
         }
 

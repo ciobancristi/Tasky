@@ -41,18 +41,13 @@ namespace Tasky
         private void BindProjectUserData()
         {
             var projectUsers = new List<ProjectUserViewModel>();
-            var users = _userService.GetAllUserDetails();
-            foreach (var user in users)
-            {
-                projectUsers.Add(new ProjectUserViewModel
-                {
-                    UserId = user.UserId,
-                    FullName = user.FirstName + ' ' + user.LastName
-                });
-            }
+            var users = _userService.GetAllUserDetails()
+                   .Select(x => _mapper.Map<NameValueItem>(x))
+                   .ToList();
+            
             ((ListBox)userCheckedListBox).DataSource = projectUsers;
-            ((ListBox)userCheckedListBox).DisplayMember = "FullName";
-            ((ListBox)userCheckedListBox).ValueMember = "UserId";
+            ((ListBox)userCheckedListBox).DisplayMember = "Name";
+            ((ListBox)userCheckedListBox).ValueMember = "Value";
         }
 
         private void BindProjectTaskData()
@@ -80,9 +75,9 @@ namespace Tasky
             List<Guid> userIds = new List<Guid>();
             List<int> taskIds = new List<int>();
 
-            foreach (ProjectUserViewModel user in userCheckedListBox.CheckedItems)
+            foreach (NameValueItem user in userCheckedListBox.CheckedItems)
             {
-                userIds.Add(user.UserId);
+                userIds.Add(new Guid(user.Value));
             }
             foreach (ProjectTask task in taskCheckedListBox.CheckedItems)
             {
