@@ -16,21 +16,6 @@ Delete From Task where ProjectId >= 0
 --- Delete all data in Project Table
 Delete From Project where ProjectId >= 0
 
---- Delete Column Client
-ALTER TABLE Project
-DROP COLUMN Client
-
-
-ALTER TABLE Project
-ADD ClientId int not null
-
-ALTER TABLE Project
-ADD CONSTRAINT FK_Project_Client
-FOREIGN KEY (ClientId)
-REFERENCES Client(ClientId)
-
-GO
-
 
 ---- Create Client Table
 
@@ -61,8 +46,23 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-USE [TaskyDB]
+
+--- Delete Column Client
+ALTER TABLE Project
+DROP COLUMN Client
+
+
+ALTER TABLE Project
+ADD ClientId int not null
+
+ALTER TABLE Project
+ADD CONSTRAINT FK_Project_Client
+FOREIGN KEY (ClientId)
+REFERENCES Client(ClientId)
+
 GO
+
+
 
 
 
