@@ -31,27 +31,23 @@ namespace Tasky.Services
         public UserDetail GetUserDetails()
         {
             var currentUser = UserHelper.GetUserId();
-            IQueryable<UserDetail> user = _dbContext.UserDetails;
-            var _currentUser = user.FirstOrDefault(u => u.UserId == currentUser);
+            var _currentUser = _dbContext.UserDetails.FirstOrDefault(u => u.UserId == currentUser);
             return _currentUser;
         }
         public IEnumerable<string> GetRoles()
         {
-            List<Role> role = _dbContext.Roles.ToList();
-            var roles = role.Select(m => m.Name);
+            var roles = _dbContext.Roles.Select(m => m.Name);
             return roles;
         }
         public IEnumerable<string> GetPositions()
         {
-            List<Position> position = _dbContext.Positions.ToList();
-            var positions = position.Select(m => m.Name);
+            var positions = _dbContext.Positions.Select(m => m.Name);
             return positions;
         }
         public User GetUser()
         {
             var currentUser = UserHelper.GetUserId();
-            IQueryable<User> user = _dbContext.Users;
-            var _currentUser = user.FirstOrDefault(u => u.UserId == currentUser);
+            var _currentUser = _dbContext.Users.FirstOrDefault(u => u.UserId == currentUser);
             return _currentUser;
         }
         public void PostUser(User currentUser)

@@ -12,7 +12,7 @@ namespace Tasky.Services
         List<Project> GetActiveProjects(Guid userId);
         List<ProjectTask> GetProjectTasks(int projectId);
         List<ProjectTask> GetProjectTasks();
-        void DelteProject(int projectId);
+        void DeleteProject(int projectId);
         //void EditProject(int projectId, Project editedProject);
     }
     public class ProjectService : BaseService, IProjectService
@@ -74,7 +74,7 @@ namespace Tasky.Services
             return projectTasks;
         }
 
-        public void DelteProject(int projectId)
+        public void DeleteProject(int projectId)
         {
             if (projectId < 0)
                 throw new ArgumentOutOfRangeException();
