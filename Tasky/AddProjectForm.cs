@@ -208,5 +208,13 @@ namespace Tasky
             projectsForm.Show();
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var userForm = new UserProfileForm();
+            this.Hide();
+            userForm.Show();
+            this.Close();
+        }
     }
 }

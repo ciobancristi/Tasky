@@ -30,7 +30,6 @@
         {
             this.addProjectButton = new System.Windows.Forms.Button();
             this.projectsDataGridView = new System.Windows.Forms.DataGridView();
-            this.closeButton = new System.Windows.Forms.Button();
             this.deleteProjectButton = new System.Windows.Forms.Button();
             this.editProjectButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -85,26 +84,10 @@
             this.projectsDataGridView.Size = new System.Drawing.Size(522, 588);
             this.projectsDataGridView.TabIndex = 1;
             // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.closeButton.Location = new System.Drawing.Point(951, 717);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(168, 69);
-            this.closeButton.TabIndex = 2;
-            this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
             // deleteProjectButton
             // 
             this.deleteProjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteProjectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteProjectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteProjectButton.ForeColor = System.Drawing.Color.Maroon;
             this.deleteProjectButton.Location = new System.Drawing.Point(765, 350);
             this.deleteProjectButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -263,6 +246,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -288,7 +272,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.editProjectButton);
             this.Controls.Add(this.deleteProjectButton);
-            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.projectsDataGridView);
             this.Controls.Add(this.addProjectButton);
             this.DoubleBuffered = true;
@@ -311,7 +294,6 @@
 
         private System.Windows.Forms.Button addProjectButton;
         private System.Windows.Forms.DataGridView projectsDataGridView;
-        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button deleteProjectButton;
         private System.Windows.Forms.Button editProjectButton;
         private System.Windows.Forms.Panel panel2;
