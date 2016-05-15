@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Tasky.Entities;
 using Tasky.Services;
+using Tasky.Services.Helpers;
 
 namespace Tasky
 {
@@ -67,18 +68,12 @@ namespace Tasky
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            var usersForm = new UserListForm();
-            this.Hide();
-            usersForm.Show();
-            this.Close();
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var logHrs = new TimeCheckForm();
-            this.Hide();
-            logHrs.Show();
-            this.Close();
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -88,18 +83,12 @@ namespace Tasky
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var clientForm = new ClientsForm();
-            this.Hide();
-            clientForm.Show();
-            this.Close();
+           
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var emailForm = new AdminEmailForm();
-            this.Hide();
-            emailForm.Show();
-            this.Close();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -107,6 +96,46 @@ namespace Tasky
             var projectsForm = new AdminProjectsForm();
             this.Hide();
             projectsForm.Show();
+            this.Close();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            var usersForm = new UserListForm(UserHelper.IsAdmin());
+            this.Hide();
+            usersForm.Show();
+            this.Close();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            var logHrs = new TimeCheckForm();
+            this.Hide();
+            logHrs.Show();
+            this.Close();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            var clientForm = new ClientsForm();
+            this.Hide();
+            clientForm.Show();
+            this.Close();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            var emailForm = new AdminEmailForm();
+            this.Hide();
+            emailForm.Show();
+            this.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var usersForm = new UserListForm(UserHelper.IsAdmin());
+            this.Hide();
+            usersForm.Show();
             this.Close();
         }
     }

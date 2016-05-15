@@ -15,7 +15,7 @@ namespace Tasky
         private IMapper _mapper;
         public UserListForm()
         {
-
+            InitializeComponent();
         }
         public UserListForm(bool isAddUserVisible)
         {
@@ -25,6 +25,7 @@ namespace Tasky
 
             BindData();
             addUserButton.Visible = isAddUserVisible;
+            button4.Visible = isAddUserVisible;
         }
 
         private void BindData()
@@ -86,6 +87,19 @@ namespace Tasky
             var emailForm = new AdminEmailForm();
             this.Hide();
             emailForm.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var log = new Login();
+            this.Hide();
+            log.Show();
             this.Close();
         }
     }

@@ -68,10 +68,7 @@ namespace Tasky
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var usersForm = new UserListForm();
-            this.Hide();
-            usersForm.Show();
-            this.Close();
+            
         }
 
         private void button8_Click_1(object sender, EventArgs e)
@@ -100,7 +97,18 @@ namespace Tasky
 
         private void button7_Click_1(object sender, EventArgs e)
         {
+            var usersForm = new UserListForm(UserHelper.IsAdmin());
+            this.Hide();
+            usersForm.Show();
+            this.Close();
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var clientForm = new ClientsForm();
+            this.Hide();
+            clientForm.Show();
+            this.Close();
         }
     }
 }

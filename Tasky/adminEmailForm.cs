@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Tasky.Services;
+using Tasky.Services.Helpers;
 
 namespace Tasky
 {
@@ -56,13 +57,33 @@ namespace Tasky
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var usersForm = new UserListForm();
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            var usersForm = new UserListForm(UserHelper.IsAdmin());
             this.Hide();
             usersForm.Show();
             this.Close();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click_1(object sender, EventArgs e)
         {
             var logHrs = new TimeCheckForm();
             this.Hide();
@@ -70,7 +91,7 @@ namespace Tasky
             this.Close();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             var projectsForm = new AdminProjectsForm();
             this.Hide();
@@ -78,7 +99,7 @@ namespace Tasky
             this.Close();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
             var clientForm = new ClientsForm();
             this.Hide();
@@ -86,5 +107,12 @@ namespace Tasky
             this.Close();
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var log = new Login();
+            this.Hide();
+            log.Show();
+            this.Close();
+        }
     }
 }

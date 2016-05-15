@@ -90,7 +90,7 @@ namespace Tasky
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var usersForm = new UserListForm();
+            var usersForm = new UserListForm(UserHelper.IsAdmin());
             this.Hide();
             usersForm.Show();
             this.Close();
