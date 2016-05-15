@@ -102,7 +102,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(431, 35);
+            this.label2.Location = new System.Drawing.Point(452, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 61);
             this.label2.TabIndex = 16;
@@ -146,6 +146,7 @@
             this.button5.TabIndex = 11;
             this.button5.Text = "Message Users";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -158,6 +159,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Projects";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button6
             // 
@@ -170,6 +172,7 @@
             this.button6.TabIndex = 9;
             this.button6.Text = "Client";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox2
             // 
@@ -205,6 +208,7 @@
             this.button8.TabIndex = 5;
             this.button8.Text = "Log Hours";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // panel1
             // 

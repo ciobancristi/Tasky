@@ -179,6 +179,7 @@
             this.button5.TabIndex = 11;
             this.button5.Text = "Message Users";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button4
             // 
@@ -191,6 +192,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Projects";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -203,7 +205,6 @@
             this.button6.TabIndex = 9;
             this.button6.Text = "Client";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox2
             // 
@@ -227,6 +228,7 @@
             this.button7.TabIndex = 3;
             this.button7.Text = "Users";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // button8
             // 
@@ -239,6 +241,7 @@
             this.button8.TabIndex = 5;
             this.button8.Text = "Log Hours";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // panel1
             // 

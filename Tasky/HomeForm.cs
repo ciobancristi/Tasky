@@ -66,12 +66,41 @@ namespace Tasky
             form.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            var showClientForm = new ClientsForm();
+            var usersForm = new UserListForm();
             this.Hide();
-            showClientForm.Show();
+            usersForm.Show();
             this.Close();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            var logHrs = new TimeCheckForm();
+            this.Hide();
+            logHrs.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var projectsForm = new AdminProjectsForm();
+            this.Hide();
+            projectsForm.Show();
+            this.Close();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            var emailForm = new AdminEmailForm();
+            this.Hide();
+            emailForm.Show();
+            this.Close();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
