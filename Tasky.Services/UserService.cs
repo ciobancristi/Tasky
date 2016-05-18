@@ -17,6 +17,7 @@ namespace Tasky.Services
         IEnumerable<string> GetRoles();
         IEnumerable<string> GetPositions();
         void RegisterUser(User currentUser, UserDetail userDetail, Role rol, Position pos);
+        int GetNumberOfEmployees();
     }
     public class UserService : BaseService, IUserService
     {
@@ -78,6 +79,10 @@ namespace Tasky.Services
             return _dbContext.UserDetails.ToList();
         }
 
+        public int GetNumberOfEmployees()
+        {
+            return _dbContext.Users.Count();
+        }
         #endregion
 
         #region IDisposable

@@ -14,6 +14,7 @@ namespace Tasky.Services
         void EditClient(int clientId, Client editedClient);
         void DeleteClient(int clientId);
         void AddClient(string name, List<int> projectIds);
+        int GetNumberOfClients();
     }
 
     public class ClientService : BaseService, IClientService
@@ -85,6 +86,11 @@ namespace Tasky.Services
             };
             _dbContext.Clients.Add(client);
             _dbContext.SaveChanges();
+        }
+
+        public int GetNumberOfClients()
+        {
+            return _dbContext.Clients.Count();
         }
         #endregion
 

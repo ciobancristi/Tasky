@@ -14,6 +14,8 @@ namespace Tasky.Services
         List<ProjectTask> GetProjectTasks();
         void DeleteProject(int projectId);
         //void EditProject(int projectId, Project editedProject);
+        int GetNumberOfActiveProjects();
+        int GetNumberOfProjects();
     }
     public class ProjectService : BaseService, IProjectService
     {
@@ -103,6 +105,16 @@ namespace Tasky.Services
             };
             project = projectToEdit;
             _dbContext.SaveChanges();
+        }
+
+        public int GetNumberOfActiveProjects()
+        {
+            return _dbContext.Projects.Where(x => x.HasFinished == false).Count();
+        }
+
+        public int GetNumberOfProjects()
+        {
+            return _dbContext.Projects.Count();
         }
         #endregion
 

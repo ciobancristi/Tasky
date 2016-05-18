@@ -271,7 +271,7 @@
             this.panelUserHome.Controls.Add(this.label3);
             this.panelUserHome.Controls.Add(this.dataGridView1);
             this.panelUserHome.Location = new System.Drawing.Point(149, 61);
-            this.panelUserHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelUserHome.Margin = new System.Windows.Forms.Padding(2);
             this.panelUserHome.Name = "panelUserHome";
             this.panelUserHome.Size = new System.Drawing.Size(460, 478);
             this.panelUserHome.TabIndex = 19;
@@ -286,7 +286,7 @@
             this.panelAdminHome.Controls.Add(this.lastWeekButton);
             this.panelAdminHome.Controls.Add(this.label9);
             this.panelAdminHome.Location = new System.Drawing.Point(149, 61);
-            this.panelAdminHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelAdminHome.Margin = new System.Windows.Forms.Padding(2);
             this.panelAdminHome.Name = "panelAdminHome";
             this.panelAdminHome.Size = new System.Drawing.Size(460, 478);
             this.panelAdminHome.TabIndex = 14;

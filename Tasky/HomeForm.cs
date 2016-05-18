@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
+using Tasky.Services;
 using Tasky.Services.Helpers;
 
 namespace Tasky
 {
     public partial class HomeForm : Form
     {
+        private IUserService _userService;
+        private IClientService _clientService;
+        private IProjectService _projectService;
+
         public HomeForm()
         {
             InitializeComponent();
@@ -21,6 +26,10 @@ namespace Tasky
                 panelUserHome.Visible = true;
             }
             label4.Text = UserHelper.CurrentUserFullName;
+            label1.Text = "Number of Employees : " + _userService.GetNumberOfEmployees();
+            label5.Text = "Number of Clients: " + _clientService.GetNumberOfClients();
+            label6.Text = "Number of Projects: " + _projectService.GetNumberOfProjects();
+            label7.Text = "Number of Active Projects: " + _projectService.GetNumberOfActiveProjects();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
