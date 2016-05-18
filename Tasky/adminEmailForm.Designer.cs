@@ -60,12 +60,11 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("PanRoman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.titleLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.titleLabel.Location = new System.Drawing.Point(394, 49);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Location = new System.Drawing.Point(263, 32);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(364, 40);
+            this.titleLabel.Size = new System.Drawing.Size(489, 30);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Send emails to users";
             // 
@@ -73,12 +72,11 @@
             // 
             this.toLabel.AutoSize = true;
             this.toLabel.BackColor = System.Drawing.Color.Transparent;
-            this.toLabel.Font = new System.Drawing.Font("Linux Libertine G", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.toLabel.Location = new System.Drawing.Point(332, 189);
-            this.toLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.toLabel.Location = new System.Drawing.Point(221, 123);
             this.toLabel.Name = "toLabel";
-            this.toLabel.Size = new System.Drawing.Size(41, 23);
+            this.toLabel.Size = new System.Drawing.Size(33, 17);
             this.toLabel.TabIndex = 1;
             this.toLabel.Text = "To: ";
             // 
@@ -86,12 +84,11 @@
             // 
             this.subjectLabel.AutoSize = true;
             this.subjectLabel.BackColor = System.Drawing.Color.Transparent;
-            this.subjectLabel.Font = new System.Drawing.Font("Linux Libertine G", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subjectLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.subjectLabel.Location = new System.Drawing.Point(288, 282);
-            this.subjectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.subjectLabel.Location = new System.Drawing.Point(192, 183);
             this.subjectLabel.Name = "subjectLabel";
-            this.subjectLabel.Size = new System.Drawing.Size(80, 23);
+            this.subjectLabel.Size = new System.Drawing.Size(63, 17);
             this.subjectLabel.TabIndex = 2;
             this.subjectLabel.Text = "Subject: ";
             // 
@@ -99,12 +96,11 @@
             // 
             this.bodyLabel.AutoSize = true;
             this.bodyLabel.BackColor = System.Drawing.Color.Transparent;
-            this.bodyLabel.Font = new System.Drawing.Font("Linux Libertine G", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bodyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bodyLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.bodyLabel.Location = new System.Drawing.Point(228, 352);
-            this.bodyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bodyLabel.Location = new System.Drawing.Point(152, 229);
             this.bodyLabel.Name = "bodyLabel";
-            this.bodyLabel.Size = new System.Drawing.Size(137, 23);
+            this.bodyLabel.Size = new System.Drawing.Size(109, 17);
             this.bodyLabel.TabIndex = 3;
             this.bodyLabel.Text = "Message Body: ";
             // 
@@ -112,31 +108,28 @@
             // 
             this.toTextBox.BackColor = System.Drawing.Color.Cornsilk;
             this.toTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toTextBox.Location = new System.Drawing.Point(406, 191);
-            this.toTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.toTextBox.Location = new System.Drawing.Point(271, 124);
             this.toTextBox.Name = "toTextBox";
-            this.toTextBox.Size = new System.Drawing.Size(353, 26);
+            this.toTextBox.Size = new System.Drawing.Size(236, 20);
             this.toTextBox.TabIndex = 4;
             // 
             // subjectTextBox
             // 
             this.subjectTextBox.BackColor = System.Drawing.Color.Cornsilk;
             this.subjectTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.subjectTextBox.Location = new System.Drawing.Point(406, 282);
-            this.subjectTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.subjectTextBox.Location = new System.Drawing.Point(271, 183);
             this.subjectTextBox.Name = "subjectTextBox";
-            this.subjectTextBox.Size = new System.Drawing.Size(353, 26);
+            this.subjectTextBox.Size = new System.Drawing.Size(236, 20);
             this.subjectTextBox.TabIndex = 5;
             // 
             // bodyTextBox
             // 
             this.bodyTextBox.BackColor = System.Drawing.Color.Cornsilk;
             this.bodyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bodyTextBox.Location = new System.Drawing.Point(406, 354);
-            this.bodyTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bodyTextBox.Location = new System.Drawing.Point(271, 230);
             this.bodyTextBox.Multiline = true;
             this.bodyTextBox.Name = "bodyTextBox";
-            this.bodyTextBox.Size = new System.Drawing.Size(353, 305);
+            this.bodyTextBox.Size = new System.Drawing.Size(236, 199);
             this.bodyTextBox.TabIndex = 6;
             // 
             // statusStrip1
@@ -144,17 +137,16 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 822);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 532);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(936, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(56, 25);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(36, 17);
             this.toolStripStatusLabel1.Text = "Tasky";
             // 
             // sendButton
@@ -163,10 +155,9 @@
             this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendButton.ForeColor = System.Drawing.Color.Indigo;
-            this.sendButton.Location = new System.Drawing.Point(406, 695);
-            this.sendButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.sendButton.Location = new System.Drawing.Point(271, 452);
             this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(352, 58);
+            this.sendButton.Size = new System.Drawing.Size(235, 38);
             this.sendButton.TabIndex = 8;
             this.sendButton.Text = "Send mail";
             this.sendButton.UseVisualStyleBackColor = false;
@@ -183,19 +174,19 @@
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(0, 3);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(0, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(192, 865);
+            this.panel2.Size = new System.Drawing.Size(129, 563);
             this.panel2.TabIndex = 19;
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(70, 810);
+            this.linkLabel1.Location = new System.Drawing.Point(47, 526);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(57, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(39, 13);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "log out";
@@ -205,10 +196,9 @@
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.Maroon;
-            this.button5.Location = new System.Drawing.Point(16, 594);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Location = new System.Drawing.Point(11, 386);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(158, 46);
+            this.button5.Size = new System.Drawing.Size(105, 30);
             this.button5.TabIndex = 11;
             this.button5.Text = "Message Users";
             this.button5.UseVisualStyleBackColor = true;
@@ -217,10 +207,9 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Maroon;
-            this.button4.Location = new System.Drawing.Point(15, 483);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(10, 314);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(158, 46);
+            this.button4.Size = new System.Drawing.Size(105, 30);
             this.button4.TabIndex = 10;
             this.button4.Text = "Projects";
             this.button4.UseVisualStyleBackColor = true;
@@ -230,10 +219,9 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.Maroon;
-            this.button6.Location = new System.Drawing.Point(15, 538);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Location = new System.Drawing.Point(10, 350);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(158, 46);
+            this.button6.Size = new System.Drawing.Size(105, 30);
             this.button6.TabIndex = 9;
             this.button6.Text = "Client";
             this.button6.UseVisualStyleBackColor = true;
@@ -243,21 +231,20 @@
             // 
             this.pictureBox2.BackgroundImage = global::Tasky.Properties.Resources.tasky_logo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 17);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 11);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(158, 140);
+            this.pictureBox2.Size = new System.Drawing.Size(105, 91);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.Maroon;
-            this.button7.Location = new System.Drawing.Point(16, 372);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button7.Location = new System.Drawing.Point(11, 242);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(156, 46);
+            this.button7.Size = new System.Drawing.Size(104, 30);
             this.button7.TabIndex = 3;
             this.button7.Text = "Users";
             this.button7.UseVisualStyleBackColor = true;
@@ -267,10 +254,9 @@
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Maroon;
-            this.button8.Location = new System.Drawing.Point(15, 428);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button8.Location = new System.Drawing.Point(10, 278);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(158, 46);
+            this.button8.Size = new System.Drawing.Size(105, 30);
             this.button8.TabIndex = 5;
             this.button8.Text = "Log Hours";
             this.button8.UseVisualStyleBackColor = true;
@@ -281,19 +267,17 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(16, 166);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(11, 108);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(158, 197);
+            this.panel1.Size = new System.Drawing.Size(105, 128);
             this.panel1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 148);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "full name";
             // 
@@ -301,9 +285,8 @@
             // 
             this.pictureBox1.Image = global::Tasky.Properties.Resources.default_user_image;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 143);
+            this.pictureBox1.Size = new System.Drawing.Size(104, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -311,12 +294,12 @@
             // 
             // AdminEmailForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(936, 852);
+            this.ClientSize = new System.Drawing.Size(624, 554);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.statusStrip1);
@@ -329,6 +312,7 @@
             this.Controls.Add(this.titleLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminEmailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminEmailForm";

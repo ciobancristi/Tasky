@@ -10,11 +10,13 @@ namespace Tasky
     {
         private IValidationService _validationService;
         private List<string> destinationEmails;
+
         public AdminEmailForm()
         {
             InitializeComponent();
             destinationEmails = new List<string>();
             _validationService = new ValidationService();
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
         //TODO: modify messageBox 
@@ -55,26 +57,6 @@ namespace Tasky
             bodyTextBox.Clear();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button7_Click_1(object sender, EventArgs e)
         {
             var usersForm = new UserListForm(UserHelper.IsAdmin());
@@ -109,6 +91,7 @@ namespace Tasky
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            UserHelper.ResetCurrentUser();
             var log = new Login();
             this.Hide();
             log.Show();
@@ -122,5 +105,15 @@ namespace Tasky
             userForm.Show();
             this.Close();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var form = new HomeForm();
+            Hide();
+            form.Show();
+            Close();
+        }
+
+        
     }
 }

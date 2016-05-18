@@ -31,6 +31,7 @@ namespace Tasky
             _mapper = App.Mapper;
 
             BindData();
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
         public AddProjectForm(Project project)
@@ -43,6 +44,7 @@ namespace Tasky
             projectToEdit = project;
 
             BindData();
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
         private void BindData()
@@ -82,6 +84,8 @@ namespace Tasky
             clientsComboBox.ValueMember = "Value";
         }
 
+
+        //ADD validation
         private void addProjectButton_Click(object sender, EventArgs e)
         {
             var projectName = projectNameTexBox.Text;
@@ -134,31 +138,6 @@ namespace Tasky
                 MessageBox.Show("All fields are required");
             }
 
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -215,6 +194,23 @@ namespace Tasky
             this.Hide();
             userForm.Show();
             this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var form = new HomeForm();
+            Hide();
+            form.Show();
+            Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UserHelper.ResetCurrentUser();
+            var form = new Login();
+            Hide();
+            form.Show();
+            Close();
         }
     }
 }

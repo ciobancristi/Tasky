@@ -18,12 +18,16 @@ namespace Tasky
             InitializeComponent();
             Position _userPosition = new Position();
             UserService user = new UserService();
+
             var roles = user.GetRoles();
             roleComboBox.Items.AddRange(roles.ToArray());
             var positions = user.GetPositions();
             positionComboBox.Items.AddRange(positions.ToArray());
+
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
+        //TODO: Add validation
         private void registerUserButton_Click(object sender, EventArgs e)
         {
             UserService user = new UserService();
@@ -60,35 +64,6 @@ namespace Tasky
             var length = 10;
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -145,6 +120,23 @@ namespace Tasky
             this.Hide();
             userForm.Show();
             this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UserHelper.ResetCurrentUser();
+            var form = new Login();
+            Hide();
+            form.Show();
+            Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var form = new HomeForm();
+            Hide();
+            form.Show();
+            Close();
         }
     }
 }

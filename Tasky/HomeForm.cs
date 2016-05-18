@@ -9,11 +9,7 @@ namespace Tasky
         public HomeForm()
         {
             InitializeComponent();
-            if (!UserHelper.IsAdmin())
-            {
-                //adminPanelButton.Visible = false;
-                //panicButton.Visible = false;
-            }
+
             if (UserHelper.IsAdmin())
             {
                 panelAdminHome.Visible = true;
@@ -24,51 +20,16 @@ namespace Tasky
                 panelAdminHome.Visible = false;
                 panelUserHome.Visible = true;
             }
-
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
-        private void panicButton_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UserListForm usersListForm = new UserListForm(false);
-            usersListForm.Show();
-        }
-
-        private void projectsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UserProfileForm userProfileForm = new UserProfileForm();
-            userProfileForm.Show();
-        }
-
-        private void registerUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AdminNewUserRegistration admUserReg = new AdminNewUserRegistration();
-            admUserReg.Show();
-        }
-
-        private void adminPanelButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timeCheckToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new TimeCheckForm();
+            UserHelper.ResetCurrentUser();
+            var form = new Login();
+            Hide();
             form.Show();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            
+            Close();
         }
 
         private void button8_Click_1(object sender, EventArgs e)

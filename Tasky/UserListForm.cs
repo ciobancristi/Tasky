@@ -26,6 +26,7 @@ namespace Tasky
             BindData();
             addUserButton.Visible = isAddUserVisible;
             button4.Visible = isAddUserVisible;
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
         private void BindData()
@@ -46,16 +47,6 @@ namespace Tasky
         private void HandleOnAddNewUserEvent(object sender, EventArgs e)
         {
             BindData();
-        }
-
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void UserListForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -90,16 +81,12 @@ namespace Tasky
             this.Close();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var log = new Login();
+            UserHelper.ResetCurrentUser();
+            var login = new Login();
             this.Hide();
-            log.Show();
+            login.Show();
             this.Close();
         }
 
@@ -109,6 +96,14 @@ namespace Tasky
             this.Hide();
             userForm.Show();
             this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var form = new HomeForm();
+            Hide();
+            form.Show();
+            Close();
         }
     }
 }

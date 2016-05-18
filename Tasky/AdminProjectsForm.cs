@@ -15,12 +15,14 @@ namespace Tasky
     {
         private IProjectService _projectService;
         private IMapper _mapper;
+
         public AdminProjectsForm()
         {
             _projectService = new ProjectService();
             _mapper = App.Mapper;
             InitializeComponent();
             BindData();
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
         private void BindData()
@@ -46,38 +48,9 @@ namespace Tasky
             BindData();
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void deleteProjectButton_Click(object sender, EventArgs e)
         {
             var project = projectsDataGridView.SelectedRows;
-        }
-
-        private void editProjectButton_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void button7_Click_1(object sender, EventArgs e)
@@ -118,6 +91,23 @@ namespace Tasky
             this.Hide();
             userForm.Show();
             this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var form = new HomeForm();
+            Hide();
+            form.Show();
+            Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UserHelper.ResetCurrentUser();
+            var form = new Login();
+            Hide();
+            form.Show();
+            Close();
         }
     }
 }

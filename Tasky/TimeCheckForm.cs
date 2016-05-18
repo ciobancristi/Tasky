@@ -24,6 +24,7 @@ namespace Tasky
 
             InitializeComponent();
             BindData();
+            label4.Text = UserHelper.CurrentUserFullName;
         }
 
         private void BindData()
@@ -219,6 +220,23 @@ namespace Tasky
             this.Hide();
             userForm.Show();
             this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UserHelper.ResetCurrentUser();
+            var form = new Login();
+            Hide();
+            form.Show();
+            Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var form = new HomeForm();
+            Hide();
+            form.Show();
+            Close();
         }
     }
 }

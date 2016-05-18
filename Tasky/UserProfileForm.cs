@@ -31,17 +31,19 @@ namespace Tasky
             if (_currentUser.Phone != null)
                 phoneTextBox.Text = _currentUser.Phone;
 
- 
+            label4.Text = UserHelper.CurrentUserFullName;
 
         }
-
+        // Chirri wtf is this?!
         private UserDetail UserDetails()
         {
             _userService = new UserService();
+            // foloseste UserHelper.CurrentUserDetails
             UserDetail _currentUser = _userService.GetUserDetails();
             return _currentUser;
         }
 
+        // TODO: add validation
         private void submitDataButton_Click(object sender, EventArgs e)
         {
             UserDetail _currentUser = UserDetails();
@@ -58,6 +60,7 @@ namespace Tasky
             _userService.PostUserDetails(_currentUser);
         }
 
+        //TODO: add validation
         private void changePasswordButton_Click(object sender, EventArgs e)
         {
             _userService = new UserService();
@@ -71,11 +74,7 @@ namespace Tasky
         private void changePasswordLabel_Click(object sender, EventArgs e)
         {
             panelChangePass.Visible = true;
-        }
-
-        private void UserProfileForm_Load(object sender, EventArgs e)
-        {
-
+            panelUpdateInfo.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,6 +85,7 @@ namespace Tasky
         private void titleLabel_Click(object sender, EventArgs e)
         {
             panelUpdateInfo.Visible = true;
+            panelChangePass.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -134,6 +134,23 @@ namespace Tasky
             this.Hide();
             userForm.Show();
             this.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UserHelper.ResetCurrentUser();
+            var form = new Login();
+            Hide();
+            form.Show();
+            Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var form = new HomeForm();
+            Hide();
+            form.Show();
+            Close();
         }
     }
 }
