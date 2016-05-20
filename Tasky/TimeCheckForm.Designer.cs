@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.titleLabel = new System.Windows.Forms.Label();
             this.projectLabel = new System.Windows.Forms.Label();
@@ -63,9 +63,10 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(242, 87);
+            this.dateTimePicker.Location = new System.Drawing.Point(363, 134);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(298, 26);
             this.dateTimePicker.TabIndex = 0;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
@@ -73,11 +74,12 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.titleLabel.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.titleLabel.Location = new System.Drawing.Point(177, 13);
+            this.titleLabel.Location = new System.Drawing.Point(330, 30);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(926, 31);
+            this.titleLabel.Size = new System.Drawing.Size(502, 38);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Add task activity for selected date ";
             // 
@@ -87,9 +89,10 @@
             this.projectLabel.BackColor = System.Drawing.Color.Transparent;
             this.projectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.projectLabel.Location = new System.Drawing.Point(171, 129);
+            this.projectLabel.Location = new System.Drawing.Point(256, 198);
+            this.projectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectLabel.Name = "projectLabel";
-            this.projectLabel.Size = new System.Drawing.Size(52, 17);
+            this.projectLabel.Size = new System.Drawing.Size(72, 25);
             this.projectLabel.TabIndex = 2;
             this.projectLabel.Text = "Project";
             // 
@@ -99,9 +102,10 @@
             this.taskLabel.BackColor = System.Drawing.Color.Transparent;
             this.taskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taskLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.taskLabel.Location = new System.Drawing.Point(184, 171);
+            this.taskLabel.Location = new System.Drawing.Point(276, 263);
+            this.taskLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.taskLabel.Name = "taskLabel";
-            this.taskLabel.Size = new System.Drawing.Size(39, 17);
+            this.taskLabel.Size = new System.Drawing.Size(56, 25);
             this.taskLabel.TabIndex = 3;
             this.taskLabel.Text = "Task";
             // 
@@ -111,9 +115,10 @@
             this.hoursWorkedDateTimePicker.BackColor = System.Drawing.Color.Transparent;
             this.hoursWorkedDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hoursWorkedDateTimePicker.ForeColor = System.Drawing.Color.Maroon;
-            this.hoursWorkedDateTimePicker.Location = new System.Drawing.Point(175, 212);
+            this.hoursWorkedDateTimePicker.Location = new System.Drawing.Point(262, 326);
+            this.hoursWorkedDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hoursWorkedDateTimePicker.Name = "hoursWorkedDateTimePicker";
-            this.hoursWorkedDateTimePicker.Size = new System.Drawing.Size(46, 17);
+            this.hoursWorkedDateTimePicker.Size = new System.Drawing.Size(64, 25);
             this.hoursWorkedDateTimePicker.TabIndex = 4;
             this.hoursWorkedDateTimePicker.Text = "Hours";
             // 
@@ -123,26 +128,29 @@
             this.commentsLabel.BackColor = System.Drawing.Color.Transparent;
             this.commentsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commentsLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.commentsLabel.Location = new System.Drawing.Point(150, 265);
+            this.commentsLabel.Location = new System.Drawing.Point(225, 408);
+            this.commentsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.commentsLabel.Name = "commentsLabel";
-            this.commentsLabel.Size = new System.Drawing.Size(74, 17);
+            this.commentsLabel.Size = new System.Drawing.Size(107, 25);
             this.commentsLabel.TabIndex = 5;
             this.commentsLabel.Text = "Comments";
             // 
             // hoursTextBox
             // 
             this.hoursTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hoursTextBox.Location = new System.Drawing.Point(243, 209);
+            this.hoursTextBox.Location = new System.Drawing.Point(364, 322);
+            this.hoursTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.hoursTextBox.Name = "hoursTextBox";
-            this.hoursTextBox.Size = new System.Drawing.Size(121, 22);
+            this.hoursTextBox.Size = new System.Drawing.Size(180, 30);
             this.hoursTextBox.TabIndex = 6;
             // 
             // commentsTextBox
             // 
             this.commentsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.commentsTextBox.Location = new System.Drawing.Point(243, 261);
+            this.commentsTextBox.Location = new System.Drawing.Point(364, 402);
+            this.commentsTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.commentsTextBox.Name = "commentsTextBox";
-            this.commentsTextBox.Size = new System.Drawing.Size(342, 39);
+            this.commentsTextBox.Size = new System.Drawing.Size(511, 58);
             this.commentsTextBox.TabIndex = 9;
             this.commentsTextBox.Text = "";
             // 
@@ -155,18 +163,19 @@
             this.activitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.activitiesDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.activitiesDataGridView.GridColor = System.Drawing.SystemColors.InactiveBorder;
-            this.activitiesDataGridView.Location = new System.Drawing.Point(243, 320);
+            this.activitiesDataGridView.Location = new System.Drawing.Point(364, 492);
+            this.activitiesDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.activitiesDataGridView.MultiSelect = false;
             this.activitiesDataGridView.Name = "activitiesDataGridView";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.activitiesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.activitiesDataGridView.Size = new System.Drawing.Size(361, 123);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.activitiesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.activitiesDataGridView.Size = new System.Drawing.Size(542, 189);
             this.activitiesDataGridView.TabIndex = 10;
             // 
             // myActivityLabel
@@ -175,9 +184,10 @@
             this.myActivityLabel.BackColor = System.Drawing.Color.Transparent;
             this.myActivityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myActivityLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.myActivityLabel.Location = new System.Drawing.Point(145, 320);
+            this.myActivityLabel.Location = new System.Drawing.Point(218, 492);
+            this.myActivityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.myActivityLabel.Name = "myActivityLabel";
-            this.myActivityLabel.Size = new System.Drawing.Size(74, 17);
+            this.myActivityLabel.Size = new System.Drawing.Size(106, 25);
             this.myActivityLabel.TabIndex = 11;
             this.myActivityLabel.Text = "My Activity";
             // 
@@ -187,9 +197,10 @@
             this.addTaskActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addTaskActivityButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addTaskActivityButton.ForeColor = System.Drawing.Color.Indigo;
-            this.addTaskActivityButton.Location = new System.Drawing.Point(483, 506);
+            this.addTaskActivityButton.Location = new System.Drawing.Point(724, 778);
+            this.addTaskActivityButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addTaskActivityButton.Name = "addTaskActivityButton";
-            this.addTaskActivityButton.Size = new System.Drawing.Size(121, 27);
+            this.addTaskActivityButton.Size = new System.Drawing.Size(182, 42);
             this.addTaskActivityButton.TabIndex = 13;
             this.addTaskActivityButton.Text = "Add Task Activity";
             this.addTaskActivityButton.UseVisualStyleBackColor = false;
@@ -199,18 +210,20 @@
             // 
             this.tasksComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tasksComboBox.FormattingEnabled = true;
-            this.tasksComboBox.Location = new System.Drawing.Point(243, 168);
+            this.tasksComboBox.Location = new System.Drawing.Point(364, 258);
+            this.tasksComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tasksComboBox.Name = "tasksComboBox";
-            this.tasksComboBox.Size = new System.Drawing.Size(148, 24);
+            this.tasksComboBox.Size = new System.Drawing.Size(220, 33);
             this.tasksComboBox.TabIndex = 15;
             // 
             // projectComboBox
             // 
             this.projectComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectComboBox.FormattingEnabled = true;
-            this.projectComboBox.Location = new System.Drawing.Point(243, 126);
+            this.projectComboBox.Location = new System.Drawing.Point(364, 194);
+            this.projectComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.projectComboBox.Name = "projectComboBox";
-            this.projectComboBox.Size = new System.Drawing.Size(121, 24);
+            this.projectComboBox.Size = new System.Drawing.Size(180, 33);
             this.projectComboBox.TabIndex = 16;
             this.projectComboBox.SelectedIndexChanged += new System.EventHandler(this.projectComboBox_SelectedIndexChanged);
             // 
@@ -225,19 +238,19 @@
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(1, 2);
+            this.panel2.Location = new System.Drawing.Point(2, 3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(129, 560);
+            this.panel2.Size = new System.Drawing.Size(192, 860);
             this.panel2.TabIndex = 17;
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(47, 526);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(70, 809);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(39, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(57, 20);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "log out";
@@ -247,9 +260,10 @@
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.Maroon;
-            this.button5.Location = new System.Drawing.Point(11, 386);
+            this.button5.Location = new System.Drawing.Point(16, 594);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 30);
+            this.button5.Size = new System.Drawing.Size(158, 46);
             this.button5.TabIndex = 11;
             this.button5.Text = "Message Users";
             this.button5.UseVisualStyleBackColor = true;
@@ -259,9 +273,10 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Maroon;
-            this.button4.Location = new System.Drawing.Point(10, 314);
+            this.button4.Location = new System.Drawing.Point(15, 483);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 30);
+            this.button4.Size = new System.Drawing.Size(158, 46);
             this.button4.TabIndex = 10;
             this.button4.Text = "Projects";
             this.button4.UseVisualStyleBackColor = true;
@@ -271,9 +286,10 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.Maroon;
-            this.button6.Location = new System.Drawing.Point(10, 350);
+            this.button6.Location = new System.Drawing.Point(15, 538);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(105, 30);
+            this.button6.Size = new System.Drawing.Size(158, 46);
             this.button6.TabIndex = 9;
             this.button6.Text = "Client";
             this.button6.UseVisualStyleBackColor = true;
@@ -283,9 +299,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::Tasky.Properties.Resources.tasky_logo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 17);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 91);
+            this.pictureBox2.Size = new System.Drawing.Size(158, 140);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -294,9 +311,10 @@
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.Maroon;
-            this.button7.Location = new System.Drawing.Point(11, 242);
+            this.button7.Location = new System.Drawing.Point(16, 372);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 30);
+            this.button7.Size = new System.Drawing.Size(156, 46);
             this.button7.TabIndex = 3;
             this.button7.Text = "Users";
             this.button7.UseVisualStyleBackColor = true;
@@ -306,9 +324,10 @@
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Maroon;
-            this.button8.Location = new System.Drawing.Point(10, 278);
+            this.button8.Location = new System.Drawing.Point(15, 428);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(105, 30);
+            this.button8.Size = new System.Drawing.Size(158, 46);
             this.button8.TabIndex = 5;
             this.button8.Text = "Log Hours";
             this.button8.UseVisualStyleBackColor = true;
@@ -318,17 +337,19 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(11, 108);
+            this.panel1.Location = new System.Drawing.Point(16, 166);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(105, 128);
+            this.panel1.Size = new System.Drawing.Size(158, 197);
             this.panel1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 96);
+            this.label4.Location = new System.Drawing.Point(4, 148);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "full name";
             // 
@@ -336,8 +357,9 @@
             // 
             this.pictureBox1.Image = global::Tasky.Properties.Resources.default_user_image;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 93);
+            this.pictureBox1.Size = new System.Drawing.Size(156, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -348,21 +370,20 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(184, 89);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(276, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 17);
+            this.label2.Size = new System.Drawing.Size(53, 25);
             this.label2.TabIndex = 18;
             this.label2.Text = "Date";
             // 
             // TimeCheckForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(624, 554);
+            this.ClientSize = new System.Drawing.Size(936, 852);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.projectComboBox);
@@ -379,6 +400,7 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.dateTimePicker);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TimeCheckForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.TimeCheckForm_Load);

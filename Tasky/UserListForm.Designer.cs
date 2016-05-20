@@ -60,12 +60,12 @@
             this.usersGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersGridView.GridColor = System.Drawing.SystemColors.InactiveCaption;
-            this.usersGridView.Location = new System.Drawing.Point(128, 90);
+            this.usersGridView.Location = new System.Drawing.Point(209, 169);
             this.usersGridView.Margin = new System.Windows.Forms.Padding(2);
             this.usersGridView.Name = "usersGridView";
             this.usersGridView.RowHeadersVisible = false;
             this.usersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usersGridView.Size = new System.Drawing.Size(418, 332);
+            this.usersGridView.Size = new System.Drawing.Size(711, 475);
             this.usersGridView.TabIndex = 0;
             // 
             // addUserButton
@@ -74,10 +74,10 @@
             this.addUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addUserButton.ForeColor = System.Drawing.Color.Indigo;
-            this.addUserButton.Location = new System.Drawing.Point(139, 487);
+            this.addUserButton.Location = new System.Drawing.Point(209, 767);
             this.addUserButton.Margin = new System.Windows.Forms.Padding(2);
             this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(102, 30);
+            this.addUserButton.Size = new System.Drawing.Size(256, 43);
             this.addUserButton.TabIndex = 1;
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = false;
@@ -90,10 +90,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Indigo;
-            this.button4.Location = new System.Drawing.Point(409, 487);
+            this.button4.Location = new System.Drawing.Point(664, 767);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(137, 30);
+            this.button4.Size = new System.Drawing.Size(256, 43);
             this.button4.TabIndex = 15;
             this.button4.Text = "Save Changes";
             this.button4.UseVisualStyleBackColor = false;
@@ -103,12 +103,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.label2.Font = new System.Drawing.Font("Open Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(272, 32);
+            this.label2.Location = new System.Drawing.Point(429, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 30);
+            this.label2.Size = new System.Drawing.Size(275, 55);
             this.label2.TabIndex = 16;
             this.label2.Text = "Fellow Users";
             // 
@@ -123,20 +123,21 @@
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.panel1);
+            this.panel2.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(1, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(116, 558);
+            this.panel2.Size = new System.Drawing.Size(192, 860);
             this.panel2.TabIndex = 19;
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(42, 526);
+            this.linkLabel1.Location = new System.Drawing.Point(65, 822);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(39, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(113, 38);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "log out";
@@ -146,10 +147,10 @@
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.Maroon;
-            this.button5.Location = new System.Drawing.Point(10, 386);
+            this.button5.Location = new System.Drawing.Point(16, 594);
             this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(95, 30);
+            this.button5.Size = new System.Drawing.Size(158, 46);
             this.button5.TabIndex = 11;
             this.button5.Text = "Message Users";
             this.button5.UseVisualStyleBackColor = true;
@@ -159,10 +160,10 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(9, 314);
+            this.button1.Location = new System.Drawing.Point(15, 483);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 30);
+            this.button1.Size = new System.Drawing.Size(158, 46);
             this.button1.TabIndex = 10;
             this.button1.Text = "Projects";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,10 +173,10 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.Maroon;
-            this.button6.Location = new System.Drawing.Point(9, 350);
+            this.button6.Location = new System.Drawing.Point(15, 538);
             this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 30);
+            this.button6.Size = new System.Drawing.Size(158, 46);
             this.button6.TabIndex = 9;
             this.button6.Text = "Client";
             this.button6.UseVisualStyleBackColor = true;
@@ -185,10 +186,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::Tasky.Properties.Resources.tasky_logo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(17, 22);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(95, 91);
+            this.pictureBox2.Size = new System.Drawing.Size(158, 140);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -197,10 +198,10 @@
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.Maroon;
-            this.button7.Location = new System.Drawing.Point(10, 242);
+            this.button7.Location = new System.Drawing.Point(16, 372);
             this.button7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 30);
+            this.button7.Size = new System.Drawing.Size(158, 46);
             this.button7.TabIndex = 3;
             this.button7.Text = "Users";
             this.button7.UseVisualStyleBackColor = true;
@@ -209,10 +210,10 @@
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Maroon;
-            this.button8.Location = new System.Drawing.Point(9, 278);
+            this.button8.Location = new System.Drawing.Point(16, 428);
             this.button8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(95, 30);
+            this.button8.Size = new System.Drawing.Size(158, 46);
             this.button8.TabIndex = 5;
             this.button8.Text = "Log Hours";
             this.button8.UseVisualStyleBackColor = true;
@@ -223,29 +224,29 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(10, 108);
+            this.panel1.Location = new System.Drawing.Point(16, 168);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(95, 128);
+            this.panel1.Size = new System.Drawing.Size(158, 197);
             this.panel1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 96);
+            this.label4.Location = new System.Drawing.Point(26, 162);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(150, 38);
             this.label4.TabIndex = 7;
             this.label4.Text = "full name";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Tasky.Properties.Resources.default_user_image;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 93);
+            this.pictureBox1.Size = new System.Drawing.Size(156, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -253,12 +254,12 @@
             // 
             // UserListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(562, 554);
+            this.ClientSize = new System.Drawing.Size(936, 852);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button4);

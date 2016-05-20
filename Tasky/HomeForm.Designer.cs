@@ -78,9 +78,10 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 68);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(429, 415);
+            this.dataGridView1.Size = new System.Drawing.Size(644, 638);
             this.dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -120,10 +121,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label2.Location = new System.Drawing.Point(292, 11);
+            this.label2.Font = new System.Drawing.Font("Open Sans", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(443, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 40);
+            this.label2.Size = new System.Drawing.Size(219, 55);
             this.label2.TabIndex = 11;
             this.label2.Text = "Welcome!";
             // 
@@ -131,9 +133,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 11);
+            this.label3.Location = new System.Drawing.Point(22, 17);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.Size = new System.Drawing.Size(107, 29);
             this.label3.TabIndex = 13;
             this.label3.Text = "Activities";
             // 
@@ -149,18 +152,18 @@
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(129, 558);
+            this.panel2.Size = new System.Drawing.Size(192, 857);
             this.panel2.TabIndex = 18;
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(47, 526);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(70, 809);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(39, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(57, 20);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "log out";
@@ -170,9 +173,10 @@
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.Maroon;
-            this.button5.Location = new System.Drawing.Point(11, 386);
+            this.button5.Location = new System.Drawing.Point(16, 594);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 30);
+            this.button5.Size = new System.Drawing.Size(158, 46);
             this.button5.TabIndex = 11;
             this.button5.Text = "Message Users";
             this.button5.UseVisualStyleBackColor = true;
@@ -182,9 +186,10 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Maroon;
-            this.button4.Location = new System.Drawing.Point(10, 314);
+            this.button4.Location = new System.Drawing.Point(15, 483);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 30);
+            this.button4.Size = new System.Drawing.Size(158, 46);
             this.button4.TabIndex = 10;
             this.button4.Text = "Projects";
             this.button4.UseVisualStyleBackColor = true;
@@ -194,9 +199,10 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.Maroon;
-            this.button6.Location = new System.Drawing.Point(10, 350);
+            this.button6.Location = new System.Drawing.Point(15, 538);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(105, 30);
+            this.button6.Size = new System.Drawing.Size(158, 46);
             this.button6.TabIndex = 9;
             this.button6.Text = "Client";
             this.button6.UseVisualStyleBackColor = true;
@@ -206,9 +212,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::Tasky.Properties.Resources.tasky_logo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 17);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 91);
+            this.pictureBox2.Size = new System.Drawing.Size(158, 140);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -216,9 +223,10 @@
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.Maroon;
-            this.button7.Location = new System.Drawing.Point(11, 242);
+            this.button7.Location = new System.Drawing.Point(16, 372);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 30);
+            this.button7.Size = new System.Drawing.Size(156, 46);
             this.button7.TabIndex = 3;
             this.button7.Text = "Users";
             this.button7.UseVisualStyleBackColor = true;
@@ -228,9 +236,10 @@
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Maroon;
-            this.button8.Location = new System.Drawing.Point(10, 278);
+            this.button8.Location = new System.Drawing.Point(15, 428);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(105, 30);
+            this.button8.Size = new System.Drawing.Size(158, 46);
             this.button8.TabIndex = 5;
             this.button8.Text = "Log Hours";
             this.button8.UseVisualStyleBackColor = true;
@@ -241,17 +250,19 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(11, 108);
+            this.panel1.Location = new System.Drawing.Point(16, 166);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(105, 128);
+            this.panel1.Size = new System.Drawing.Size(158, 197);
             this.panel1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 96);
+            this.label4.Location = new System.Drawing.Point(4, 148);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "full name";
             // 
@@ -259,8 +270,9 @@
             // 
             this.pictureBox1.Image = global::Tasky.Properties.Resources.default_user_image;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 93);
+            this.pictureBox1.Size = new System.Drawing.Size(156, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -270,10 +282,9 @@
             // 
             this.panelUserHome.Controls.Add(this.label3);
             this.panelUserHome.Controls.Add(this.dataGridView1);
-            this.panelUserHome.Location = new System.Drawing.Point(149, 61);
-            this.panelUserHome.Margin = new System.Windows.Forms.Padding(2);
+            this.panelUserHome.Location = new System.Drawing.Point(224, 94);
             this.panelUserHome.Name = "panelUserHome";
-            this.panelUserHome.Size = new System.Drawing.Size(460, 478);
+            this.panelUserHome.Size = new System.Drawing.Size(690, 735);
             this.panelUserHome.TabIndex = 19;
             // 
             // panelAdminHome
@@ -285,19 +296,19 @@
             this.panelAdminHome.Controls.Add(this.CurrentWeekReminder);
             this.panelAdminHome.Controls.Add(this.lastWeekButton);
             this.panelAdminHome.Controls.Add(this.label9);
-            this.panelAdminHome.Location = new System.Drawing.Point(149, 61);
-            this.panelAdminHome.Margin = new System.Windows.Forms.Padding(2);
+            this.panelAdminHome.Location = new System.Drawing.Point(224, 94);
             this.panelAdminHome.Name = "panelAdminHome";
-            this.panelAdminHome.Size = new System.Drawing.Size(460, 478);
+            this.panelAdminHome.Size = new System.Drawing.Size(690, 735);
             this.panelAdminHome.TabIndex = 14;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(232, 169);
+            this.label7.Location = new System.Drawing.Point(348, 260);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 17);
+            this.label7.Size = new System.Drawing.Size(258, 25);
             this.label7.TabIndex = 29;
             this.label7.Text = "Number of Active Projects: 2";
             // 
@@ -305,9 +316,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(49, 123);
+            this.label6.Location = new System.Drawing.Point(74, 189);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 17);
+            this.label6.Size = new System.Drawing.Size(210, 25);
             this.label6.TabIndex = 28;
             this.label6.Text = "Number of Projects: 12";
             // 
@@ -315,9 +327,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(271, 75);
+            this.label5.Location = new System.Drawing.Point(406, 115);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 17);
+            this.label5.Size = new System.Drawing.Size(200, 25);
             this.label5.TabIndex = 27;
             this.label5.Text = "Number of Clients: 25";
             // 
@@ -325,9 +338,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 29);
+            this.label1.Location = new System.Drawing.Point(74, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 17);
+            this.label1.Size = new System.Drawing.Size(242, 25);
             this.label1.TabIndex = 26;
             this.label1.Text = "Number of Employees : 20";
             // 
@@ -335,9 +349,10 @@
             // 
             this.CurrentWeekReminder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CurrentWeekReminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentWeekReminder.Location = new System.Drawing.Point(99, 325);
+            this.CurrentWeekReminder.Location = new System.Drawing.Point(148, 500);
+            this.CurrentWeekReminder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CurrentWeekReminder.Name = "CurrentWeekReminder";
-            this.CurrentWeekReminder.Size = new System.Drawing.Size(267, 30);
+            this.CurrentWeekReminder.Size = new System.Drawing.Size(400, 46);
             this.CurrentWeekReminder.TabIndex = 24;
             this.CurrentWeekReminder.Text = "Current Week";
             this.CurrentWeekReminder.UseVisualStyleBackColor = true;
@@ -346,9 +361,10 @@
             // 
             this.lastWeekButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lastWeekButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastWeekButton.Location = new System.Drawing.Point(99, 391);
+            this.lastWeekButton.Location = new System.Drawing.Point(148, 602);
+            this.lastWeekButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lastWeekButton.Name = "lastWeekButton";
-            this.lastWeekButton.Size = new System.Drawing.Size(267, 30);
+            this.lastWeekButton.Size = new System.Drawing.Size(400, 46);
             this.lastWeekButton.TabIndex = 23;
             this.lastWeekButton.Text = "Last Week";
             this.lastWeekButton.UseVisualStyleBackColor = true;
@@ -357,23 +373,24 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.label9.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Indigo;
-            this.label9.Location = new System.Drawing.Point(12, 246);
+            this.label9.Location = new System.Drawing.Point(20, 376);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(843, 26);
+            this.label9.Size = new System.Drawing.Size(630, 38);
             this.label9.TabIndex = 22;
             this.label9.Text = "Send Missing Hours Reminder To Employees";
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Ivory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(624, 554);
+            this.ClientSize = new System.Drawing.Size(936, 852);
             this.Controls.Add(this.panelAdminHome);
             this.Controls.Add(this.panelUserHome);
             this.Controls.Add(this.panel2);
@@ -381,6 +398,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";

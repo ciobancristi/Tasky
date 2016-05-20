@@ -65,7 +65,7 @@
             this.projectNameLabel.Location = new System.Drawing.Point(377, 166);
             this.projectNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectNameLabel.Name = "projectNameLabel";
-            this.projectNameLabel.Size = new System.Drawing.Size(49, 17);
+            this.projectNameLabel.Size = new System.Drawing.Size(70, 25);
             this.projectNameLabel.TabIndex = 0;
             this.projectNameLabel.Text = "Name:";
             // 
@@ -78,7 +78,7 @@
             this.clientNameLabel.Location = new System.Drawing.Point(379, 229);
             this.clientNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientNameLabel.Name = "clientNameLabel";
-            this.clientNameLabel.Size = new System.Drawing.Size(47, 17);
+            this.clientNameLabel.Size = new System.Drawing.Size(68, 25);
             this.clientNameLabel.TabIndex = 1;
             this.clientNameLabel.Text = "Client:";
             // 
@@ -91,7 +91,7 @@
             this.tasksLabel.Location = new System.Drawing.Point(379, 331);
             this.tasksLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tasksLabel.Name = "tasksLabel";
-            this.tasksLabel.Size = new System.Drawing.Size(50, 17);
+            this.tasksLabel.Size = new System.Drawing.Size(72, 25);
             this.tasksLabel.TabIndex = 3;
             this.tasksLabel.Text = "Tasks:";
             // 
@@ -104,7 +104,7 @@
             this.usersLabel.Location = new System.Drawing.Point(379, 535);
             this.usersLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usersLabel.Name = "usersLabel";
-            this.usersLabel.Size = new System.Drawing.Size(49, 17);
+            this.usersLabel.Size = new System.Drawing.Size(69, 25);
             this.usersLabel.TabIndex = 4;
             this.usersLabel.Text = "Users:";
             // 
@@ -114,7 +114,7 @@
             this.projectNameTexBox.Location = new System.Drawing.Point(524, 166);
             this.projectNameTexBox.Margin = new System.Windows.Forms.Padding(4);
             this.projectNameTexBox.Name = "projectNameTexBox";
-            this.projectNameTexBox.Size = new System.Drawing.Size(217, 22);
+            this.projectNameTexBox.Size = new System.Drawing.Size(217, 30);
             this.projectNameTexBox.TabIndex = 5;
             // 
             // addProjectButton
@@ -139,7 +139,7 @@
             this.taskCheckedListBox.Location = new System.Drawing.Point(524, 331);
             this.taskCheckedListBox.Margin = new System.Windows.Forms.Padding(4);
             this.taskCheckedListBox.Name = "taskCheckedListBox";
-            this.taskCheckedListBox.Size = new System.Drawing.Size(318, 123);
+            this.taskCheckedListBox.Size = new System.Drawing.Size(318, 104);
             this.taskCheckedListBox.TabIndex = 10;
             // 
             // userCheckedListBox
@@ -149,7 +149,7 @@
             this.userCheckedListBox.Location = new System.Drawing.Point(524, 535);
             this.userCheckedListBox.Margin = new System.Windows.Forms.Padding(4);
             this.userCheckedListBox.Name = "userCheckedListBox";
-            this.userCheckedListBox.Size = new System.Drawing.Size(318, 123);
+            this.userCheckedListBox.Size = new System.Drawing.Size(318, 104);
             this.userCheckedListBox.TabIndex = 11;
             // 
             // clientsComboBox
@@ -158,7 +158,7 @@
             this.clientsComboBox.FormattingEnabled = true;
             this.clientsComboBox.Location = new System.Drawing.Point(524, 219);
             this.clientsComboBox.Name = "clientsComboBox";
-            this.clientsComboBox.Size = new System.Drawing.Size(217, 24);
+            this.clientsComboBox.Size = new System.Drawing.Size(217, 33);
             this.clientsComboBox.TabIndex = 12;
             // 
             // panel2
@@ -184,7 +184,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
             this.linkLabel1.Location = new System.Drawing.Point(70, 810);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(48, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(70, 25);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "log out";
@@ -284,7 +284,7 @@
             this.label4.Location = new System.Drawing.Point(4, 148);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 16);
+            this.label4.Size = new System.Drawing.Size(90, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "full name";
             // 
@@ -303,11 +303,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.label1.Font = new System.Drawing.Font("Open Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(497, 56);
+            this.label1.Location = new System.Drawing.Point(451, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 30);
+            this.label1.Size = new System.Drawing.Size(254, 55);
             this.label1.TabIndex = 21;
             this.label1.Text = "Add Project";
             // 
@@ -318,7 +318,7 @@
             this.linkLabel2.LinkColor = System.Drawing.Color.Maroon;
             this.linkLabel2.Location = new System.Drawing.Point(558, 810);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(39, 16);
+            this.linkLabel2.Size = new System.Drawing.Size(56, 25);
             this.linkLabel2.TabIndex = 22;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Back";
@@ -326,7 +326,7 @@
             // 
             // AddProjectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
