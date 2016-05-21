@@ -65,6 +65,7 @@
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Common\NameValueItem.cs" />
     <Compile Include="Models\ClientViewModel.cs" />
+    <Compile Include="Models\EditProjectModel.cs" />
     <Compile Include="Models\NewProjectModel.cs" />
     <Compile Include="Models\ProjectUserViewModel.cs" />
     <Compile Include="Models\ProjectViewModel.cs" />

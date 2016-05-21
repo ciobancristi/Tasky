@@ -75,18 +75,9 @@ namespace Tasky
             var tasks = _taskService.GetTasks(date)
                         .Select(x => _mapper.Map<TaskViewModel>(x))
                         .ToList();
-            if (tasks.Count > 0)
-            {
-                activitiesDataGridView.DataSource = tasks;
-                activitiesDataGridView.Columns[0].Visible = false;
-                activitiesDataGridView.Visible = true;
-                //noActivityLabel.Visible = false;
-            }
-            else
-            {
-                activitiesDataGridView.Visible = false;
-                //noActivityLabel.Visible = true;
-            }
+            activitiesDataGridView.DataSource = tasks;
+            activitiesDataGridView.Columns[0].Visible = false;
+            activitiesDataGridView.Visible = true;
         }
 
         private void dateTimePicker_ValueChanged(object sender, System.EventArgs e)
@@ -152,26 +143,6 @@ namespace Tasky
         {
             NameValueItem selectedProject = (NameValueItem)projectComboBox.SelectedItem;
             BindProjectTasks(int.Parse(selectedProject.Value));
-        }
-
-        private void TimeCheckForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void button5_Click(object sender, EventArgs e)

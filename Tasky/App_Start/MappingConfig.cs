@@ -39,6 +39,10 @@ namespace Tasky.App_Start
                 cfg.CreateMap<Project, ProjectViewModel>()
                     .ForMember(x => x.ClientName, o => o.MapFrom(x => x.Client.Name));
 
+                cfg.CreateMap<UserDetail, NameValueItem>()
+                    .ForMember(x => x.Value, o => o.MapFrom(x => x.UserId))
+                    .ForMember(x => x.Name, o => o.MapFrom(x => x.FirstName + ' ' + x.LastName));
+
             });
             App.MapperConfiguration = config;
             App.Mapper = config.CreateMapper();

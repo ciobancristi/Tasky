@@ -14,6 +14,9 @@ namespace Tasky
         public HomeForm()
         {
             InitializeComponent();
+            _userService = new UserService();
+            _clientService = new ClientService();
+            _projectService = new ProjectService();
 
             if (UserHelper.IsAdmin())
             {
@@ -25,6 +28,7 @@ namespace Tasky
                 panelAdminHome.Visible = false;
                 panelUserHome.Visible = true;
             }
+            
             label4.Text = UserHelper.CurrentUserFullName;
             label1.Text = "Number of Employees : " + _userService.GetNumberOfEmployees();
             label5.Text = "Number of Clients: " + _clientService.GetNumberOfClients();

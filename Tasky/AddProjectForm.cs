@@ -13,8 +13,6 @@ namespace Tasky
 {
     public partial class AddProjectForm : Form
     {
-        public delegate void OnSaveEventHandler(object sender, EventArgs e);
-        public event OnSaveEventHandler OnSaveEvent;
 
         private IUserService _userService;
         private IProjectService _projectService;
@@ -32,19 +30,56 @@ namespace Tasky
 
             BindData();
             label4.Text = UserHelper.CurrentUserFullName;
+            label1.Text = "Add project";
         }
 
-        public AddProjectForm(Project project)
+        public AddProjectForm(int projectId)
         {
             InitializeComponent();
             _userService = new UserService();
             _projectService = new ProjectService();
             _clientService = new ClientService();
             _mapper = App.Mapper;
-            projectToEdit = project;
+            projectToEdit = _projectService.GetProject(projectId);
 
             BindData();
             label4.Text = UserHelper.CurrentUserFullName;
+            label1.Text = "Edit project";
+            MarkSelectedUsers();
+            MarkSelectedTasks();
+            clientsComboBox.SelectedIndex = clientsComboBox.FindStringExact(projectToEdit.Client.Name);
+            projectNameTexBox.Text = projectToEdit.Name;
+            checkBox1.Checked = projectToEdit.HasFinished;
+        }
+
+        private void MarkSelectedTasks()
+        {
+            foreach (var u in projectToEdit.ProjectTasks)
+            {
+                for (int i = 0; i < taskCheckedListBox.Items.Count; i++)
+                {
+                    NameValueItem item = (NameValueItem)taskCheckedListBox.Items[i];
+                    if (item.Value == u.ProjectTaskId.ToString())
+                    {
+                        taskCheckedListBox.SetItemChecked(i, true);
+                    }
+                }
+            }
+        }
+
+        private void MarkSelectedUsers()
+        {
+            foreach (var u in projectToEdit.Users)
+            {
+                for (int i = 0; i < userCheckedListBox.Items.Count; i++)
+                {
+                    NameValueItem item = (NameValueItem)userCheckedListBox.Items[i];
+                    if (item.Value == u.UserId.ToString())
+                    {
+                        userCheckedListBox.SetItemChecked(i, true);
+                    }
+                }
+            }
         }
 
         private void BindData()
@@ -56,22 +91,23 @@ namespace Tasky
 
         private void BindProjectUserData()
         {
-            var projectUsers = new List<ProjectUserViewModel>();
             var users = _userService.GetAllUserDetails()
                    .Select(x => _mapper.Map<NameValueItem>(x))
                    .ToList();
-            
-            ((ListBox)userCheckedListBox).DataSource = projectUsers;
+
+            ((ListBox)userCheckedListBox).DataSource = users;
             ((ListBox)userCheckedListBox).DisplayMember = "Name";
             ((ListBox)userCheckedListBox).ValueMember = "Value";
         }
 
         private void BindProjectTaskData()
         {
-            var tasks = _projectService.GetProjectTasks();
+            var tasks = _projectService.GetProjectTasks()
+                    .Select(x => _mapper.Map<NameValueItem>(x))
+                   .ToList();
             ((ListBox)taskCheckedListBox).DataSource = tasks;
             ((ListBox)taskCheckedListBox).DisplayMember = "Name";
-            ((ListBox)taskCheckedListBox).ValueMember = "ProjectTaskId";
+            ((ListBox)taskCheckedListBox).ValueMember = "Value";
         }
 
         private void BindClients()
@@ -83,7 +119,6 @@ namespace Tasky
             clientsComboBox.DisplayMember = "Name";
             clientsComboBox.ValueMember = "Value";
         }
-
 
         //ADD validation
         private void addProjectButton_Click(object sender, EventArgs e)
@@ -97,14 +132,14 @@ namespace Tasky
             {
                 userIds.Add(new Guid(user.Value));
             }
-            foreach (ProjectTask task in taskCheckedListBox.CheckedItems)
+            foreach (NameValueItem task in taskCheckedListBox.CheckedItems)
             {
-                taskIds.Add(task.ProjectTaskId);
+                taskIds.Add(int.Parse(task.Value));
             }
             if (projectName.Length > 0 && userIds.Count > 0
                 && taskIds.Count > 0 && clientsComboBox.Items.Count > 0)
             {
-                if (projectToEdit != null)
+                if (projectToEdit == null)
                 {
                     var newProject = new NewProjectModel
                     {
@@ -115,21 +150,28 @@ namespace Tasky
                     };
                     _projectService.AddProject(newProject);
                     MessageBox.Show("Project Saved Successfully");
-                    OnSaveEvent.Invoke(this, e);
+
+                    var projectsForm = new AdminProjectsForm();
+                    Hide();
+                    projectsForm.Show();
                     Close();
+
                 }
                 else
                 {
-                    var newProject = new NewProjectModel
+                    var editedProject = new EditProjectModel
                     {
                         Name = projectName,
                         ClientId = int.Parse(selectedClient.Value),
                         TaskIds = taskIds,
-                        UserIds = userIds
+                        UserIds = userIds,
+                        HasFinished = checkBox1.Checked
                     };
-                    //_projectService.EditProject(projectToEdit.ProjectId, newProject);
+                    _projectService.EditProject(projectToEdit.ProjectId, editedProject);
                     MessageBox.Show("Project Saved Successfully");
-                    OnSaveEvent.Invoke(this, e);
+                    var projectsForm = new AdminProjectsForm();
+                    Hide();
+                    projectsForm.Show();
                     Close();
                 }
             }

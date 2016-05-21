@@ -12,10 +12,10 @@ namespace Tasky.Services
         List<Project> GetActiveProjects(Guid userId);
         List<ProjectTask> GetProjectTasks(int projectId);
         List<ProjectTask> GetProjectTasks();
-        void DeleteProject(int projectId);
-        //void EditProject(int projectId, Project editedProject);
+        void EditProject(int projectId, EditProjectModel editedProject);
         int GetNumberOfActiveProjects();
         int GetNumberOfProjects();
+        Project GetProject(int projectId);
     }
     public class ProjectService : BaseService, IProjectService
     {
@@ -50,8 +50,7 @@ namespace Tasky.Services
                 throw new ArgumentNullException();
 
             var projects = _dbContext.Projects
-                            .Where(p => (p.Users.FirstOrDefault(u => u.UserId == userId) != null)
-                                        && p.HasFinished == false)
+                            .Where(p => p.Users.Any(u => u.UserId == userId) && p.HasFinished == false)
                             .ToList();
 
             return projects;
@@ -76,20 +75,7 @@ namespace Tasky.Services
             return projectTasks;
         }
 
-        public void DeleteProject(int projectId)
-        {
-            if (projectId < 0)
-                throw new ArgumentOutOfRangeException();
-
-            var project = _dbContext.Projects.FirstOrDefault(x => x.ProjectId == projectId);
-            if(project != null)
-            {
-                _dbContext.Projects.Remove(project);
-                _dbContext.SaveChanges();
-            }
-        }
-
-        public void EditProject(int projectId, NewProjectModel editedProject)
+        public void EditProject(int projectId, EditProjectModel editedProject)
         {
             var project = _dbContext.Projects.FirstOrDefault(x => x.ProjectId == projectId);
             var users = GetUsersByIds(editedProject.UserIds);
@@ -97,13 +83,18 @@ namespace Tasky.Services
             var projectToEdit = new Project
             {
                 Name = editedProject.Name,
-                HasFinished = false,
-                Created = DateTime.Now,
+                HasFinished = editedProject.HasFinished,
                 ProjectTasks = projectTasks,
                 Users = users,
                 ClientId = editedProject.ClientId
             };
-            project = projectToEdit;
+
+            project.Name = projectToEdit.Name;
+            project.HasFinished = projectToEdit.HasFinished;
+            project.ProjectTasks = projectToEdit.ProjectTasks;
+            project.Users = projectToEdit.Users;
+            project.ClientId = projectToEdit.ClientId;
+
             _dbContext.SaveChanges();
         }
 
@@ -116,6 +107,12 @@ namespace Tasky.Services
         {
             return _dbContext.Projects.Count();
         }
+
+        public Project GetProject(int projectId)
+        {
+            return _dbContext.Projects.FirstOrDefault(p => p.ProjectId == projectId);
+        }
+
         #endregion
 
         #region private members

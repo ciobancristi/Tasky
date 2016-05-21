@@ -39,18 +39,9 @@ namespace Tasky
         private void addProjectButton_Click(object sender, EventArgs e)
         {
             var form = new AddProjectForm();
-            form.OnSaveEvent += new AddProjectForm.OnSaveEventHandler(HandleOnAddNewProjectEvent);
+            Hide();
             form.Show();
-        }
-
-        private void HandleOnAddNewProjectEvent(object sender, EventArgs e)
-        {
-            BindData();
-        }
-
-        private void deleteProjectButton_Click(object sender, EventArgs e)
-        {
-            var project = projectsDataGridView.SelectedRows;
+            Close();
         }
 
         private void button7_Click_1(object sender, EventArgs e)
@@ -109,5 +100,16 @@ namespace Tasky
             form.Show();
             Close();
         }
+
+        private void editProjectButton_Click(object sender, EventArgs e)
+        {
+            var selectedRow = projectsDataGridView.SelectedRows[0];
+            var projectId = (int)selectedRow.Cells[0].Value;
+            var form = new AddProjectForm(projectId);
+            Hide();
+            form.Show();
+            Close();
+        }
+
     }
 }
