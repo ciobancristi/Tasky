@@ -77,7 +77,7 @@
             this.addUserButton.Location = new System.Drawing.Point(209, 767);
             this.addUserButton.Margin = new System.Windows.Forms.Padding(2);
             this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(256, 43);
+            this.addUserButton.Size = new System.Drawing.Size(256, 52);
             this.addUserButton.TabIndex = 1;
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = false;
@@ -93,7 +93,7 @@
             this.button4.Location = new System.Drawing.Point(664, 767);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(256, 43);
+            this.button4.Size = new System.Drawing.Size(256, 52);
             this.button4.TabIndex = 15;
             this.button4.Text = "Save Changes";
             this.button4.UseVisualStyleBackColor = false;
@@ -133,11 +133,12 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("SansSerif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(65, 822);
+            this.linkLabel1.Location = new System.Drawing.Point(75, 823);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(113, 38);
+            this.linkLabel1.Size = new System.Drawing.Size(57, 19);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "log out";
@@ -146,6 +147,7 @@
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("SansSerif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button5.ForeColor = System.Drawing.Color.Maroon;
             this.button5.Location = new System.Drawing.Point(16, 594);
             this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -159,6 +161,7 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("SansSerif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
             this.button1.Location = new System.Drawing.Point(15, 483);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -172,6 +175,7 @@
             // button6
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("SansSerif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button6.ForeColor = System.Drawing.Color.Maroon;
             this.button6.Location = new System.Drawing.Point(15, 538);
             this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -197,6 +201,7 @@
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("SansSerif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button7.ForeColor = System.Drawing.Color.Maroon;
             this.button7.Location = new System.Drawing.Point(16, 372);
             this.button7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -209,6 +214,7 @@
             // button8
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("SansSerif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button8.ForeColor = System.Drawing.Color.Maroon;
             this.button8.Location = new System.Drawing.Point(16, 428);
             this.button8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -233,10 +239,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 162);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(43, 160);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 38);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "full name";
             // 
