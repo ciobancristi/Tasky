@@ -103,9 +103,16 @@ namespace Tasky
 
         private void editProjectButton_Click(object sender, EventArgs e)
         {
+            AddProjectForm form;
             var selectedRow = projectsDataGridView.SelectedRows[0];
-            var projectId = (int)selectedRow.Cells[0].Value;
-            var form = new AddProjectForm(projectId);
+            if (selectedRow != null)
+            {
+                var projectId = (int)selectedRow.Cells[0].Value;
+                form = new AddProjectForm(projectId);
+            }else
+            {
+                form = new AddProjectForm();
+            }
             Hide();
             form.Show();
             Close();
