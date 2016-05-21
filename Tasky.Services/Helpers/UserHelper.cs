@@ -37,12 +37,22 @@ namespace Tasky.Services.Helpers
             return role != null;
         }
 
-        public static string CurrentUserFullName {
-            get {
+        public static string CurrentUserFullName
+        {
+            get
+            {
                 if (_currentUser != null)
                 {
-                    var fullName = _currentUser.UserDetail.FirstName + " " + _currentUser.UserDetail.LastName;
-                    if (fullName.Length == 0)
+                    string fullName;
+                    if (_currentUser.UserDetail != null)
+                    {
+                        fullName = _currentUser.UserDetail.FirstName + " " + _currentUser.UserDetail.LastName;
+                        if (fullName.Length == 0)
+                        {
+                            fullName = _currentUser.Name;
+                        }
+                    }
+                    else
                     {
                         fullName = _currentUser.Name;
                     }
@@ -52,7 +62,7 @@ namespace Tasky.Services.Helpers
                     throw new MissingFieldException();
             }
         }
-        
+
         public static UserDetail CurrentUserDetails
         {
             get
