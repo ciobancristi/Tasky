@@ -58,12 +58,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(330, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(220, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 38);
+            this.label1.Size = new System.Drawing.Size(73, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Clients";
             // 
@@ -71,51 +70,51 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(648, 46);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(432, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 54);
+            this.button1.Size = new System.Drawing.Size(166, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "Add new client";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // clientNameTextBox
             // 
-            this.clientNameTextBox.Location = new System.Drawing.Point(100, 65);
-            this.clientNameTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.clientNameTextBox.Location = new System.Drawing.Point(67, 42);
+            this.clientNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clientNameTextBox.Name = "clientNameTextBox";
-            this.clientNameTextBox.Size = new System.Drawing.Size(148, 26);
+            this.clientNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.clientNameTextBox.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(16, 68);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(11, 44);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Name";
             // 
             // listBoxClient
             // 
             this.listBoxClient.FormattingEnabled = true;
-            this.listBoxClient.ItemHeight = 20;
-            this.listBoxClient.Location = new System.Drawing.Point(210, 168);
+            this.listBoxClient.Location = new System.Drawing.Point(140, 109);
+            this.listBoxClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxClient.Name = "listBoxClient";
-            this.listBoxClient.Size = new System.Drawing.Size(378, 244);
+            this.listBoxClient.Size = new System.Drawing.Size(253, 160);
             this.listBoxClient.TabIndex = 17;
+            this.listBoxClient.SelectedIndexChanged += new System.EventHandler(this.listBoxClient_SelectedIndexChanged);
             // 
             // listBoxProject
             // 
             this.listBoxProject.FormattingEnabled = true;
-            this.listBoxProject.ItemHeight = 20;
-            this.listBoxProject.Location = new System.Drawing.Point(210, 429);
+            this.listBoxProject.Location = new System.Drawing.Point(140, 279);
+            this.listBoxProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxProject.Name = "listBoxProject";
-            this.listBoxProject.Size = new System.Drawing.Size(378, 224);
+            this.listBoxProject.Size = new System.Drawing.Size(253, 147);
             this.listBoxProject.TabIndex = 18;
             // 
             // panelNewClient
@@ -124,18 +123,20 @@
             this.panelNewClient.Controls.Add(this.button2);
             this.panelNewClient.Controls.Add(this.clientNameTextBox);
             this.panelNewClient.Controls.Add(this.label3);
-            this.panelNewClient.Location = new System.Drawing.Point(628, 168);
+            this.panelNewClient.Location = new System.Drawing.Point(419, 109);
+            this.panelNewClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelNewClient.Name = "panelNewClient";
-            this.panelNewClient.Size = new System.Drawing.Size(278, 175);
+            this.panelNewClient.Size = new System.Drawing.Size(185, 114);
             this.panelNewClient.TabIndex = 19;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(110, 0);
+            this.label2.Location = new System.Drawing.Point(73, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "New Client";
             // 
@@ -143,12 +144,14 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Indigo;
-            this.button2.Location = new System.Drawing.Point(100, 125);
+            this.button2.Location = new System.Drawing.Point(67, 81);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
+            this.button2.Size = new System.Drawing.Size(50, 21);
             this.button2.TabIndex = 10;
             this.button2.Text = "Done";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -162,18 +165,18 @@
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(192, 864);
+            this.panel2.Size = new System.Drawing.Size(129, 562);
             this.panel2.TabIndex = 20;
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(70, 809);
+            this.linkLabel1.Location = new System.Drawing.Point(47, 526);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(57, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(39, 13);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "log out";
@@ -183,10 +186,9 @@
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.Maroon;
-            this.button5.Location = new System.Drawing.Point(16, 594);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Location = new System.Drawing.Point(11, 386);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(158, 46);
+            this.button5.Size = new System.Drawing.Size(105, 30);
             this.button5.TabIndex = 11;
             this.button5.Text = "Message Users";
             this.button5.UseVisualStyleBackColor = true;
@@ -196,10 +198,9 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Maroon;
-            this.button4.Location = new System.Drawing.Point(15, 483);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(10, 314);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(158, 46);
+            this.button4.Size = new System.Drawing.Size(105, 30);
             this.button4.TabIndex = 10;
             this.button4.Text = "Projects";
             this.button4.UseVisualStyleBackColor = true;
@@ -209,10 +210,9 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.Maroon;
-            this.button6.Location = new System.Drawing.Point(15, 538);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Location = new System.Drawing.Point(10, 350);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(158, 46);
+            this.button6.Size = new System.Drawing.Size(105, 30);
             this.button6.TabIndex = 9;
             this.button6.Text = "Client";
             this.button6.UseVisualStyleBackColor = true;
@@ -221,10 +221,9 @@
             // 
             this.pictureBox2.BackgroundImage = global::Tasky.Properties.Resources.tasky_logo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 17);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 11);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(158, 140);
+            this.pictureBox2.Size = new System.Drawing.Size(105, 91);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -233,10 +232,9 @@
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.Maroon;
-            this.button7.Location = new System.Drawing.Point(16, 372);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button7.Location = new System.Drawing.Point(11, 242);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(156, 46);
+            this.button7.Size = new System.Drawing.Size(104, 30);
             this.button7.TabIndex = 3;
             this.button7.Text = "Users";
             this.button7.UseVisualStyleBackColor = true;
@@ -246,10 +244,9 @@
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Maroon;
-            this.button8.Location = new System.Drawing.Point(15, 428);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button8.Location = new System.Drawing.Point(10, 278);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(158, 46);
+            this.button8.Size = new System.Drawing.Size(105, 30);
             this.button8.TabIndex = 5;
             this.button8.Text = "Log Hours";
             this.button8.UseVisualStyleBackColor = true;
@@ -260,19 +257,17 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(16, 166);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(11, 108);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(158, 197);
+            this.panel1.Size = new System.Drawing.Size(105, 128);
             this.panel1.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 148);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "full name";
             // 
@@ -280,9 +275,8 @@
             // 
             this.pictureBox1.Image = global::Tasky.Properties.Resources.default_user_image;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 143);
+            this.pictureBox1.Size = new System.Drawing.Size(104, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -290,11 +284,11 @@
             // 
             // ClientsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(936, 852);
+            this.ClientSize = new System.Drawing.Size(624, 554);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelNewClient);
             this.Controls.Add(this.listBoxProject);
@@ -302,9 +296,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ClientsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.ClientsForm_Load);
             this.panelNewClient.ResumeLayout(false);
             this.panelNewClient.PerformLayout();
             this.panel2.ResumeLayout(false);

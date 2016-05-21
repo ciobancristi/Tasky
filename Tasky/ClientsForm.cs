@@ -31,6 +31,7 @@ namespace Tasky
             var clientViewModels = new List<ClientViewModel>();
             foreach(var client in clients)
             {
+                listBoxClient.Items.Add(client.Name);
                 var projectNames = "";
                 foreach(var project in client.Projects)
                 {
@@ -43,6 +44,7 @@ namespace Tasky
                     Projects = projectNames
                 });
             }
+                        
             //clientsDataGridView.DataSource = clientViewModels;
             //clientsDataGridView.Columns[0].Visible = false;
         }
@@ -123,6 +125,32 @@ namespace Tasky
             Hide();
             form.Show();
             Close();
+        }
+
+        private void ClientsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBoxProject.Items.Clear();
+            var sel = listBoxClient.SelectedItem.ToString();
+            var clients = _clientService.GetSelectedClient(sel);
+            foreach (var item in clients.Projects)
+            {
+                listBoxProject.Items.Add(item.Name);
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBoxClient.Items.Clear();
+            listBoxProject.Items.Clear();
+            _clientService.AddClient(clientNameTextBox.Text);
+            BindData();
         }
     }
 }

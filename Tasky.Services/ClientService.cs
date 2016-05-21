@@ -13,8 +13,9 @@ namespace Tasky.Services
         Client GetClient(int clientId);
         void EditClient(int clientId, Client editedClient);
         void DeleteClient(int clientId);
-        void AddClient(string name, List<int> projectIds);
+        void AddClient(string name);
         int GetNumberOfClients();
+        Client GetSelectedClient(string client);
     }
 
     public class ClientService : BaseService, IClientService
@@ -73,16 +74,12 @@ namespace Tasky.Services
             }
         }
 
-        public void AddClient(string name, List<int> projectIds)
+        public void AddClient(string name)
         {
-            if (name.Length == 0 || projectIds.Count <= 0)
-                throw new ArgumentException();
 
-            var projects = GetProjectsByIds(projectIds);
             var client = new Client
             {
-                Name = name,
-                Projects = projects
+                Name = name
             };
             _dbContext.Clients.Add(client);
             _dbContext.SaveChanges();
@@ -91,6 +88,11 @@ namespace Tasky.Services
         public int GetNumberOfClients()
         {
             return _dbContext.Clients.Count();
+        }
+        public Client GetSelectedClient(string client)
+        {
+            var cl = _dbContext.Clients.FirstOrDefault(s => s.Name == client);
+            return cl;
         }
         #endregion
 

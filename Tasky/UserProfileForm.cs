@@ -34,7 +34,7 @@ namespace Tasky
             label4.Text = UserHelper.CurrentUserFullName;
 
         }
-        // Chirri wtf is this?!
+        
         private UserDetail UserDetails()
         {
             _userService = new UserService();
