@@ -31,6 +31,8 @@ namespace Tasky
             BindData();
             label4.Text = UserHelper.CurrentUserFullName;
             label1.Text = "Add project";
+            label2.Visible = false;
+            checkBox1.Visible = false;
         }
 
         public AddProjectForm(int projectId)
@@ -45,6 +47,8 @@ namespace Tasky
             BindData();
             label4.Text = UserHelper.CurrentUserFullName;
             label1.Text = "Edit project";
+            label2.Visible = true;
+            checkBox1.Visible = true;
             MarkSelectedUsers();
             MarkSelectedTasks();
             clientsComboBox.SelectedIndex = clientsComboBox.FindStringExact(projectToEdit.Client.Name);

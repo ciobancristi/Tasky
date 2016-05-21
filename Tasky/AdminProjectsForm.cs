@@ -28,7 +28,7 @@ namespace Tasky
         private void BindData()
         {
             var projects = _projectService
-                            .GetActiveProjects(UserHelper.GetUserId())
+                            .GetProjects()
                             .Select(x => _mapper.Map<ProjectViewModel>(x))
                             .ToList();
             

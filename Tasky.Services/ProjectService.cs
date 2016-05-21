@@ -16,6 +16,7 @@ namespace Tasky.Services
         int GetNumberOfActiveProjects();
         int GetNumberOfProjects();
         Project GetProject(int projectId);
+        List<Project> GetProjects();
     }
     public class ProjectService : BaseService, IProjectService
     {
@@ -42,6 +43,11 @@ namespace Tasky.Services
             };
             _dbContext.Projects.Add(project);
             _dbContext.SaveChanges();
+        }
+
+        public List<Project> GetProjects()
+        {
+            return _dbContext.Projects.ToList();
         }
 
         public List<Project> GetActiveProjects(Guid userId)
