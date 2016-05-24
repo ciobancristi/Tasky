@@ -127,63 +127,68 @@ namespace Tasky
         //ADD validation
         private void addProjectButton_Click(object sender, EventArgs e)
         {
-            var projectName = projectNameTexBox.Text;
-            NameValueItem selectedClient = (NameValueItem)clientsComboBox.SelectedItem;
-            List<Guid> userIds = new List<Guid>();
-            List<int> taskIds = new List<int>();
+            if (projectNameTexBox.Text == "") { label3.Visible = true; }
+            else if (clientsComboBox.SelectedItem.ToString() == "") { label5.Visible = true; }
+            else if (taskCheckedListBox.SelectedItems.Count == 0) { label6.Visible = true; }
+            else if (userCheckedListBox.SelectedItems.Count == 0) { label7.Visible = true; }
+            else {
+                var projectName = projectNameTexBox.Text;
+                NameValueItem selectedClient = (NameValueItem)clientsComboBox.SelectedItem;
+                List<Guid> userIds = new List<Guid>();
+                List<int> taskIds = new List<int>();
 
-            foreach (NameValueItem user in userCheckedListBox.CheckedItems)
-            {
-                userIds.Add(new Guid(user.Value));
-            }
-            foreach (NameValueItem task in taskCheckedListBox.CheckedItems)
-            {
-                taskIds.Add(int.Parse(task.Value));
-            }
-            if (projectName.Length > 0 && userIds.Count > 0
-                && taskIds.Count > 0 && clientsComboBox.Items.Count > 0)
-            {
-                if (projectToEdit == null)
+                foreach (NameValueItem user in userCheckedListBox.CheckedItems)
                 {
-                    var newProject = new NewProjectModel
+                    userIds.Add(new Guid(user.Value));
+                }
+                foreach (NameValueItem task in taskCheckedListBox.CheckedItems)
+                {
+                    taskIds.Add(int.Parse(task.Value));
+                }
+                if (projectName.Length > 0 && userIds.Count > 0
+                    && taskIds.Count > 0 && clientsComboBox.Items.Count > 0)
+                {
+                    if (projectToEdit == null)
                     {
-                        Name = projectName,
-                        ClientId = int.Parse(selectedClient.Value),
-                        TaskIds = taskIds,
-                        UserIds = userIds
-                    };
-                    _projectService.AddProject(newProject);
-                    MessageBox.Show("Project Saved Successfully");
+                        var newProject = new NewProjectModel
+                        {
+                            Name = projectName,
+                            ClientId = int.Parse(selectedClient.Value),
+                            TaskIds = taskIds,
+                            UserIds = userIds
+                        };
+                        _projectService.AddProject(newProject);
+                        MessageBox.Show("Project Saved Successfully");
 
-                    var projectsForm = new AdminProjectsForm();
-                    Hide();
-                    projectsForm.Show();
-                    Close();
+                        var projectsForm = new AdminProjectsForm();
+                        Hide();
+                        projectsForm.Show();
+                        Close();
 
+                    }
+                    else
+                    {
+                        var editedProject = new EditProjectModel
+                        {
+                            Name = projectName,
+                            ClientId = int.Parse(selectedClient.Value),
+                            TaskIds = taskIds,
+                            UserIds = userIds,
+                            HasFinished = checkBox1.Checked
+                        };
+                        _projectService.EditProject(projectToEdit.ProjectId, editedProject);
+                        MessageBox.Show("Project Saved Successfully");
+                        var projectsForm = new AdminProjectsForm();
+                        Hide();
+                        projectsForm.Show();
+                        Close();
+                    }
                 }
                 else
                 {
-                    var editedProject = new EditProjectModel
-                    {
-                        Name = projectName,
-                        ClientId = int.Parse(selectedClient.Value),
-                        TaskIds = taskIds,
-                        UserIds = userIds,
-                        HasFinished = checkBox1.Checked
-                    };
-                    _projectService.EditProject(projectToEdit.ProjectId, editedProject);
-                    MessageBox.Show("Project Saved Successfully");
-                    var projectsForm = new AdminProjectsForm();
-                    Hide();
-                    projectsForm.Show();
-                    Close();
+                    MessageBox.Show("All fields are required");
                 }
             }
-            else
-            {
-                MessageBox.Show("All fields are required");
-            }
-
         }
 
         private void button7_Click(object sender, EventArgs e)

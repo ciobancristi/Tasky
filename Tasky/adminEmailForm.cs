@@ -22,11 +22,17 @@ namespace Tasky
         //TODO: modify messageBox 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            if (AreValidFields())
+            if (toTextBox.Text == "") { label2.Visible = true; }
+            else if(subjectTextBox.Text=="") { label3.Visible = true; }
+            else if (bodyTextBox.Text == "") { label5.Visible = true; }
+            else if (AreValidFields())
             {
                 MailHelper.SendMail(destinationEmails, subjectTextBox.Text, bodyTextBox.Text);
                 MessageBox.Show("The mails were sent successfuly!");
                 ResetFields();
+                label2.Visible = false;
+                label3.Visible = false;
+                label5.Visible = false;
             }
         }
 
@@ -114,6 +120,9 @@ namespace Tasky
             Close();
         }
 
-        
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelNewClient.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -82,7 +83,7 @@
             // clientNameTextBox
             // 
             this.clientNameTextBox.Location = new System.Drawing.Point(67, 42);
-            this.clientNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clientNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.clientNameTextBox.Name = "clientNameTextBox";
             this.clientNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.clientNameTextBox.TabIndex = 9;
@@ -102,7 +103,7 @@
             // 
             this.listBoxClient.FormattingEnabled = true;
             this.listBoxClient.Location = new System.Drawing.Point(140, 109);
-            this.listBoxClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxClient.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxClient.Name = "listBoxClient";
             this.listBoxClient.Size = new System.Drawing.Size(253, 160);
             this.listBoxClient.TabIndex = 17;
@@ -112,7 +113,7 @@
             // 
             this.listBoxProject.FormattingEnabled = true;
             this.listBoxProject.Location = new System.Drawing.Point(140, 279);
-            this.listBoxProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxProject.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxProject.Name = "listBoxProject";
             this.listBoxProject.Size = new System.Drawing.Size(253, 147);
             this.listBoxProject.TabIndex = 18;
@@ -124,7 +125,7 @@
             this.panelNewClient.Controls.Add(this.clientNameTextBox);
             this.panelNewClient.Controls.Add(this.label3);
             this.panelNewClient.Location = new System.Drawing.Point(419, 109);
-            this.panelNewClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelNewClient.Margin = new System.Windows.Forms.Padding(2);
             this.panelNewClient.Name = "panelNewClient";
             this.panelNewClient.Size = new System.Drawing.Size(185, 114);
             this.panelNewClient.TabIndex = 19;
@@ -145,7 +146,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Indigo;
             this.button2.Location = new System.Drawing.Point(67, 81);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 21);
             this.button2.TabIndex = 10;
@@ -282,6 +283,17 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(449, 243);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Client name field is empty.";
+            this.label5.Visible = false;
+            // 
             // ClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +301,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(624, 554);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelNewClient);
             this.Controls.Add(this.listBoxProject);
@@ -334,5 +347,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

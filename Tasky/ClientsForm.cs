@@ -29,11 +29,11 @@ namespace Tasky
         {
             var clients = _clientService.GetClients().ToList();
             var clientViewModels = new List<ClientViewModel>();
-            foreach(var client in clients)
+            foreach (var client in clients)
             {
                 listBoxClient.Items.Add(client.Name);
                 var projectNames = "";
-                foreach(var project in client.Projects)
+                foreach (var project in client.Projects)
                 {
                     projectNames += project.Name + " ";
                 }
@@ -44,30 +44,30 @@ namespace Tasky
                     Projects = projectNames
                 });
             }
-                        
+
             //clientsDataGridView.DataSource = clientViewModels;
             //clientsDataGridView.Columns[0].Visible = false;
         }
-        
+
         private void button7_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
-        
+
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -147,10 +147,14 @@ namespace Tasky
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listBoxClient.Items.Clear();
-            listBoxProject.Items.Clear();
-            _clientService.AddClient(clientNameTextBox.Text);
-            BindData();
+            if (clientNameTextBox.Text == "") { label5.Visible = true; }
+            else {
+                listBoxClient.Items.Clear();
+                listBoxProject.Items.Clear();
+                _clientService.AddClient(clientNameTextBox.Text);
+                BindData();
+                label5.Visible = false;
+            }
         }
     }
 }
