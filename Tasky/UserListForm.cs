@@ -16,6 +16,7 @@ namespace Tasky
         public UserListForm()
         {
             InitializeComponent();
+            
         }
         public UserListForm(bool isAddUserVisible)
         {
@@ -27,8 +28,21 @@ namespace Tasky
             addUserButton.Visible = isAddUserVisible;
             button4.Visible = isAddUserVisible;
             label4.Text = UserHelper.CurrentUserFullName;
+            HideButtons();
         }
 
+        private void HideButtons()
+        {
+
+            if (!UserHelper.IsAdmin())
+            {
+                button1.Visible = false;
+                button6.Visible = false;
+                button5.Visible = false;
+                button4.Visible = false;
+                addUserButton.Visible = false;
+            }
+        }
         private void BindData()
         {
             var models = _userService.GetAllUserDetails()
@@ -104,6 +118,11 @@ namespace Tasky
             Hide();
             form.Show();
             Close();
+        }
+
+        private void UserListForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

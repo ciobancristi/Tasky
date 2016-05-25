@@ -47,7 +47,7 @@ namespace Tasky.Services.Helpers
                     if (_currentUser.UserDetail != null)
                     {
                         fullName = _currentUser.UserDetail.FirstName + " " + _currentUser.UserDetail.LastName;
-                        if (fullName.Length == 0)
+                        if (fullName.Length <= 1)
                         {
                             fullName = _currentUser.Name;
                         }

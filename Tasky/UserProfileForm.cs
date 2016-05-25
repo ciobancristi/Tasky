@@ -32,43 +32,98 @@ namespace Tasky
                 phoneTextBox.Text = _currentUser.Phone;
 
             label4.Text = UserHelper.CurrentUserFullName;
+            HideButtons();
 
         }
-        
+        private void HideButtons()
+        {
+
+            if (!UserHelper.IsAdmin())
+            {
+                button1.Visible = false;
+                button6.Visible = false;
+                button5.Visible = false;
+            }
+        }
+
         private UserDetail UserDetails()
         {
             _userService = new UserService();
-            // foloseste UserHelper.CurrentUserDetails
             UserDetail _currentUser = _userService.GetUserDetails();
             return _currentUser;
         }
 
-        // TODO: add validation
         private void submitDataButton_Click(object sender, EventArgs e)
         {
-            UserDetail _currentUser = UserDetails();
-            if (emailTextBox.Text !=null)
-               _currentUser.Email = emailTextBox.Text;
-            if (firstNameTextBox.Text != null)
-              _currentUser.FirstName= firstNameTextBox.Text;
-            if ( lastNameTextBox.Text != null)
-                _currentUser.LastName= lastNameTextBox.Text;
-            if (birthdayDatePicker.Value != null)
-               _currentUser.BirthDate = birthdayDatePicker.Value;
-            if (phoneTextBox.Text != null)
-               _currentUser.Phone= phoneTextBox.Text;
-            _userService.PostUserDetails(_currentUser);
+            if (emailTextBox.Text == "")
+            {
+                label5.Visible = true;
+            }
+            else if (firstNameTextBox.Text == "")
+            {
+                label6.Visible = true;
+            }
+            else if (lastNameTextBox.Text == "")
+            {
+                label7.Visible = true;
+            }
+            else
+            {
+
+                UserDetail _currentUser = UserDetails();
+                if (emailTextBox.Text != null)
+                    _currentUser.Email = emailTextBox.Text;
+                if (firstNameTextBox.Text != null)
+                    _currentUser.FirstName = firstNameTextBox.Text;
+                if (lastNameTextBox.Text != null)
+                    _currentUser.LastName = lastNameTextBox.Text;
+                if (birthdayDatePicker.Value != null)
+                    _currentUser.BirthDate = birthdayDatePicker.Value;
+                if (phoneTextBox.Text != null)
+                    _currentUser.Phone = phoneTextBox.Text;
+                _userService.PostUserDetails(_currentUser);
+                label5.Visible = false;
+                label6.Visible = false;
+                label7.Visible = false;
+                MessageBox.Show("User edited successfuly.");
+                UserHelper.SetUser(_userService.GetUser());
+                label4.Text = UserHelper.CurrentUserFullName;
+            }
         }
 
-        //TODO: add validation
         private void changePasswordButton_Click(object sender, EventArgs e)
         {
-            _userService = new UserService();
-            User _currentUser = _userService.GetUser();
-            if (_currentUser.Password == oldPasswordTextBox.Text)
-                _currentUser.Password = newPasswordTextBox.Text;
-            _userService.PostUser(_currentUser);
+            if (oldPasswordTextBox.Text == "")
+            {
+                label2.Text = "Old password field is required.";
+                label2.Visible = true;
 
+            }
+            else if (newPasswordTextBox.Text == "")
+            {
+                label3.Visible = true;
+            }
+            else {
+                
+                _userService = new UserService();
+                User _currentUser = _userService.GetUser();
+                if (_currentUser.Password == oldPasswordTextBox.Text)
+                {
+                    _currentUser.Password = newPasswordTextBox.Text;
+                    _userService.PostUser(_currentUser);
+                    MessageBox.Show("Password changed successfully");
+                    oldPasswordTextBox.Text = "";
+                    newPasswordTextBox.Text = "";
+                    label2.Visible = false;
+                    label3.Visible = false;
+
+                }
+                else
+                {
+                    label2.Text = "Old password is incorrect";
+                }
+                
+            }
         }
 
         private void changePasswordLabel_Click(object sender, EventArgs e)

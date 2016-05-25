@@ -22,9 +22,9 @@ public partial class ProjectTask
     public ProjectTask()
     {
 
-        this.Tasks = new HashSet<Task>();
-
         this.Projects = new HashSet<Project>();
+
+        this.Tasks = new HashSet<Task>();
 
     }
 
@@ -37,11 +37,11 @@ public partial class ProjectTask
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Task> Tasks { get; set; }
+    public virtual ICollection<Project> Projects { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Project> Projects { get; set; }
+    public virtual ICollection<Task> Tasks { get; set; }
 
 }
 

@@ -326,11 +326,11 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="HasFinished" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_Project" FromRole="Project" ToRole="Task" />
           <NavigationProperty Name="ProjectTasks" Relationship="Self.ProjectTaskMap" FromRole="Project" ToRole="ProjectTask" />
           <NavigationProperty Name="Users" Relationship="Self.UserProject" FromRole="Project" ToRole="User" />
           <Property Name="ClientId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="TaskyDBModel.FK_Project_Client" FromRole="Project" ToRole="Client" />
+          <NavigationProperty Name="Tasks" Relationship="TaskyDBModel.FK_Task_Project" FromRole="Project" ToRole="Task" />
         </EntityType>
         <EntityType Name="ProjectTask">
           <Key>
@@ -338,8 +338,8 @@
           </Key>
           <Property Name="ProjectTaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_ProjectTask" FromRole="ProjectTask" ToRole="Task" />
           <NavigationProperty Name="Projects" Relationship="Self.ProjectTaskMap" FromRole="ProjectTask" ToRole="Project" />
+          <NavigationProperty Name="Tasks" Relationship="TaskyDBModel.FK_Task_ProjectTask" FromRole="ProjectTask" ToRole="Task" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -349,22 +349,6 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.UserRole" FromRole="Role" ToRole="User" />
         </EntityType>
-        <EntityType Name="Task">
-          <Key>
-            <PropertyRef Name="TaskId" />
-          </Key>
-          <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Hours" Type="Double" Nullable="false" />
-          <Property Name="ProjectId" Type="Int32" Nullable="false" />
-          <Property Name="UserId" Type="Guid" Nullable="false" />
-          <Property Name="ProjectTaskId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Project" Relationship="Self.FK_Task_Project" FromRole="Task" ToRole="Project" />
-          <NavigationProperty Name="ProjectTask" Relationship="Self.FK_Task_ProjectTask" FromRole="Task" ToRole="ProjectTask" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Task_User" FromRole="Task" ToRole="User" />
-          <Property Name="Date" Type="DateTime" Precision="0" Nullable="false" />
-        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserId" />
@@ -372,10 +356,10 @@
           <Property Name="UserId" Type="Guid" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_User" FromRole="User" ToRole="Task" />
           <NavigationProperty Name="UserDetail" Relationship="Self.FK_UserDetails_User" FromRole="User" ToRole="UserDetails" />
           <NavigationProperty Name="Projects" Relationship="Self.UserProject" FromRole="User" ToRole="Project" />
           <NavigationProperty Name="Roles" Relationship="Self.UserRole" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Tasks" Relationship="TaskyDBModel.FK_Task_User" FromRole="User" ToRole="Task" />
         </EntityType>
         <EntityType Name="UserDetail">
           <Key>
@@ -401,42 +385,6 @@
             </Principal>
             <Dependent Role="UserDetails">
               <PropertyRef Name="PositionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Task_Project">
-          <End Role="Project" Type="Self.Project" Multiplicity="1" />
-          <End Role="Task" Type="Self.Task" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Project">
-              <PropertyRef Name="ProjectId" />
-            </Principal>
-            <Dependent Role="Task">
-              <PropertyRef Name="ProjectId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Task_ProjectTask">
-          <End Role="ProjectTask" Type="Self.ProjectTask" Multiplicity="1" />
-          <End Role="Task" Type="Self.Task" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProjectTask">
-              <PropertyRef Name="ProjectTaskId" />
-            </Principal>
-            <Dependent Role="Task">
-              <PropertyRef Name="ProjectTaskId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Task_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Task" Type="Self.Task" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Task">
-              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -469,24 +417,11 @@
           <EntitySet Name="Projects" EntityType="Self.Project" />
           <EntitySet Name="ProjectTasks" EntityType="Self.ProjectTask" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
-          <EntitySet Name="Tasks" EntityType="Self.Task" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
           <AssociationSet Name="FK_UserDetails_Position" Association="Self.FK_UserDetails_Position">
             <End Role="Position" EntitySet="Positions" />
             <End Role="UserDetails" EntitySet="UserDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Task_Project" Association="Self.FK_Task_Project">
-            <End Role="Project" EntitySet="Projects" />
-            <End Role="Task" EntitySet="Tasks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Task_ProjectTask" Association="Self.FK_Task_ProjectTask">
-            <End Role="ProjectTask" EntitySet="ProjectTasks" />
-            <End Role="Task" EntitySet="Tasks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Task_User" Association="Self.FK_Task_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Task" EntitySet="Tasks" />
           </AssociationSet>
           <AssociationSet Name="FK_UserDetails_User" Association="Self.FK_UserDetails_User">
             <End Role="User" EntitySet="Users" />
@@ -509,6 +444,19 @@
             <End Role="Client" EntitySet="Clients" />
             <End Role="Project" EntitySet="Projects" />
           </AssociationSet>
+          <EntitySet Name="Tasks" EntityType="TaskyDBModel.Task" />
+          <AssociationSet Name="FK_Task_Project" Association="TaskyDBModel.FK_Task_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_ProjectTask" Association="TaskyDBModel.FK_Task_ProjectTask">
+            <End Role="ProjectTask" EntitySet="ProjectTasks" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_User" Association="TaskyDBModel.FK_Task_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Client">
           <Key>
@@ -527,6 +475,58 @@
             </Principal>
             <Dependent Role="Project">
               <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Hours" Type="Double" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="ProjectTaskId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Project" Relationship="TaskyDBModel.FK_Task_Project" FromRole="Task" ToRole="Project" />
+          <NavigationProperty Name="ProjectTask" Relationship="TaskyDBModel.FK_Task_ProjectTask" FromRole="Task" ToRole="ProjectTask" />
+          <NavigationProperty Name="User" Relationship="TaskyDBModel.FK_Task_User" FromRole="Task" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Task_Project">
+          <End Type="TaskyDBModel.Project" Role="Project" Multiplicity="1" />
+          <End Type="TaskyDBModel.Task" Role="Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_ProjectTask">
+          <End Type="TaskyDBModel.ProjectTask" Role="ProjectTask" Multiplicity="1" />
+          <End Type="TaskyDBModel.Task" Role="Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTask">
+              <PropertyRef Name="ProjectTaskId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="ProjectTaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_User">
+          <End Type="TaskyDBModel.User" Role="User" Multiplicity="1" />
+          <End Type="TaskyDBModel.Task" Role="Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -568,20 +568,6 @@
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tasks">
-            <EntityTypeMapping TypeName="TaskyDBModel.Task">
-              <MappingFragment StoreEntitySet="Task">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Hours" ColumnName="Hours" />
-                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ProjectTaskId" ColumnName="ProjectTaskId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -637,6 +623,20 @@
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="TaskyDBModel.Task">
+              <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ProjectTaskId" ColumnName="ProjectTaskId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

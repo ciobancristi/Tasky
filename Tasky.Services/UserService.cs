@@ -62,7 +62,7 @@ namespace Tasky.Services
             var selectedRole = _dbContext.Roles.FirstOrDefault(m => m.RoleId == role.RoleId);
             currentUser.Roles.Add(selectedRole);
             _dbContext.Users.Add(currentUser);
-            var position = _dbContext.Positions.FirstOrDefault(m => m.PositionId == pos.PositionId);
+            var position = _dbContext.Positions.FirstOrDefault(m => m.Name == pos.Name);
             userDetail.PositionId = position.PositionId;
             userDetail.UserId = currentUser.UserId;
             _dbContext.UserDetails.Add(userDetail);

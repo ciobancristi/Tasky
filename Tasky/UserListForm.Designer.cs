@@ -74,7 +74,7 @@
             this.addUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addUserButton.ForeColor = System.Drawing.Color.Indigo;
-            this.addUserButton.Location = new System.Drawing.Point(209, 767);
+            this.addUserButton.Location = new System.Drawing.Point(209, 752);
             this.addUserButton.Margin = new System.Windows.Forms.Padding(2);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(256, 52);
@@ -90,7 +90,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Indigo;
-            this.button4.Location = new System.Drawing.Point(664, 767);
+            this.button4.Location = new System.Drawing.Point(664, 752);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(256, 52);
@@ -105,7 +105,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Open Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(429, 52);
+            this.label2.Location = new System.Drawing.Point(410, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(275, 55);
@@ -135,7 +135,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("SansSerif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(75, 823);
+            this.linkLabel1.Location = new System.Drawing.Point(59, 823);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(57, 19);
@@ -240,7 +240,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 160);
+            this.label4.Location = new System.Drawing.Point(2, 158);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 20);
@@ -266,7 +266,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(936, 852);
+            this.ClientSize = new System.Drawing.Size(948, 852);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button4);
@@ -279,6 +279,7 @@
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "UserListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.UserListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

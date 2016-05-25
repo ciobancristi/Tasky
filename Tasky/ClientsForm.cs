@@ -23,6 +23,17 @@ namespace Tasky
             InitializeComponent();
             BindData();
             label4.Text = UserHelper.CurrentUserFullName;
+            HideButtons();
+        }
+        private void HideButtons()
+        {
+
+            if (!UserHelper.IsAdmin())
+            {
+                button4.Visible = false;
+                button6.Visible = false;
+                button5.Visible = false;
+            }
         }
 
         private void BindData()

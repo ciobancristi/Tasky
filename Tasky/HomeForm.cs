@@ -45,6 +45,7 @@ namespace Tasky
             label6.Text = "Number of Projects: " + _projectService.GetNumberOfProjects();
             label7.Text = "Number of Active Projects: " + _projectService.GetNumberOfActiveProjects();
             BindTasks();
+            HideButtons();
 
         }
 

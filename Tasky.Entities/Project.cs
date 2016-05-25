@@ -22,11 +22,11 @@ public partial class Project
     public Project()
     {
 
-        this.Tasks = new HashSet<Task>();
-
         this.ProjectTasks = new HashSet<ProjectTask>();
 
         this.Users = new HashSet<User>();
+
+        this.Tasks = new HashSet<Task>();
 
     }
 
@@ -45,10 +45,6 @@ public partial class Project
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Task> Tasks { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
     public virtual ICollection<ProjectTask> ProjectTasks { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -56,6 +52,10 @@ public partial class Project
     public virtual ICollection<User> Users { get; set; }
 
     public virtual Client Client { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<Task> Tasks { get; set; }
 
 }
 
